@@ -19,6 +19,8 @@
 		8E18A02319F6EAEC0056697C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* MainViewController.swift */; };
 		8E18A02419F6EAEC0056697C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* MainViewController.swift */; };
 		8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02819F6EC9B0056697C /* Today.xcdatamodeld */; };
+		8E18A02C19F700B60056697C /* MainViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02B19F700B60056697C /* MainViewControllerSpec.swift */; };
+		8E853BB419F7036C007128B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E189FD219F637180056697C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,7 @@
 		8E18A01F19F6E6880056697C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8E18A02219F6EAEC0056697C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8E18A02919F6EC9B0056697C /* Today.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Today.xcdatamodel; sourceTree = "<group>"; };
+		8E18A02B19F700B60056697C /* MainViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,7 @@
 		8E189FE119F637180056697C /* TodayTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E18A02B19F700B60056697C /* MainViewControllerSpec.swift */,
 				8E18A01D19F6E5D10056697C /* CoreDataStackSpec.swift */,
 				8E18A00B19F6E5170056697C /* Nimble.xcodeproj */,
 				8E189FFB19F6E5050056697C /* Quick.xcodeproj */,
@@ -391,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E853BB419F7036C007128B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +419,7 @@
 			files = (
 				8E18A02419F6EAEC0056697C /* MainViewController.swift in Sources */,
 				8E18A01E19F6E5D10056697C /* CoreDataStackSpec.swift in Sources */,
+				8E18A02C19F700B60056697C /* MainViewControllerSpec.swift in Sources */,
 				8E18A02119F6E6880056697C /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +609,7 @@
 				8E189FEA19F637180056697C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E189FEB19F637180056697C /* Build configuration list for PBXNativeTarget "TodayTests" */ = {
 			isa = XCConfigurationList;
@@ -611,6 +618,7 @@
 				8E189FED19F637180056697C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
