@@ -12,5 +12,16 @@ import CoreData
 class MainViewController: UIViewController {
     
     var managedObjectContext:NSManagedObjectContext!
+    
+    required init (coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    
 
 }

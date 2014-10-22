@@ -18,9 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Core Data Setup
         let navigationController = self.window!.rootViewController as UINavigationController
         let mainViewController = navigationController.topViewController as MainViewController
         mainViewController.managedObjectContext = self.coreDataStack.managedObjectContext
+        
+        //Global Appearence Methods
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 21.0)!]
+        UINavigationBar.appearance().barStyle = .Black
+        UINavigationBar.appearance().barTintColor = .todayBlack
+        UINavigationBar.appearance().translucent = false
+        
         return true
     }
 

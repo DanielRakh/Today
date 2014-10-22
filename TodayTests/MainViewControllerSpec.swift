@@ -17,5 +17,11 @@ class MainViewControllerSpec: QuickSpec {
                 expect(viewController).toNot(beNil())
             }
         }
+        
+        describe("Navigation Bar") {
+            it("Has a title") {
+                
+            }
+        }
     }
 }
