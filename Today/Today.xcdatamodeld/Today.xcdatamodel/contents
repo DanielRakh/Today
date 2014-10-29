@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A388b" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Do" syncable="YES">
+        <attribute name="activity" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Dont" syncable="YES">
+        <attribute name="activity" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Do" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="Dont" positionX="-54" positionY="-9" width="128" height="58"/>
+    </elements>
 </model>

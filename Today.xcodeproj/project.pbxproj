@@ -22,6 +22,7 @@
 		8E18A02C19F700B60056697C /* MainViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02B19F700B60056697C /* MainViewControllerSpec.swift */; };
 		8E853BB419F7036C007128B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E189FD219F637180056697C /* Main.storyboard */; };
 		8E853BB719F719FA007128B3 /* UIColor+ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E853BB619F719FA007128B3 /* UIColor+ColorPalette.swift */; };
+		8EAA94BC1A0155F00002659C /* DoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94BB1A0155F00002659C /* DoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		8E18A02919F6EC9B0056697C /* Today.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Today.xcdatamodel; sourceTree = "<group>"; };
 		8E18A02B19F700B60056697C /* MainViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpec.swift; sourceTree = "<group>"; };
 		8E853BB619F719FA007128B3 /* UIColor+ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorPalette.swift"; sourceTree = "<group>"; };
+		8EAA94BB1A0155F00002659C /* DoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				8E18A02219F6EAEC0056697C /* MainViewController.swift */,
+				8EAA94BB1A0155F00002659C /* DoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				8E189FCF19F637180056697C /* AppDelegate.swift in Sources */,
 				8E853BB719F719FA007128B3 /* UIColor+ColorPalette.swift in Sources */,
 				8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */,
+				8EAA94BC1A0155F00002659C /* DoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
