@@ -15,7 +15,7 @@ class DoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundColor = UIColor.whiteColor()
+        self.tableView.backgroundColor = UIColor.todayWhite
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0)
 
