@@ -162,7 +162,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="jZV-MC-71I">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.2156862745" green="0.50196078430000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97999999999999998" green="0.98799999999999999" blue="0.98799999999999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -180,6 +180,7 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="WPP-ZK-2yU" secondAttribute="trailing" id="5VH-cz-qMD">
                                                     <variation key="widthClass=compact" constant="8"/>
@@ -217,6 +218,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="textField" destination="WPP-ZK-2yU" id="wMR-x1-3ZI"/>
                                         </connections>
@@ -265,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRm-MJ-Sqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3103.5" y="580"/>
+            <point key="canvasLocation" x="3070.5" y="375"/>
         </scene>
     </scenes>
 </document>
