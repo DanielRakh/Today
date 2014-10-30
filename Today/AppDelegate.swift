@@ -20,15 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //Core Data Setup
-        let navigationController = self.window!.rootViewController as UINavigationController
-        let mainViewController = navigationController.topViewController as MainViewController
+        let mainViewController = self.window!.rootViewController as MainViewController
         mainViewController.managedObjectContext = self.coreDataStack.managedObjectContext
         
         //Global Appearence Methods
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 21.0)!]
-        UINavigationBar.appearance().barStyle = .Black
-        UINavigationBar.appearance().barTintColor = .todayBlack
-        UINavigationBar.appearance().translucent = false
+//        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 21.0)!]
+//        UINavigationBar.appearance().barStyle = .Black
+//        UINavigationBar.appearance().barTintColor = .todayBlack
+//        UINavigationBar.appearance().translucent = false
         
         return true
     }

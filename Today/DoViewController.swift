@@ -11,18 +11,16 @@ import UIKit
 class DoViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var activities = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = UIColor.whiteColor()
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0)
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
@@ -39,14 +37,23 @@ class DoViewController: UIViewController {
 extension DoViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 5
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DoCell") as UITableViewCell
-        cell.textLabel.text = "\(indexPath.row)"
+        let cell = tableView.dequeueReusableCellWithIdentifier("DoCell") as ActivityTableViewCell
         return cell
     }
 }
+
+
+extension DoViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
 
 

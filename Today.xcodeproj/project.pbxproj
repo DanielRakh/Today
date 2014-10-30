@@ -23,6 +23,7 @@
 		8E853BB419F7036C007128B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E189FD219F637180056697C /* Main.storyboard */; };
 		8E853BB719F719FA007128B3 /* UIColor+ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E853BB619F719FA007128B3 /* UIColor+ColorPalette.swift */; };
 		8EAA94BC1A0155F00002659C /* DoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94BB1A0155F00002659C /* DoViewController.swift */; };
+		8EAA94C61A0161C50002659C /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94C51A0161C50002659C /* ActivityTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		8E18A02B19F700B60056697C /* MainViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpec.swift; sourceTree = "<group>"; };
 		8E853BB619F719FA007128B3 /* UIColor+ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorPalette.swift"; sourceTree = "<group>"; };
 		8EAA94BB1A0155F00002659C /* DoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoViewController.swift; sourceTree = "<group>"; };
+		8EAA94C51A0161C50002659C /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 			children = (
 				8E189FD219F637180056697C /* Main.storyboard */,
 				8E189FD719F637180056697C /* LaunchScreen.xib */,
+				8EAA94C51A0161C50002659C /* ActivityTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				8E18A02019F6E6880056697C /* CoreDataStack.swift in Sources */,
 				8E189FCF19F637180056697C /* AppDelegate.swift in Sources */,
 				8E853BB719F719FA007128B3 /* UIColor+ColorPalette.swift in Sources */,
+				8EAA94C61A0161C50002659C /* ActivityTableViewCell.swift in Sources */,
 				8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */,
 				8EAA94BC1A0155F00002659C /* DoViewController.swift in Sources */,
 			);
