@@ -11,9 +11,9 @@ import CoreData
 class CoreDataStack {
     
     let managedObjectContext:NSManagedObjectContext!
-    let persistentStoreCoordinator: NSPersistentStoreCoordinator!
-    let model: NSManagedObjectModel!
-    let store: NSPersistentStore?
+   private let persistentStoreCoordinator: NSPersistentStoreCoordinator!
+   private let model: NSManagedObjectModel!
+   private let store: NSPersistentStore?
     
     init() {
         let bundle = NSBundle.mainBundle()
@@ -40,7 +40,7 @@ class CoreDataStack {
         }
     }
     
-    func applicationDocumentsDirectory() -> NSURL {
+    private func applicationDocumentsDirectory() -> NSURL {
         let fileManager = NSFileManager.defaultManager()
         let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask) as [NSURL]
         return urls.first!
@@ -52,4 +52,6 @@ class CoreDataStack {
             println("Could not save: \(error), \(error?.userInfo)")
         }
     }
+    
+    
 }

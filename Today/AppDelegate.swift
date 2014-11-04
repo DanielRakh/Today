@@ -20,8 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //Core Data Setup
-        let mainViewController = self.window!.rootViewController as MainViewController
-        mainViewController.managedObjectContext = self.coreDataStack.managedObjectContext
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let masterViewController = storyboard.instantiateInitialViewController() as MasterViewController
+        masterViewController.managedObjectContext = self.coreDataStack.managedObjectContext
         
         //Global Appearence Methods
 //        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 21.0)!]

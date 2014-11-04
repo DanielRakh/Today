@@ -8,17 +8,26 @@
 
 import UIKit
 
+
 class DoViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    var activities = [String]()
+    @IBOutlet weak var tableView: EntryTableView!
+
+//    var tableViewDataSource:TableViewManager
+    
+//    required init(coder aDecoder: NSCoder) {
+//        tableViewDataSource = TableViewManager(tableView: self.tableView, withCellIdentifier: "DoCell")
+//        super.init(coder: aDecoder)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundColor = UIColor.todayWhite
-        self.tableView.tableFooterView = UIView(frame: CGRectZero)
-        self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0)
-
+        let tableViewManager = TableViewManager(tableView: self.tableView, withCellIdentifier: "DoCell")
+          tableView.dataSource = tableViewManager
+//        self.tableView.backgroundColor = UIColor.todayWhite
+//        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+//        self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -34,26 +43,27 @@ class DoViewController: UIViewController {
 
 }
 
-extension DoViewController: UITableViewDataSource {
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DoCell") as ActivityTableViewCell
-        return cell
-    }
-}
+//extension DoViewController: UITableViewDataSource {
+//    
+//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return activities.count
+//    }
+//    
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("DoCell") as ActivityTableViewCell
+//        return cell
+//    }
+//}
 
 
-extension DoViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
+//extension DoViewController: UITextFieldDelegate {
+//    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//}
 
 
 

@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E047E281A08204D00B2690A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E047E271A08204D00B2690A /* Entry.swift */; };
+		8E047E2A1A08766800B2690A /* FetchedResultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E047E291A08766800B2690A /* FetchedResultsManager.swift */; };
+		8E047E2C1A08787300B2690A /* EntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E047E2B1A08787300B2690A /* EntryService.swift */; };
+		8E047E2E1A0878AA00B2690A /* TableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E047E2D1A0878AA00B2690A /* TableViewManager.swift */; };
+		8E047E321A08794700B2690A /* EntryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E047E311A08794700B2690A /* EntryTableView.swift */; };
+		8E047E341A08795600B2690A /* DontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E047E331A08795600B2690A /* DontViewController.swift */; };
 		8E189FCF19F637180056697C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E189FCE19F637180056697C /* AppDelegate.swift */; };
 		8E189FD419F637180056697C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E189FD219F637180056697C /* Main.storyboard */; };
 		8E189FD619F637180056697C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E189FD519F637180056697C /* Images.xcassets */; };
 		8E189FD919F637180056697C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E189FD719F637180056697C /* LaunchScreen.xib */; };
-		8E18A01A19F6E52E0056697C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E18A01319F6E5170056697C /* Nimble.framework */; };
-		8E18A01B19F6E52E0056697C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E18A00819F6E5050056697C /* Quick.framework */; };
-		8E18A01E19F6E5D10056697C /* CoreDataStackSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A01D19F6E5D10056697C /* CoreDataStackSpec.swift */; };
 		8E18A02019F6E6880056697C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A01F19F6E6880056697C /* CoreDataStack.swift */; };
-		8E18A02119F6E6880056697C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A01F19F6E6880056697C /* CoreDataStack.swift */; };
-		8E18A02319F6EAEC0056697C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* MainViewController.swift */; };
-		8E18A02419F6EAEC0056697C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* MainViewController.swift */; };
+		8E18A02319F6EAEC0056697C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* MasterViewController.swift */; };
 		8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02819F6EC9B0056697C /* Today.xcdatamodeld */; };
-		8E18A02C19F700B60056697C /* MainViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02B19F700B60056697C /* MainViewControllerSpec.swift */; };
-		8E853BB419F7036C007128B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E189FD219F637180056697C /* Main.storyboard */; };
 		8E853BB719F719FA007128B3 /* UIColor+ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E853BB619F719FA007128B3 /* UIColor+ColorPalette.swift */; };
 		8EAA94BC1A0155F00002659C /* DoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94BB1A0155F00002659C /* DoViewController.swift */; };
 		8EAA94C61A0161C50002659C /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94C51A0161C50002659C /* ActivityTableViewCell.swift */; };
+		8EF333711A08921E00EC6498 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* MasterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,65 +34,15 @@
 			remoteGlobalIDString = 8E189FC819F637180056697C;
 			remoteInfo = Today;
 		};
-		8E18A00319F6E5050056697C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E189FFB19F6E5050056697C /* Quick.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DAEB6B8E1943873100289F44;
-			remoteInfo = Quick;
-		};
-		8E18A00519F6E5050056697C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E189FFB19F6E5050056697C /* Quick.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DAEB6B991943873100289F44;
-			remoteInfo = QuickTests;
-		};
-		8E18A00719F6E5050056697C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E189FFB19F6E5050056697C /* Quick.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5A5D117C19473F2100F6D13D;
-			remoteInfo = "Quick-iOS";
-		};
-		8E18A00919F6E5050056697C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E189FFB19F6E5050056697C /* Quick.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5A5D118619473F2100F6D13D;
-			remoteInfo = "Quick-iOSTests";
-		};
-		8E18A01219F6E5170056697C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E18A00B19F6E5170056697C /* Nimble.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1F1A74291940169200FFFC47;
-			remoteInfo = "Nimble-iOS";
-		};
-		8E18A01419F6E5170056697C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E18A00B19F6E5170056697C /* Nimble.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1F1A74341940169200FFFC47;
-			remoteInfo = "Nimble-iOSTests";
-		};
-		8E18A01619F6E5170056697C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E18A00B19F6E5170056697C /* Nimble.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1F925EAD195C0D6300ED456B;
-			remoteInfo = "Nimble-OSX";
-		};
-		8E18A01819F6E5170056697C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E18A00B19F6E5170056697C /* Nimble.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1F925EB7195C0D6300ED456B;
-			remoteInfo = "Nimble-OSXTests";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E047E271A08204D00B2690A /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		8E047E291A08766800B2690A /* FetchedResultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsManager.swift; sourceTree = "<group>"; };
+		8E047E2B1A08787300B2690A /* EntryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryService.swift; sourceTree = "<group>"; };
+		8E047E2D1A0878AA00B2690A /* TableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewManager.swift; sourceTree = "<group>"; };
+		8E047E311A08794700B2690A /* EntryTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableView.swift; sourceTree = "<group>"; };
+		8E047E331A08795600B2690A /* DontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DontViewController.swift; sourceTree = "<group>"; };
 		8E189FC919F637180056697C /* Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E189FCD19F637180056697C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E189FCE19F637180056697C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,14 +51,10 @@
 		8E189FD819F637180056697C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8E189FDE19F637180056697C /* TodayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E189FE319F637180056697C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E189FFB19F6E5050056697C /* Quick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quick.xcodeproj; path = ../../Quick/Quick/Quick.xcodeproj; sourceTree = "<group>"; };
-		8E18A00B19F6E5170056697C /* Nimble.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nimble.xcodeproj; path = ../../Nimble/Nimble.xcodeproj; sourceTree = "<group>"; };
 		8E18A01C19F6E5D00056697C /* TodayTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodayTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		8E18A01D19F6E5D10056697C /* CoreDataStackSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackSpec.swift; sourceTree = "<group>"; };
 		8E18A01F19F6E6880056697C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		8E18A02219F6EAEC0056697C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8E18A02219F6EAEC0056697C /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		8E18A02919F6EC9B0056697C /* Today.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Today.xcdatamodel; sourceTree = "<group>"; };
-		8E18A02B19F700B60056697C /* MainViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpec.swift; sourceTree = "<group>"; };
 		8E853BB619F719FA007128B3 /* UIColor+ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorPalette.swift"; sourceTree = "<group>"; };
 		8EAA94BB1A0155F00002659C /* DoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoViewController.swift; sourceTree = "<group>"; };
 		8EAA94C51A0161C50002659C /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -126,8 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E18A01A19F6E52E0056697C /* Nimble.framework in Frameworks */,
-				8E18A01B19F6E52E0056697C /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,10 +121,6 @@
 		8E189FE119F637180056697C /* TodayTests */ = {
 			isa = PBXGroup;
 			children = (
-				8E18A02B19F700B60056697C /* MainViewControllerSpec.swift */,
-				8E18A01D19F6E5D10056697C /* CoreDataStackSpec.swift */,
-				8E18A00B19F6E5170056697C /* Nimble.xcodeproj */,
-				8E189FFB19F6E5050056697C /* Quick.xcodeproj */,
 				8E189FE219F637180056697C /* Supporting Files */,
 			);
 			path = TodayTests;
@@ -195,33 +135,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8E189FFC19F6E5050056697C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8E18A00419F6E5050056697C /* Quick.framework */,
-				8E18A00619F6E5050056697C /* QuickTests.xctest */,
-				8E18A00819F6E5050056697C /* Quick.framework */,
-				8E18A00A19F6E5050056697C /* Quick-iOSTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		8E18A00C19F6E5170056697C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8E18A01319F6E5170056697C /* Nimble.framework */,
-				8E18A01519F6E5170056697C /* NimbleTests.xctest */,
-				8E18A01719F6E5170056697C /* Nimble.framework */,
-				8E18A01919F6E5170056697C /* Nimble-OSXTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		8E18A02519F6EC340056697C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8E18A01F19F6E6880056697C /* CoreDataStack.swift */,
 				8E18A02819F6EC9B0056697C /* Today.xcdatamodeld */,
+				8E18A01F19F6E6880056697C /* CoreDataStack.swift */,
+				8E047E271A08204D00B2690A /* Entry.swift */,
+				8E047E291A08766800B2690A /* FetchedResultsManager.swift */,
+				8E047E2B1A08787300B2690A /* EntryService.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -232,6 +153,7 @@
 				8E189FD219F637180056697C /* Main.storyboard */,
 				8E189FD719F637180056697C /* LaunchScreen.xib */,
 				8EAA94C51A0161C50002659C /* ActivityTableViewCell.swift */,
+				8E047E311A08794700B2690A /* EntryTableView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -239,8 +161,10 @@
 		8E18A02719F6EC670056697C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E18A02219F6EAEC0056697C /* MainViewController.swift */,
+				8E18A02219F6EAEC0056697C /* MasterViewController.swift */,
 				8EAA94BB1A0155F00002659C /* DoViewController.swift */,
+				8E047E2D1A0878AA00B2690A /* TableViewManager.swift */,
+				8E047E331A08795600B2690A /* DontViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -320,16 +244,6 @@
 			mainGroup = 8E189FC019F637180056697C;
 			productRefGroup = 8E189FCA19F637180056697C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 8E18A00C19F6E5170056697C /* Products */;
-					ProjectRef = 8E18A00B19F6E5170056697C /* Nimble.xcodeproj */;
-				},
-				{
-					ProductGroup = 8E189FFC19F6E5050056697C /* Products */;
-					ProjectRef = 8E189FFB19F6E5050056697C /* Quick.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8E189FC819F637180056697C /* Today */,
@@ -337,65 +251,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		8E18A00419F6E5050056697C /* Quick.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Quick.framework;
-			remoteRef = 8E18A00319F6E5050056697C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8E18A00619F6E5050056697C /* QuickTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = QuickTests.xctest;
-			remoteRef = 8E18A00519F6E5050056697C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8E18A00819F6E5050056697C /* Quick.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Quick.framework;
-			remoteRef = 8E18A00719F6E5050056697C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8E18A00A19F6E5050056697C /* Quick-iOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Quick-iOSTests.xctest";
-			remoteRef = 8E18A00919F6E5050056697C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8E18A01319F6E5170056697C /* Nimble.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Nimble.framework;
-			remoteRef = 8E18A01219F6E5170056697C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8E18A01519F6E5170056697C /* NimbleTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = NimbleTests.xctest;
-			remoteRef = 8E18A01419F6E5170056697C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8E18A01719F6E5170056697C /* Nimble.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Nimble.framework;
-			remoteRef = 8E18A01619F6E5170056697C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8E18A01919F6E5170056697C /* Nimble-OSXTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Nimble-OSXTests.xctest";
-			remoteRef = 8E18A01819F6E5170056697C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8E189FC719F637180056697C /* Resources */ = {
@@ -412,7 +267,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E853BB419F7036C007128B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,11 +277,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E18A02319F6EAEC0056697C /* MainViewController.swift in Sources */,
+				8E047E2A1A08766800B2690A /* FetchedResultsManager.swift in Sources */,
+				8E18A02319F6EAEC0056697C /* MasterViewController.swift in Sources */,
 				8E18A02019F6E6880056697C /* CoreDataStack.swift in Sources */,
+				8E047E2C1A08787300B2690A /* EntryService.swift in Sources */,
+				8E047E341A08795600B2690A /* DontViewController.swift in Sources */,
 				8E189FCF19F637180056697C /* AppDelegate.swift in Sources */,
 				8E853BB719F719FA007128B3 /* UIColor+ColorPalette.swift in Sources */,
+				8E047E2E1A0878AA00B2690A /* TableViewManager.swift in Sources */,
 				8EAA94C61A0161C50002659C /* ActivityTableViewCell.swift in Sources */,
+				8E047E281A08204D00B2690A /* Entry.swift in Sources */,
+				8E047E321A08794700B2690A /* EntryTableView.swift in Sources */,
 				8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */,
 				8EAA94BC1A0155F00002659C /* DoViewController.swift in Sources */,
 			);
@@ -437,10 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E18A02419F6EAEC0056697C /* MainViewController.swift in Sources */,
-				8E18A01E19F6E5D10056697C /* CoreDataStackSpec.swift in Sources */,
-				8E18A02C19F700B60056697C /* MainViewControllerSpec.swift in Sources */,
-				8E18A02119F6E6880056697C /* CoreDataStack.swift in Sources */,
+				8EF333711A08921E00EC6498 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

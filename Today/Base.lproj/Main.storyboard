@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Master View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="MainViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="MasterViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -62,10 +62,10 @@
                                             <exclude reference="6zy-Z4-ImB"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="Nko-wO-4Rh"/>
-                                            <exclude reference="X1s-37-HR5"/>
                                             <exclude reference="YCT-oM-nxr"/>
                                             <exclude reference="bX9-Tz-RRF"/>
+                                            <exclude reference="Nko-wO-4Rh"/>
+                                            <exclude reference="X1s-37-HR5"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -74,10 +74,10 @@
                                             <include reference="6zy-Z4-ImB"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="Nko-wO-4Rh"/>
-                                            <include reference="X1s-37-HR5"/>
                                             <include reference="YCT-oM-nxr"/>
                                             <include reference="bX9-Tz-RRF"/>
+                                            <include reference="Nko-wO-4Rh"/>
+                                            <include reference="X1s-37-HR5"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -113,13 +113,13 @@
                                 <exclude reference="aE9-Rx-yvl"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="C5w-bO-DEv"/>
                                 <exclude reference="Yq4-Pu-kxQ"/>
                                 <exclude reference="iy9-KN-HHt"/>
                                 <exclude reference="wnC-Zm-IU7"/>
                                 <exclude reference="CbY-15-b0r"/>
                                 <exclude reference="MYB-Mi-id6"/>
                                 <exclude reference="RXh-x2-otc"/>
-                                <exclude reference="C5w-bO-DEv"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -128,13 +128,13 @@
                                 <include reference="aE9-Rx-yvl"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="C5w-bO-DEv"/>
                                 <include reference="Yq4-Pu-kxQ"/>
                                 <include reference="iy9-KN-HHt"/>
                                 <include reference="wnC-Zm-IU7"/>
                                 <include reference="CbY-15-b0r"/>
                                 <include reference="MYB-Mi-id6"/>
                                 <include reference="RXh-x2-otc"/>
-                                <include reference="C5w-bO-DEv"/>
                             </mask>
                         </variation>
                     </view>
@@ -151,7 +151,7 @@
         <!--Do View Controller-->
         <scene sceneID="Ekh-1J-CoY">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="B9k-xf-s3K" customClass="DoViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DoViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B9k-xf-s3K" customClass="DoViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FHv-89-Ofw"/>
                         <viewControllerLayoutGuide type="bottom" id="4rO-NO-xzu"/>
@@ -160,7 +160,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="jZV-MC-71I">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="jZV-MC-71I" customClass="EntryTableView" customModule="Today" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.97999999999999998" green="0.98799999999999999" blue="0.98799999999999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
@@ -170,65 +170,12 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KMg-7U-76H" id="4TB-Y6-a2k">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WPP-ZK-2yU">
-                                                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="B9k-xf-s3K" id="qXZ-3Y-RNo"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="WPP-ZK-2yU" secondAttribute="trailing" id="5VH-cz-qMD">
-                                                    <variation key="widthClass=compact" constant="8"/>
-                                                </constraint>
-                                                <constraint firstItem="WPP-ZK-2yU" firstAttribute="leading" secondItem="4TB-Y6-a2k" secondAttribute="leading" id="erc-bB-yCK">
-                                                    <variation key="widthClass=compact" constant="15"/>
-                                                </constraint>
-                                                <constraint firstAttribute="bottom" secondItem="WPP-ZK-2yU" secondAttribute="bottom" constant="16" id="nkf-bu-eVp">
-                                                    <variation key="widthClass=compact" constant="0.0"/>
-                                                </constraint>
-                                                <constraint firstItem="WPP-ZK-2yU" firstAttribute="top" secondItem="4TB-Y6-a2k" secondAttribute="top" constant="16" id="zYf-ae-thP">
-                                                    <variation key="widthClass=compact" constant="0.0"/>
-                                                </constraint>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="WPP-ZK-2yU"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="5VH-cz-qMD"/>
-                                                    <exclude reference="erc-bB-yCK"/>
-                                                    <exclude reference="nkf-bu-eVp"/>
-                                                    <exclude reference="zYf-ae-thP"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="WPP-ZK-2yU"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="5VH-cz-qMD"/>
-                                                    <include reference="erc-bB-yCK"/>
-                                                    <include reference="nkf-bu-eVp"/>
-                                                    <include reference="zYf-ae-thP"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                        <connections>
-                                            <outlet property="textField" destination="WPP-ZK-2yU" id="wMR-x1-3ZI"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="B9k-xf-s3K" id="ThK-62-0gm"/>
-                                    <outlet property="delegate" destination="B9k-xf-s3K" id="OXs-Xo-9gX"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -263,7 +210,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="tableView" destination="jZV-MC-71I" id="psq-Tv-xfr"/>
+                        <outlet property="tableView" destination="jZV-MC-71I" id="StT-Ue-Rt8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRm-MJ-Sqh" userLabel="First Responder" sceneMemberID="firstResponder"/>

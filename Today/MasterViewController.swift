@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  MasterViewController.swift
 //  Today
 //
 //  Created by Daniel on 10/21/14.
@@ -9,17 +9,13 @@
 import UIKit
 import CoreData
 
-class MainViewController: UIViewController {
+class MasterViewController: UIViewController {
     
+    //Set in AppDelegate
     var managedObjectContext:NSManagedObjectContext!
-    
-    required init (coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     
