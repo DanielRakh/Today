@@ -11,17 +11,23 @@ import UIKit
 
 class TableViewManager:NSObject, UITableViewDataSource, UITableViewDelegate {
     
-    var tableView:UITableView
+    private var tableView:UITableView
     private var cellIdentifier:String
+    private var entries:[AnyObject]?
     
-    init(tableView:UITableView, withCellIdentifier cellIdentifier:String) {
+    required init(tableView:UITableView, items:[AnyObject]?, withCellIdentifier cellIdentifier:String) {
         self.tableView = tableView
         self.cellIdentifier = cellIdentifier
+        self.entries = items
         super.init()
     }
    
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if let entries = self.entries {
+            return entries.count
+        } else {
+            return 0
+        }
     }
     
     internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

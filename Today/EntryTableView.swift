@@ -9,6 +9,11 @@
 import UIKit
 
 class EntryTableView: UITableView {
-   
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        backgroundColor = UIColor.todayWhite
+        tableFooterView = UIView(frame: CGRectZero)
+        contentInset = UIEdgeInsetsMake(44, 0, 0, 0)
+    }
 }
  

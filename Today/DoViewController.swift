@@ -13,22 +13,13 @@ class DoViewController: UIViewController {
 
     @IBOutlet weak var tableView: EntryTableView!
 
-//    var tableViewDataSource:TableViewManager
-    
-//    required init(coder aDecoder: NSCoder) {
-//        tableViewDataSource = TableViewManager(tableView: self.tableView, withCellIdentifier: "DoCell")
-//        super.init(coder: aDecoder)
-//    }
+    var tableViewDataSource:TableViewManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tableViewManager = TableViewManager(tableView: self.tableView, withCellIdentifier: "DoCell")
-          tableView.dataSource = tableViewManager
-//        self.tableView.backgroundColor = UIColor.todayWhite
-//        self.tableView.tableFooterView = UIView(frame: CGRectZero)
-//        self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0)
-        
-        // Do any additional setup after loading the view.
+        tableViewDataSource = TableViewManager(tableView: self.tableView, items:nil, withCellIdentifier: "DoCell")
+          tableView.dataSource = tableViewDataSource
+    
     }
 
     /*
@@ -42,18 +33,6 @@ class DoViewController: UIViewController {
     */
 
 }
-
-//extension DoViewController: UITableViewDataSource {
-//    
-//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return activities.count
-//    }
-//    
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("DoCell") as ActivityTableViewCell
-//        return cell
-//    }
-//}
 
 
 //extension DoViewController: UITextFieldDelegate {
