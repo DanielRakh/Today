@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TableViewManager:NSObject, UITableViewDataSource, UITableViewDelegate {
+class TableViewManager:NSObject {
     
     private var tableView:UITableView
     private var cellIdentifier:String
@@ -21,7 +21,11 @@ class TableViewManager:NSObject, UITableViewDataSource, UITableViewDelegate {
         self.entries = items
         super.init()
     }
-   
+}
+
+//MARK: <TableViewDataSource>
+extension TableViewManager: UITableViewDataSource {
+    
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let entries = self.entries {
             return entries.count
@@ -35,5 +39,13 @@ class TableViewManager:NSObject, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier) as UITableViewCell
         return cell
     }
+}
+
+//MARK: <TableViewDelegate>
+extension TableViewManager: UITableViewDelegate {
+    
     
 }
+
+
+
