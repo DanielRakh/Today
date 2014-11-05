@@ -20,6 +20,7 @@
 		8E18A02019F6E6880056697C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A01F19F6E6880056697C /* CoreDataStack.swift */; };
 		8E18A02319F6EAEC0056697C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* MasterViewController.swift */; };
 		8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02819F6EC9B0056697C /* Today.xcdatamodeld */; };
+		8E7E89721A0953C50087C655 /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E89711A0953C50087C655 /* AddEntryView.swift */; };
 		8E853BB719F719FA007128B3 /* UIColor+ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E853BB619F719FA007128B3 /* UIColor+ColorPalette.swift */; };
 		8EAA94BC1A0155F00002659C /* DoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94BB1A0155F00002659C /* DoViewController.swift */; };
 		8EAA94C61A0161C50002659C /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94C51A0161C50002659C /* ActivityTableViewCell.swift */; };
@@ -55,6 +56,7 @@
 		8E18A01F19F6E6880056697C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8E18A02219F6EAEC0056697C /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		8E18A02919F6EC9B0056697C /* Today.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Today.xcdatamodel; sourceTree = "<group>"; };
+		8E7E89711A0953C50087C655 /* AddEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
 		8E853BB619F719FA007128B3 /* UIColor+ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorPalette.swift"; sourceTree = "<group>"; };
 		8EAA94BB1A0155F00002659C /* DoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoViewController.swift; sourceTree = "<group>"; };
 		8EAA94C51A0161C50002659C /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				8E189FD719F637180056697C /* LaunchScreen.xib */,
 				8EAA94C51A0161C50002659C /* ActivityTableViewCell.swift */,
 				8E047E311A08794700B2690A /* EntryTableView.swift */,
+				8E7E89711A0953C50087C655 /* AddEntryView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				8E853BB719F719FA007128B3 /* UIColor+ColorPalette.swift in Sources */,
 				8E047E2E1A0878AA00B2690A /* TableViewManager.swift in Sources */,
 				8EAA94C61A0161C50002659C /* ActivityTableViewCell.swift in Sources */,
+				8E7E89721A0953C50087C655 /* AddEntryView.swift in Sources */,
 				8E047E281A08204D00B2690A /* Entry.swift in Sources */,
 				8E047E321A08794700B2690A /* EntryTableView.swift in Sources */,
 				8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */,

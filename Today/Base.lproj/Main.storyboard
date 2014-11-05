@@ -96,6 +96,41 @@
                                     </mask>
                                 </variation>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo4-AZ-smG" customClass="AddEntryView" customModule="Today" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.10199999999999999" green="0.10199999999999999" blue="0.11" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Txy-le-kv0">
+                                        <variation key="widthClass=compact" constant="64"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="80" id="qZn-mB-1RI">
+                                        <variation key="widthClass=compact" constant="64"/>
+                                    </constraint>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="glyphSizeAsPercentageOfSuperView">
+                                        <real key="value" value="0.32000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Txy-le-kv0"/>
+                                        <exclude reference="qZn-mB-1RI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Txy-le-kv0"/>
+                                        <include reference="qZn-mB-1RI"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -105,36 +140,44 @@
                             <constraint firstItem="ahT-QE-Gn3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="RXh-x2-otc"/>
                             <constraint firstAttribute="trailing" secondItem="aE9-Rx-yvl" secondAttribute="trailing" id="Yq4-Pu-kxQ"/>
                             <constraint firstItem="aE9-Rx-yvl" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="iy9-KN-HHt"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Qo4-AZ-smG" secondAttribute="bottom" constant="20" id="k1o-tF-DCF"/>
+                            <constraint firstAttribute="centerX" secondItem="Qo4-AZ-smG" secondAttribute="centerX" id="vae-q3-Mnr"/>
                             <constraint firstItem="aE9-Rx-yvl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="wnC-Zm-IU7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ahT-QE-Gn3"/>
                                 <exclude reference="aE9-Rx-yvl"/>
+                                <exclude reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="C5w-bO-DEv"/>
                                 <exclude reference="Yq4-Pu-kxQ"/>
                                 <exclude reference="iy9-KN-HHt"/>
                                 <exclude reference="wnC-Zm-IU7"/>
                                 <exclude reference="CbY-15-b0r"/>
                                 <exclude reference="MYB-Mi-id6"/>
                                 <exclude reference="RXh-x2-otc"/>
+                                <exclude reference="vae-q3-Mnr"/>
+                                <exclude reference="C5w-bO-DEv"/>
+                                <exclude reference="k1o-tF-DCF"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="ahT-QE-Gn3"/>
                                 <include reference="aE9-Rx-yvl"/>
+                                <include reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="C5w-bO-DEv"/>
                                 <include reference="Yq4-Pu-kxQ"/>
                                 <include reference="iy9-KN-HHt"/>
                                 <include reference="wnC-Zm-IU7"/>
                                 <include reference="CbY-15-b0r"/>
                                 <include reference="MYB-Mi-id6"/>
                                 <include reference="RXh-x2-otc"/>
+                                <include reference="vae-q3-Mnr"/>
+                                <include reference="C5w-bO-DEv"/>
+                                <include reference="k1o-tF-DCF"/>
                             </mask>
                         </variation>
                     </view>
