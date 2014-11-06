@@ -1,5 +1,5 @@
 //
-//  ActivityTableViewCell.swift
+//  EntryTableViewCell.swift
 //  Today
 //
 //  Created by Daniel on 10/29/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityTableViewCell: UITableViewCell {
+class EntryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var textField: UITextField!
     

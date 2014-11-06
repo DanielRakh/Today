@@ -13,7 +13,7 @@ class DoViewController: UIViewController {
 
     @IBOutlet weak var tableView: EntryTableView!
 
-    var tableViewManager:TableViewManager!
+    var tableViewManager:DoTableViewManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class DoViewController: UIViewController {
     }
     
     func setupTableView() {
-        tableViewManager = TableViewManager(tableView: self.tableView, items:[1,2,3], withCellIdentifier: "DoCell")
+        tableViewManager = DoTableViewManager(tableView: self.tableView, items:[1,2,3], withCellIdentifier: "DoCell")
         tableView.dataSource = tableViewManager
         tableView.delegate = tableViewManager
     }

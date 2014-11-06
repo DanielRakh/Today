@@ -1,5 +1,5 @@
 //
-//  AddEntryView.swift
+//  AddEntryButton.swift
 //  Today
 //
 //  Created by Daniel on 11/4/14.
@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-@IBDesignable class AddEntryView: UIButton {
+@IBDesignable class AddEntryButton: UIButton {
     
     var additionGlyph:CALayer!
     

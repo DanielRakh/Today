@@ -96,7 +96,7 @@
                                     </mask>
                                 </variation>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo4-AZ-smG" customClass="AddEntryView" customModule="Today" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo4-AZ-smG" customClass="AddEntryButton" customModule="Today" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.10199999999999999" green="0.10199999999999999" blue="0.11" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -151,15 +151,15 @@
                                 <exclude reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="C5w-bO-DEv"/>
+                                <exclude reference="k1o-tF-DCF"/>
+                                <exclude reference="vae-q3-Mnr"/>
                                 <exclude reference="Yq4-Pu-kxQ"/>
                                 <exclude reference="iy9-KN-HHt"/>
                                 <exclude reference="wnC-Zm-IU7"/>
                                 <exclude reference="CbY-15-b0r"/>
                                 <exclude reference="MYB-Mi-id6"/>
                                 <exclude reference="RXh-x2-otc"/>
-                                <exclude reference="vae-q3-Mnr"/>
-                                <exclude reference="C5w-bO-DEv"/>
-                                <exclude reference="k1o-tF-DCF"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -169,15 +169,15 @@
                                 <include reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="C5w-bO-DEv"/>
+                                <include reference="k1o-tF-DCF"/>
+                                <include reference="vae-q3-Mnr"/>
                                 <include reference="Yq4-Pu-kxQ"/>
                                 <include reference="iy9-KN-HHt"/>
                                 <include reference="wnC-Zm-IU7"/>
                                 <include reference="CbY-15-b0r"/>
                                 <include reference="MYB-Mi-id6"/>
                                 <include reference="RXh-x2-otc"/>
-                                <include reference="vae-q3-Mnr"/>
-                                <include reference="C5w-bO-DEv"/>
-                                <include reference="k1o-tF-DCF"/>
                             </mask>
                         </variation>
                     </view>
@@ -203,20 +203,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="jZV-MC-71I" customClass="EntryTableView" customModule="Today" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="jZV-MC-71I" customClass="EntryTableView" customModule="Today" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.97999999999999998" green="0.98799999999999999" blue="0.98799999999999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoCell" rowHeight="50" id="KMg-7U-76H" customClass="ActivityTableViewCell" customModule="Today" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoCell" rowHeight="60" id="KMg-7U-76H" customClass="EntryTableViewCell" customModule="Today" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KMg-7U-76H" id="4TB-Y6-a2k">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jgx-wx-IxJ">
+                                                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" red="0.10199999999999999" green="0.10199999999999999" blue="0.11" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.10199999999999999" green="0.10199999999999999" blue="0.11" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                </textField>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="jgx-wx-IxJ" firstAttribute="leading" secondItem="4TB-Y6-a2k" secondAttribute="leading" constant="15" id="9Cv-ys-8k8"/>
+                                                <constraint firstItem="jgx-wx-IxJ" firstAttribute="top" secondItem="4TB-Y6-a2k" secondAttribute="top" id="DAa-Jq-RbD"/>
+                                                <constraint firstAttribute="trailing" secondItem="jgx-wx-IxJ" secondAttribute="trailing" constant="15" id="MW0-Pu-FTH"/>
+                                                <constraint firstAttribute="bottom" secondItem="jgx-wx-IxJ" secondAttribute="bottom" id="cVi-8k-0VE"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="jgx-wx-IxJ"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="9Cv-ys-8k8"/>
+                                                    <exclude reference="DAa-Jq-RbD"/>
+                                                    <exclude reference="MW0-Pu-FTH"/>
+                                                    <exclude reference="cVi-8k-0VE"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="jgx-wx-IxJ"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="9Cv-ys-8k8"/>
+                                                    <include reference="DAa-Jq-RbD"/>
+                                                    <include reference="MW0-Pu-FTH"/>
+                                                    <include reference="cVi-8k-0VE"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="textField" destination="jgx-wx-IxJ" id="ix3-fg-fyL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
