@@ -11,16 +11,30 @@ import UIKit
 
 class DoTableViewManager:NSObject {
     
-    private var tableView:UITableView
-    private var cellIdentifier:String
+    private var tableView:UITableView!
+    private var cellIdentifier:String!
     private var entries:[AnyObject]?
     
+    
     required init(tableView:UITableView, items:[AnyObject]?, withCellIdentifier cellIdentifier:String) {
-        self.tableView = tableView
-        self.cellIdentifier = cellIdentifier
-        self.entries = items
         super.init()
+        self.entries = items
+        self.cellIdentifier = cellIdentifier
+        self.tableView = tableView
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
+    
+    // Inserts row at next available index path
+    func insertRow() {
+        
+        let nextAvailableIndexPath = NSIndexPath(forRow: self.entries!.count, inSection: 0)
+        entries! += [4]
+        tableView.beginUpdates()
+        tableView.insertRowsAtIndexPaths([nextAvailableIndexPath], withRowAnimation: .Left)
+        tableView.endUpdates()
+    }
+
 }
 
 //MARK: <TableViewDataSource>
@@ -46,6 +60,4 @@ extension DoTableViewManager: UITableViewDelegate {
     
     
 }
-
-
 

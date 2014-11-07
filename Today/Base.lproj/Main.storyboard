@@ -19,7 +19,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahT-QE-Gn3">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <connections>
-                                    <segue destination="B9k-xf-s3K" kind="embed" id="jif-8L-8Bm"/>
+                                    <segue destination="B9k-xf-s3K" kind="embed" identifier="embedDoVC" id="jif-8L-8Bm"/>
                                 </connections>
                             </containerView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aE9-Rx-yvl">
@@ -130,6 +130,9 @@
                                         <include reference="qZn-mB-1RI"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="addEntry:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="z72-5h-yNW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -186,6 +189,10 @@
                         <nil key="title"/>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addEntryButton" destination="Qo4-AZ-smG" id="RWR-kK-4L6"/>
+                        <outlet property="doContainerView" destination="ahT-QE-Gn3" id="WIy-tA-YOi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

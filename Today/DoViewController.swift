@@ -9,7 +9,7 @@
 import UIKit
 
 
-class DoViewController: UIViewController {
+class DoViewController: UIViewController, MasterViewControllerDelegate {
 
     @IBOutlet weak var tableView: EntryTableView!
 
@@ -22,31 +22,12 @@ class DoViewController: UIViewController {
     
     func setupTableView() {
         tableViewManager = DoTableViewManager(tableView: self.tableView, items:[1,2,3], withCellIdentifier: "DoCell")
-        tableView.dataSource = tableViewManager
-        tableView.delegate = tableViewManager
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
-//extension DoViewController: UITextFieldDelegate {
-//    
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        
-//        textField.resignFirstResponder()
-//        return true
-//    }
-//}
-
-
-
+extension DoViewController: MasterViewControllerDelegate {
+    func addEntryButtonDidTap() {
+        tableViewManager.insertRow()
+    }
+}
