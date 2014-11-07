@@ -13,12 +13,12 @@ class DoTableViewManager:NSObject {
     
     private var tableView:UITableView!
     private var cellIdentifier:String!
-    private var entries:[AnyObject]?
+    private var items:[AnyObject]?
     
     
     required init(tableView:UITableView, items:[AnyObject]?, withCellIdentifier cellIdentifier:String) {
         super.init()
-        self.entries = items
+        self.items = items
         self.cellIdentifier = cellIdentifier
         self.tableView = tableView
         self.tableView.dataSource = self
@@ -28,8 +28,8 @@ class DoTableViewManager:NSObject {
     // Inserts row at next available index path
     func insertRow() {
         
-        let nextAvailableIndexPath = NSIndexPath(forRow: self.entries!.count, inSection: 0)
-        entries! += [4]
+        let nextAvailableIndexPath = NSIndexPath(forRow: self.items!.count, inSection: 0)
+        items! += [4]
         tableView.beginUpdates()
         tableView.insertRowsAtIndexPaths([nextAvailableIndexPath], withRowAnimation: .Left)
         tableView.endUpdates()
@@ -41,7 +41,7 @@ class DoTableViewManager:NSObject {
 extension DoTableViewManager: UITableViewDataSource {
     
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let entries = self.entries {
+        if let entries = self.items {
             return entries.count
         } else {
             return 0
