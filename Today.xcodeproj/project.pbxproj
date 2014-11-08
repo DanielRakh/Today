@@ -25,6 +25,7 @@
 		8E84A93C1A0C1B9100E40422 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* MasterViewController.swift */; };
 		8EAA94BC1A0155F00002659C /* DoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94BB1A0155F00002659C /* DoViewController.swift */; };
 		8EAA94C61A0161C50002659C /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94C51A0161C50002659C /* EntryTableViewCell.swift */; };
+		8EAF9E031A0D9EF4005BB9D0 /* DRTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF9E021A0D9EF4005BB9D0 /* DRTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		8E853BB619F719FA007128B3 /* UIColor+ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorPalette.swift"; sourceTree = "<group>"; };
 		8EAA94BB1A0155F00002659C /* DoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoViewController.swift; sourceTree = "<group>"; };
 		8EAA94C51A0161C50002659C /* EntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
+		8EAF9E021A0D9EF4005BB9D0 /* DRTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				8EAA94C51A0161C50002659C /* EntryTableViewCell.swift */,
 				8E047E311A08794700B2690A /* EntryTableView.swift */,
 				8E7E89711A0953C50087C655 /* AddEntryButton.swift */,
+				8EAF9E021A0D9EF4005BB9D0 /* DRTabBar.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				8EAA94C61A0161C50002659C /* EntryTableViewCell.swift in Sources */,
 				8E047E281A08204D00B2690A /* Entry.swift in Sources */,
 				8E047E321A08794700B2690A /* EntryTableView.swift in Sources */,
+				8EAF9E031A0D9EF4005BB9D0 /* DRTabBar.swift in Sources */,
 				8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */,
 				8EAA94BC1A0155F00002659C /* DoViewController.swift in Sources */,
 				8E044F5F1A0C5778005E7838 /* UIColor+ColorPalette.swift in Sources */,
