@@ -13,7 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    lazy var coreDataStack = CoreDataStack()
+    lazy var coreDataStack = DRCoreDataStack()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Core Data Setup
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let masterViewController = storyboard.instantiateInitialViewController() as MasterViewController
+        let masterViewController = storyboard.instantiateInitialViewController() as DRMasterViewController
         masterViewController.managedObjectContext = self.coreDataStack.managedObjectContext
         UIView.appearance().tintColor = UIColor.todayPastyWhite()
         

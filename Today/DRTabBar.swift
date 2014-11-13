@@ -40,6 +40,7 @@ class DRTabBar: UIView {
             if currentButtonSelected != nil {
                 dontLabel.textColor = currentButtonSelected == .Do ? UIColor.todayTextGray() : UIColor.todayPastyWhite()
                 doLabel.textColor = currentButtonSelected == .Do ? UIColor.todayPastyWhite() : UIColor.todayTextGray()
+                
             }
         }
     }

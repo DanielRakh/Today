@@ -8,6 +8,6 @@
 
 import UIKit
 
-class DontTableViewManager: NSObject {
+class DRDontTableViewManager: NSObject {
     
 }

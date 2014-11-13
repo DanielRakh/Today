@@ -9,11 +9,11 @@
 import UIKit
 
 
-class DoViewController: UIViewController, MasterViewControllerDelegate {
+class DRDoViewController: UIViewController, DRMasterViewControllerDelegate {
 
-    @IBOutlet weak var tableView: EntryTableView!
+    @IBOutlet weak var tableView: DREntryTableView!
 
-    var tableViewManager:DoTableViewManager!
+    var tableViewManager:DRDoTableViewManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +21,12 @@ class DoViewController: UIViewController, MasterViewControllerDelegate {
     }
     
     func setupTableView() {
-        tableViewManager = DoTableViewManager(tableView: self.tableView, items:[1,2,3], withCellIdentifier: "DoCell")
+        tableViewManager = DRDoTableViewManager(tableView: self.tableView, items:[1,2,3], withCellIdentifier: "DoCell")
     }
 }
 
 
-extension DoViewController: MasterViewControllerDelegate {
+extension DRDoViewController: DRMasterViewControllerDelegate {
     func addEntryButtonDidTap() {
         tableViewManager.insertRow()
     }

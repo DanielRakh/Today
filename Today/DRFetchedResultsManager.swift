@@ -1,5 +1,5 @@
 //
-//  EntryService.swift
+//  FetchedResultsManager.swift
 //  Today
 //
 //  Created by Daniel on 11/3/14.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class EntryService: NSObject {
+class DRFetchedResultsManager: NSObject {
    
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class DoTableViewManager:NSObject {
+class DRDoTableViewManager:NSObject {
     
     private var tableView:UITableView!
     private var cellIdentifier:String!
@@ -38,7 +38,7 @@ class DoTableViewManager:NSObject {
 }
 
 //MARK: <TableViewDataSource>
-extension DoTableViewManager: UITableViewDataSource {
+extension DRDoTableViewManager: UITableViewDataSource {
     
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let entries = self.items {
@@ -56,7 +56,7 @@ extension DoTableViewManager: UITableViewDataSource {
 }
 
 //MARK: <TableViewDelegate>
-extension DoTableViewManager: UITableViewDelegate {
+extension DRDoTableViewManager: UITableViewDelegate {
     
     
 }

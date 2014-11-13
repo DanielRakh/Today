@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DontViewController: UIViewController {
+class DRDontViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

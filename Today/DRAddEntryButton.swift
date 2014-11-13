@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-@IBDesignable class AddEntryButton: UIButton {
+@IBDesignable class DRAddEntryButton: UIButton {
     
     var additionGlyph:CALayer!
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EntryTableViewCell: UITableViewCell {
+class DREntryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var textField: UITextField!
     

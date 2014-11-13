@@ -10,19 +10,24 @@ import UIKit
 import CoreData
 
 
-protocol MasterViewControllerDelegate {
+protocol DRMasterViewControllerDelegate {
     func addEntryButtonDidTap()
 }
 
 
-class MasterViewController: UIViewController {
+class DRMasterViewController: UIViewController {
     
     @IBOutlet weak var doContainerView: UIView!
-    @IBOutlet weak var addEntryButton: AddEntryButton!
+    @IBOutlet weak var addEntryButton: DRAddEntryButton!
     
     @IBOutlet weak var alignCenterYAddEntryButtonToTabBar: NSLayoutConstraint!
-    var delegate:MasterViewControllerDelegate?
+    var delegate:DRMasterViewControllerDelegate?
     
+    //Hide Status Bar
+    override func prefersStatusBarHidden() -> Bool {
+
+        return true
+    }
     
     //Set in AppDelegate
     var managedObjectContext:NSManagedObjectContext!
@@ -39,7 +44,7 @@ class MasterViewController: UIViewController {
     //MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "embedDoVC" {
-            let doVc = segue.destinationViewController as DoViewController
+            let doVc = segue.destinationViewController as DRDoViewController
             delegate = doVc
         }
     }

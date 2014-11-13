@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EntryTableView: UITableView {
+class DREntryTableView: UITableView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = UIColor.todayBackgroundBlack()

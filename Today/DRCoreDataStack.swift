@@ -8,7 +8,7 @@
 
 import CoreData
 
-class CoreDataStack {
+class DRCoreDataStack {
     
     let managedObjectContext:NSManagedObjectContext!
    private let persistentStoreCoordinator: NSPersistentStoreCoordinator!
