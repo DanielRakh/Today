@@ -19,6 +19,7 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahT-QE-Gn3">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="B9k-xf-s3K" kind="embed" identifier="embedDoVC" id="jif-8L-8Bm"/>
                                 </connections>
@@ -59,12 +60,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DON'T" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMt-nI-d6B" userLabel="DON'T Label">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.23404696583747864" green="0.23403996229171753" blue="0.23404392600059509" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYv-Zc-vk6" userLabel="Underline View">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" red="0.1843137255" green="0.48627450979999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.06128438562" green="0.4794761837" blue="0.88656342030000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="5Db-Uw-060"/>
                                         </constraints>
@@ -173,20 +174,24 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo4-AZ-smG" userLabel="Add Entry Button" customClass="AddEntryButton" customModule="Today" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.1843137255" green="0.48627450979999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.061284385621547699" green="0.47947618365287781" blue="0.88656342029571533" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="CSQ-AQ-b83"/>
-                                    <constraint firstAttribute="width" constant="64" id="UUy-lK-lf4"/>
+                                    <constraint firstAttribute="height" constant="64" id="CSQ-AQ-b83">
+                                        <variation key="widthClass=compact" constant="60"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="64" id="UUy-lK-lf4">
+                                        <variation key="widthClass=compact" constant="60"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="32"/>
+                                        <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="glyphSizeAsPercentageOfSuperView">
-                                        <real key="value" value="0.32000000000000001"/>
+                                        <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="glyphColor">
                                         <color key="value" red="0.97647058819999999" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -209,7 +214,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.079050943260000006" green="0.078877195720000001" blue="0.084246784450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Kbh-sc-k4Y" secondAttribute="bottom" id="0qL-hd-gvx"/>
                             <constraint firstAttribute="trailing" secondItem="ahT-QE-Gn3" secondAttribute="trailing" id="CbY-15-b0r"/>
@@ -219,9 +224,11 @@
                             <constraint firstItem="ahT-QE-Gn3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="RXh-x2-otc"/>
                             <constraint firstItem="Kbh-sc-k4Y" firstAttribute="top" secondItem="ahT-QE-Gn3" secondAttribute="bottom" id="aAc-YM-8Gk"/>
                             <constraint firstItem="Kbh-sc-k4Y" firstAttribute="centerY" secondItem="Qo4-AZ-smG" secondAttribute="centerY" constant="30" id="aJ6-LD-hI3">
-                                <variation key="widthClass=compact" constant="32"/>
+                                <variation key="widthClass=compact" constant="30"/>
                             </constraint>
-                            <constraint firstItem="Kbh-sc-k4Y" firstAttribute="centerX" secondItem="Qo4-AZ-smG" secondAttribute="centerX" id="cus-fu-Hyn"/>
+                            <constraint firstItem="Kbh-sc-k4Y" firstAttribute="centerX" secondItem="Qo4-AZ-smG" secondAttribute="centerX" id="cus-fu-Hyn">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -264,6 +271,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addEntryButton" destination="Qo4-AZ-smG" id="RWR-kK-4L6"/>
+                        <outlet property="alignCenterYAddEntryButtonToTabBar" destination="aJ6-LD-hI3" id="Xkv-6g-aRI"/>
                         <outlet property="doContainerView" destination="ahT-QE-Gn3" id="WIy-tA-YOi"/>
                     </connections>
                 </viewController>
@@ -283,13 +291,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="jZV-MC-71I" customClass="EntryTableView" customModule="Today" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="126" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="jZV-MC-71I" customClass="EntryTableView" customModule="Today" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.97999999999999998" green="0.98799999999999999" blue="0.98799999999999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoCell" rowHeight="60" id="KMg-7U-76H" userLabel="Entry Table View Cell" customClass="EntryTableViewCell" customModule="Today" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoCell" rowHeight="126" id="KMg-7U-76H" userLabel="Entry Table View Cell" customClass="EntryTableViewCell" customModule="Today" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KMg-7U-76H" id="4TB-Y6-a2k">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -301,9 +309,6 @@
                                                     <color key="textColor" red="0.10199999999999999" green="0.10199999999999999" blue="0.11" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="15" y="0.0" width="210" height="60"/>
-                                                    </variation>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -345,7 +350,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jZV-MC-71I" firstAttribute="leading" secondItem="GIk-si-gv9" secondAttribute="leading" id="IRv-WS-4Cm"/>
                             <constraint firstItem="4rO-NO-xzu" firstAttribute="top" secondItem="jZV-MC-71I" secondAttribute="bottom" id="IyG-ve-FE5"/>
@@ -382,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRm-MJ-Sqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3070.5" y="375"/>
+            <point key="canvasLocation" x="2989.5" y="-51"/>
         </scene>
     </scenes>
 </document>

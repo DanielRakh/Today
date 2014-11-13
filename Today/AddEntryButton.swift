@@ -14,26 +14,20 @@ import QuartzCore
     var additionGlyph:CALayer!
     
     @IBInspectable var glyphSizeAsPercentageOfSuperView:CGFloat = 0
-    @IBInspectable var glyphColor:UIColor = UIColor.todayWhite
+    @IBInspectable var glyphColor:UIColor = UIColor.todayPastyWhite()
     @IBInspectable var cornerRadius:CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
         }
     }
-
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-//        setup()
-    }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-//        setup()
+    override func prepareForInterfaceBuilder() {
+        backgroundColor = UIColor.todayVignelliBlue()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //        setup()
+        backgroundColor = UIColor.todayVignelliBlue()
     }
     
     override func layoutSubviews() {

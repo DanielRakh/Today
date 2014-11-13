@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let masterViewController = storyboard.instantiateInitialViewController() as MasterViewController
         masterViewController.managedObjectContext = self.coreDataStack.managedObjectContext
-        UIView.appearance().tintColor = .todayBlack
+        UIView.appearance().tintColor = UIColor.todayPastyWhite()
         
         //Global Appearence Methods
 //        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 21.0)!]

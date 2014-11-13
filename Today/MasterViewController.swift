@@ -20,7 +20,9 @@ class MasterViewController: UIViewController {
     @IBOutlet weak var doContainerView: UIView!
     @IBOutlet weak var addEntryButton: AddEntryButton!
     
+    @IBOutlet weak var alignCenterYAddEntryButtonToTabBar: NSLayoutConstraint!
     var delegate:MasterViewControllerDelegate?
+    
     
     //Set in AppDelegate
     var managedObjectContext:NSManagedObjectContext!

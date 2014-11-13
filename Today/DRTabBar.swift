@@ -18,11 +18,10 @@ enum ButtonMode {
     case Do
 }
 
-
 class DRTabBar: UIView {
     
     var delegate:DRTabBarDelegate?
-
+    
     @IBOutlet weak var dontButton:UIButton!
     @IBOutlet weak var doButton:UIButton!
     
@@ -30,7 +29,6 @@ class DRTabBar: UIView {
     @IBOutlet weak var doLabel:UILabel!
     
     @IBOutlet weak var underlineView:UIView!
-    
     
     @IBOutlet var centerXAlignUnderlineToDoLabel:NSLayoutConstraint!
     @IBOutlet var equalWidthUnderlineToDoLabel:NSLayoutConstraint!
@@ -40,8 +38,8 @@ class DRTabBar: UIView {
     var currentButtonSelected:ButtonMode? {
         didSet {
             if currentButtonSelected != nil {
-                dontLabel.textColor = currentButtonSelected == .Do ? UIColor.darkGrayColor() : UIColor.todayWhite
-                doLabel.textColor = currentButtonSelected == .Do ? UIColor.todayWhite : UIColor.darkGrayColor()
+                dontLabel.textColor = currentButtonSelected == .Do ? UIColor.todayTextGray() : UIColor.todayPastyWhite()
+                doLabel.textColor = currentButtonSelected == .Do ? UIColor.todayPastyWhite() : UIColor.todayTextGray()
             }
         }
     }

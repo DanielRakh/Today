@@ -11,7 +11,7 @@ import UIKit
 class EntryTableView: UITableView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        backgroundColor = UIColor.todayWhite
+        backgroundColor = UIColor.todayBackgroundBlack()
         tableFooterView = UIView(frame: CGRectZero)
         contentInset = UIEdgeInsetsMake(22, 0, 0, 0)
     }
