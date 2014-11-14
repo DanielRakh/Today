@@ -13,7 +13,7 @@ class DREntryTableView: UITableView {
         super.init(coder: aDecoder)
         backgroundColor = UIColor.todayBackgroundBlack()
         tableFooterView = UIView(frame: CGRectZero)
-        contentInset = UIEdgeInsetsMake(22, 0, 0, 0)
+//        contentInset = UIEdgeInsetsMake(22, 0, 0, 0)
     }
 }
  
