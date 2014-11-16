@@ -9,15 +9,18 @@
 import UIKit
 
 class DRNode: UIView {
+//    
+//    override func prepareForInterfaceBuilder() {
+//        backgroundColor = UIColor.todayVignelliRed()
+//    }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = UIColor.todayVignelliRed()
-        layer.cornerRadius = frame.size.width / 2.0
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = CGRectGetWidth(self.bounds) / 2.0
     }
     
     /*

@@ -19,14 +19,14 @@ class DRProgressView: UIView {
     
     var progressView:UIView!
     
-    let nodes:[DRNode] = {
-        var nodeArray = [DRNode]()
-        for _ in 1...7 {
-            nodeArray += [DRNode(frame: CGRectMake(0, 0, 23, 23))]
-        }
-        return nodeArray
-        
-        }()
+//    let nodes:[DRNode] = {
+//        var nodeArray = [DRNode]()
+//        for _ in 1...7 {
+//            nodeArray += [DRNode(frame: CGRectMake(0, 0, 23, 23))]
+//        }
+//        return nodeArray
+//        
+//        }()
 
     var mode:Mode! {
         didSet {
@@ -61,9 +61,9 @@ class DRProgressView: UIView {
         backgroundView.addSubview(progressView)
         
         //Add Nodes
-        for node in nodes {
-            progressView.addSubview(node)
-        }
+//        for node in nodes {
+//            progressView.addSubview(node)
+//        }
         
         
     }
@@ -71,9 +71,9 @@ class DRProgressView: UIView {
     func layout() {
         progressView.frame = CGRectMake(0, 0, backgroundView.bounds.size.width * 0.25, backgroundView.bounds.size.height)
         
-        for (index, node) in enumerate(nodes) {
-            node.frame.origin = CGPointMake(25.0 * CGFloat(index), 0)
-        }
+//        for (index, node) in enumerate(nodes) {
+//            node.frame.origin = CGPointMake(25.0 * CGFloat(index), 0)
+//        }
 
         
     }
