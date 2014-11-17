@@ -8,9 +8,10 @@
 
 import UIKit
 
-protocol DRTabBarViewDelegate {
-    func doButtonDidTouch(sender:AnyObject)
-    func dontButtonDidTouch(sender:AnyObject)
+@objc protocol DRTabBarViewDelegate {
+    optional func doButtonDidTouch(sender:AnyObject)
+    optional func dontButtonDidTouch(sender:AnyObject)
+    optional func addEntryButtonDidTouch(sender:AnyObject)
 }
 
 enum Mode {
@@ -24,11 +25,10 @@ class DRTabBarView: UIView {
     
     @IBOutlet weak var dontButton:UIButton!
     @IBOutlet weak var doButton:UIButton!
-    
     @IBOutlet weak var dontLabel:UILabel!
     @IBOutlet weak var doLabel:UILabel!
-    
     @IBOutlet weak var underlineView:UIView!
+    @IBOutlet weak var addEntryButton:DRAddEntryButton!
     
     @IBOutlet var centerXAlignUnderlineToDoLabel:NSLayoutConstraint!
     @IBOutlet var equalWidthUnderlineToDoLabel:NSLayoutConstraint!
@@ -42,6 +42,9 @@ class DRTabBarView: UIView {
             }
         }
     }
+    
+    
+    //MARK: Functions
     
     override func updateConstraints() {
         if (centerXAlignUnderlineToDontLabel == nil && equalWidthUnderlineToDontLabel == nil) {
@@ -123,7 +126,7 @@ class DRTabBarView: UIView {
     
     @IBAction func doButtonPressed(sender:AnyObject) {
         if currentButtonSelected == .Dont {
-            delegate?.doButtonDidTouch(sender)
+            delegate?.doButtonDidTouch?(sender)
             performUnderlineAnimationForMode(.Do)
         }
     }
@@ -131,9 +134,13 @@ class DRTabBarView: UIView {
     @IBAction func dontButtonPressed(sender:AnyObject) {
         
         if currentButtonSelected == .Do {
-            delegate?.dontButtonDidTouch(sender)
+            delegate?.dontButtonDidTouch?(sender)
             performUnderlineAnimationForMode(.Dont)
         }
+    }
+    
+    @IBAction func addEntryButtonPressed(sender: AnyObject) {
+        delegate?.addEntryButtonDidTouch?(sender)
     }
     
 }

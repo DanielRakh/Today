@@ -29,7 +29,7 @@ class DRDoViewController: UIViewController, DRMasterViewControllerDelegate {
 
 
 extension DRDoViewController: DRMasterViewControllerDelegate {
-    func addEntryButtonDidTap() {
+    func addEntry() {
         tableViewManager.insertRow()
     }
 }

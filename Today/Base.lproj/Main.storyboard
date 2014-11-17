@@ -163,6 +163,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <outlet property="addEntryButton" destination="Qo4-AZ-smG" id="aP0-6H-4lK"/>
                                     <outlet property="centerXAlignUnderlineToDoLabel" destination="kCK-fK-Kc0" id="06l-Ud-yrA"/>
                                     <outlet property="doButton" destination="81q-cJ-5nP" id="Qhj-zB-pdt"/>
                                     <outlet property="doLabel" destination="UYo-f4-ePv" id="Oop-lR-7bu"/>
@@ -210,7 +211,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="addEntry:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="z72-5h-yNW"/>
+                                    <action selector="addEntryButtonPressed:" destination="Kbh-sc-k4Y" eventType="touchUpInside" id="fyF-dY-RK5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -270,9 +271,8 @@
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addEntryButton" destination="Qo4-AZ-smG" id="RWR-kK-4L6"/>
-                        <outlet property="alignCenterYAddEntryButtonToTabBar" destination="aJ6-LD-hI3" id="Xkv-6g-aRI"/>
                         <outlet property="doContainerView" destination="ahT-QE-Gn3" id="WIy-tA-YOi"/>
+                        <outlet property="tabBar" destination="Kbh-sc-k4Y" id="Nww-KM-Kzd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -11,16 +11,14 @@ import CoreData
 
 
 protocol DRMasterViewControllerDelegate {
-    func addEntryButtonDidTap()
+    func addEntry()
 }
 
-
-class DRMasterViewController: UIViewController {
+class DRMasterViewController: UIViewController, DRTabBarViewDelegate  {
     
     @IBOutlet weak var doContainerView: UIView!
-    @IBOutlet weak var addEntryButton: DRAddEntryButton!
+    @IBOutlet weak var tabBar: DRTabBarView!
     
-    @IBOutlet weak var alignCenterYAddEntryButtonToTabBar: NSLayoutConstraint!
     var delegate:DRMasterViewControllerDelegate?
     
     //Set in AppDelegate
@@ -28,18 +26,13 @@ class DRMasterViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.delegate = self
         doContainerView.backgroundColor = UIColor.clearColor()
         view.backgroundColor = UIColor.todayBackgroundBlack()
     }
     
-    //MARK: IBActions
-    @IBAction func addEntry(sender: AnyObject) {
-        delegate?.addEntryButtonDidTap()
-    }
-    
     //Hide Status Bar
     override func prefersStatusBarHidden() -> Bool {
-        
         return true
     }
     
@@ -49,6 +42,11 @@ class DRMasterViewController: UIViewController {
             let doVc = segue.destinationViewController as DRDoViewController
             delegate = doVc
         }
+    }
+    
+    //MARK: <DRTabBarViewDelegate>
+    func addEntryButtonDidTouch(sender: AnyObject) {
+        delegate?.addEntry()
     }
 
 }
