@@ -23,22 +23,24 @@ class DRMasterViewController: UIViewController {
     @IBOutlet weak var alignCenterYAddEntryButtonToTabBar: NSLayoutConstraint!
     var delegate:DRMasterViewControllerDelegate?
     
-    //Hide Status Bar
-    override func prefersStatusBarHidden() -> Bool {
-
-        return true
-    }
-    
     //Set in AppDelegate
     var managedObjectContext:NSManagedObjectContext!
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        doContainerView.backgroundColor = UIColor.clearColor()
+        view.backgroundColor = UIColor.todayBackgroundBlack()
     }
     
     //MARK: IBActions
     @IBAction func addEntry(sender: AnyObject) {
         delegate?.addEntryButtonDidTap()
+    }
+    
+    //Hide Status Bar
+    override func prefersStatusBarHidden() -> Bool {
+        
+        return true
     }
     
     //MARK: Navigation

@@ -12,8 +12,19 @@ class DREntryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var textField: UITextField!
     
+    @IBOutlet weak var bubbleBackgroundView: UIView!
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        backgroundColor = UIColor.clearColor()
+        contentView.backgroundColor = UIColor.clearColor()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        bubbleBackgroundView.backgroundColor = UIColor.todayCellBackground()
+        bubbleBackgroundView.layer.cornerRadius = 12.0
+
         // Initialization code
     }
 

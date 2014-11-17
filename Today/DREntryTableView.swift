@@ -11,9 +11,11 @@ import UIKit
 class DREntryTableView: UITableView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        backgroundColor = UIColor.todayBackgroundBlack()
+        contentInset = UIEdgeInsetsMake(10, 0, 0, 0)
+        backgroundColor = UIColor.clearColor()
         tableFooterView = UIView(frame: CGRectZero)
-//        contentInset = UIEdgeInsetsMake(22, 0, 0, 0)
+        separatorStyle = .None
+        
     }
 }
  

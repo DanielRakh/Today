@@ -17,11 +17,13 @@ class DRDoViewController: UIViewController, DRMasterViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.clearColor()
         setupTableView()
+        let test = MMScalableVectorView()
     }
     
     func setupTableView() {
-        tableViewManager = DRDoTableViewManager(tableView: self.tableView, items:[1,2,3], withCellIdentifier: "DoCell")
+        tableViewManager = DRDoTableViewManager(tableView: self.tableView, items:[1,2], withCellIdentifier: "DoCell")
     }
 }
 

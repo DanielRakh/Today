@@ -22,12 +22,12 @@ import QuartzCore
     }
     
     override func prepareForInterfaceBuilder() {
-        backgroundColor = UIColor.todayVignelliBlue()
+        backgroundColor = UIColor.todayKiwiGreen()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = UIColor.todayVignelliBlue()
+        backgroundColor = UIColor.todayKiwiGreen()
     }
     
     override func layoutSubviews() {

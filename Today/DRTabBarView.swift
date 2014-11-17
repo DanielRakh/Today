@@ -13,7 +13,7 @@ protocol DRTabBarViewDelegate {
     func dontButtonDidTouch(sender:AnyObject)
 }
 
-enum ButtonMode {
+enum Mode {
     case Dont
     case Do
 }
@@ -35,12 +35,10 @@ class DRTabBarView: UIView {
     var centerXAlignUnderlineToDontLabel:NSLayoutConstraint?
     var equalWidthUnderlineToDontLabel:NSLayoutConstraint?
     
-    var currentButtonSelected:ButtonMode? {
+    var currentButtonSelected:Mode? {
         didSet {
             if currentButtonSelected != nil {
-                dontLabel.textColor = currentButtonSelected == .Do ? UIColor.todayTextGray() : UIColor.todayPastyWhite()
-                doLabel.textColor = currentButtonSelected == .Do ? UIColor.todayPastyWhite() : UIColor.todayTextGray()
-                
+                adjustColorForMode(currentButtonSelected!)
             }
         }
     }
@@ -55,9 +53,50 @@ class DRTabBarView: UIView {
     required init(coder aDecoder: NSCoder) {
         currentButtonSelected = .Do
         super.init(coder: aDecoder)
+        backgroundColor = UIColor.todayBackgroundBlack()
+    }
+    
+    //MARK: Helpers
+    
+    func adjustColorForMode(mode:Mode) {
+        dontLabel.textColor = currentButtonSelected == .Do ? UIColor.todayTabBarUnselectedText() : UIColor.todayPastyWhite()
+        doLabel.textColor = currentButtonSelected == .Do ? UIColor.todayPastyWhite() : UIColor.todayTabBarUnselectedText()
+        underlineView.backgroundColor = currentButtonSelected == .Do ? UIColor.todayKiwiGreen() : UIColor.todayWatermelonRed()
+    }
+    
+    
+    func performUnderlineAnimationForMode(mode:Mode) {
+        
+        adjustContraintsForMode(mode)
+        
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping:0.7, initialSpringVelocity:1.0, options: .CurveEaseInOut, animations: {
+            UIView.performWithoutAnimation({ () -> Void in
+                self.currentButtonSelected = mode
+            })
+            self.layoutIfNeeded()
+            }, completion: { finished in
+                //
+        })
+        
+    }
+    
+    func adjustContraintsForMode(mode:Mode) {
+        switch mode {
+        case .Do:
+            removeConstraints([centerXAlignUnderlineToDontLabel!, equalWidthUnderlineToDontLabel!])
+            setNeedsUpdateConstraints()
+            addConstraints([centerXAlignUnderlineToDoLabel,equalWidthUnderlineToDoLabel])
+        case .Dont:
+            removeConstraints([centerXAlignUnderlineToDoLabel,equalWidthUnderlineToDoLabel])
+            setNeedsUpdateConstraints()
+            addConstraints([centerXAlignUnderlineToDontLabel!, equalWidthUnderlineToDontLabel!])
+            
+        default:
+            println("There was an error adjusting constraints for mode")
+        }
     }
  
-    //MARK: Helpers
+    //MARK: Auto Layout
     
     func setupDontLabelConstraints() {
         centerXAlignUnderlineToDontLabel = NSLayoutConstraint(
@@ -78,38 +117,7 @@ class DRTabBarView: UIView {
             multiplier: 1,
             constant: 0)
     }
-    
-    
-    func performUnderlineAnimationForMode(mode:ButtonMode) {
-        
-        adjustContraintsForMode(mode)
-    
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping:0.7, initialSpringVelocity:1.0, options: .CurveEaseInOut, animations: {
-            UIView.performWithoutAnimation({ () -> Void in
-                self.currentButtonSelected = mode
-            })
-                self.layoutIfNeeded()
-            }, completion: { finished in
-                //
-        })
-        
-    }
-    
-    func adjustContraintsForMode(mode:ButtonMode) {
-        switch mode {
-        case .Do:
-            removeConstraints([centerXAlignUnderlineToDontLabel!, equalWidthUnderlineToDontLabel!])
-            setNeedsUpdateConstraints()
-            addConstraints([centerXAlignUnderlineToDoLabel,equalWidthUnderlineToDoLabel])
-        case .Dont:
-            removeConstraints([centerXAlignUnderlineToDoLabel,equalWidthUnderlineToDoLabel])
-            setNeedsUpdateConstraints()
-            addConstraints([centerXAlignUnderlineToDontLabel!, equalWidthUnderlineToDontLabel!])
-           
-        default:
-            println("There was an error adjusting constraints for mode")
-        }
-    }
+
     
     //MARK: IBActions
     
