@@ -20,11 +20,9 @@
 		8E189FD919F637180056697C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E189FD719F637180056697C /* LaunchScreen.xib */; };
 		8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A01F19F6E6880056697C /* DRCoreDataStack.swift */; };
 		8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02819F6EC9B0056697C /* Today.xcdatamodeld */; };
-		8E6AD5E11A156A2B00AC3E8D /* DRProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6AD5E01A156A2B00AC3E8D /* DRProgressView.swift */; };
 		8E7E89781A0C17D60087C655 /* DRDontTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E89771A0C17D60087C655 /* DRDontTableViewManager.swift */; };
 		8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */; };
 		8E9C95AF1A0ED3CA009DCE60 /* DRDoTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E047E2D1A0878AA00B2690A /* DRDoTableViewManager.swift */; };
-		8EAA08B71A159E68001159EC /* DRNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA08B61A159E68001159EC /* DRNode.swift */; };
 		8EAA94BC1A0155F00002659C /* DRDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94BB1A0155F00002659C /* DRDoViewController.swift */; };
 		8EAA94C61A0161C50002659C /* DREntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94C51A0161C50002659C /* DREntryTableViewCell.swift */; };
 		8EAF9E031A0D9EF4005BB9D0 /* DRTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF9E021A0D9EF4005BB9D0 /* DRTabBarView.swift */; };
@@ -59,11 +57,9 @@
 		8E18A01F19F6E6880056697C /* DRCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCoreDataStack.swift; sourceTree = "<group>"; };
 		8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRMasterViewController.swift; sourceTree = "<group>"; };
 		8E18A02919F6EC9B0056697C /* Today.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Today.xcdatamodel; sourceTree = "<group>"; };
-		8E6AD5E01A156A2B00AC3E8D /* DRProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRProgressView.swift; sourceTree = "<group>"; };
 		8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAddEntryButton.swift; sourceTree = "<group>"; };
 		8E7E89771A0C17D60087C655 /* DRDontTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDontTableViewManager.swift; sourceTree = "<group>"; };
 		8E853BB619F719FA007128B3 /* UIColor+TodayColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TodayColorPalette.swift"; sourceTree = "<group>"; };
-		8EAA08B61A159E68001159EC /* DRNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRNode.swift; sourceTree = "<group>"; };
 		8EAA94BB1A0155F00002659C /* DRDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDoViewController.swift; sourceTree = "<group>"; };
 		8EAA94C51A0161C50002659C /* DREntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntryTableViewCell.swift; sourceTree = "<group>"; };
 		8EAF9E021A0D9EF4005BB9D0 /* DRTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTabBarView.swift; sourceTree = "<group>"; };
@@ -165,8 +161,6 @@
 				8E047E311A08794700B2690A /* DREntryTableView.swift */,
 				8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */,
 				8EAF9E021A0D9EF4005BB9D0 /* DRTabBarView.swift */,
-				8E6AD5E01A156A2B00AC3E8D /* DRProgressView.swift */,
-				8EAA08B61A159E68001159EC /* DRNode.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -300,7 +294,6 @@
 				8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */,
 				8E7E89781A0C17D60087C655 /* DRDontTableViewManager.swift in Sources */,
 				8EAA94C61A0161C50002659C /* DREntryTableViewCell.swift in Sources */,
-				8EAA08B71A159E68001159EC /* DRNode.swift in Sources */,
 				8E047E281A08204D00B2690A /* DREntry.swift in Sources */,
 				8E047E321A08794700B2690A /* DREntryTableView.swift in Sources */,
 				8EAF9E031A0D9EF4005BB9D0 /* DRTabBarView.swift in Sources */,
@@ -308,7 +301,6 @@
 				8EAA94BC1A0155F00002659C /* DRDoViewController.swift in Sources */,
 				8E044F5F1A0C5778005E7838 /* UIColor+TodayColorPalette.swift in Sources */,
 				8E044F5E1A0C5764005E7838 /* DRAddEntryButton.swift in Sources */,
-				8E6AD5E11A156A2B00AC3E8D /* DRProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
