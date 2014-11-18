@@ -15,7 +15,6 @@ class DREntryTableView: UITableView {
         backgroundColor = UIColor.clearColor()
         tableFooterView = UIView(frame: CGRectZero)
         separatorStyle = .None
-        
     }
 }
  
