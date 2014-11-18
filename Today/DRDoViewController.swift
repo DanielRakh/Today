@@ -12,7 +12,7 @@ import UIKit
 class DRDoViewController: UIViewController, DRMasterViewControllerDelegate {
 
     @IBOutlet weak var tableView: DREntryTableView!
-
+    
     var tableViewManager:DRDoTableViewManager!
     
     override func viewDidLoad() {

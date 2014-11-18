@@ -20,6 +20,7 @@
 		8E189FD919F637180056697C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E189FD719F637180056697C /* LaunchScreen.xib */; };
 		8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A01F19F6E6880056697C /* DRCoreDataStack.swift */; };
 		8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02819F6EC9B0056697C /* Today.xcdatamodeld */; };
+		8E3369DD1A1A97BF005C8EA4 /* DRBubbleBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3369DC1A1A97BF005C8EA4 /* DRBubbleBackgroundView.swift */; };
 		8E7E89781A0C17D60087C655 /* DRDontTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E89771A0C17D60087C655 /* DRDontTableViewManager.swift */; };
 		8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */; };
 		8E88DF041A19DA4000B0A992 /* MMScalableVectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88DF031A19DA4000B0A992 /* MMScalableVectorView.m */; };
@@ -60,6 +61,7 @@
 		8E18A01F19F6E6880056697C /* DRCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCoreDataStack.swift; sourceTree = "<group>"; };
 		8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRMasterViewController.swift; sourceTree = "<group>"; };
 		8E18A02919F6EC9B0056697C /* Today.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Today.xcdatamodel; sourceTree = "<group>"; };
+		8E3369DC1A1A97BF005C8EA4 /* DRBubbleBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRBubbleBackgroundView.swift; sourceTree = "<group>"; };
 		8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAddEntryButton.swift; sourceTree = "<group>"; };
 		8E7E89771A0C17D60087C655 /* DRDontTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDontTableViewManager.swift; sourceTree = "<group>"; };
 		8E853BB619F719FA007128B3 /* UIColor+TodayColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TodayColorPalette.swift"; sourceTree = "<group>"; };
@@ -166,12 +168,8 @@
 			children = (
 				8E189FD219F637180056697C /* Main.storyboard */,
 				8E189FD719F637180056697C /* LaunchScreen.xib */,
-				8EAA94C51A0161C50002659C /* DREntryTableViewCell.swift */,
-				8E047E311A08794700B2690A /* DREntryTableView.swift */,
-				8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */,
-				8EAF9E021A0D9EF4005BB9D0 /* DRTabBarView.swift */,
-				8EC563401A19DFA1003EF8D2 /* DRNotificationIconView.swift */,
-				8EC563421A19E1B6003EF8D2 /* DRCheckmarkIcon.swift */,
+				8EFA65921A1A892300066ACC /* Tab Bar */,
+				8EFA65911A1A88EB00066ACC /* Table View */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -180,10 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */,
+				8EFA65941A1A895700066ACC /* Table View Controllers */,
 				8EAA94BB1A0155F00002659C /* DRDoViewController.swift */,
 				8E047E331A08795600B2690A /* DRDontViewController.swift */,
-				8E047E2D1A0878AA00B2690A /* DRDoTableViewManager.swift */,
-				8E7E89771A0C17D60087C655 /* DRDontTableViewManager.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -191,7 +188,7 @@
 		8E853BB519F71810007128B3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8E88DF011A19DA4000B0A992 /* MMScalableVector */,
+				8EFA65931A1A893800066ACC /* 3rd Party */,
 				8E853BB619F719FA007128B3 /* UIColor+TodayColorPalette.swift */,
 			);
 			name = Helpers;
@@ -204,6 +201,60 @@
 				8E88DF031A19DA4000B0A992 /* MMScalableVectorView.m */,
 			);
 			path = MMScalableVector;
+			sourceTree = "<group>";
+		};
+		8EFA65911A1A88EB00066ACC /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				8E047E311A08794700B2690A /* DREntryTableView.swift */,
+				8EFA65951A1A8C2600066ACC /* Cell */,
+			);
+			name = "Table View";
+			sourceTree = "<group>";
+		};
+		8EFA65921A1A892300066ACC /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */,
+				8EAF9E021A0D9EF4005BB9D0 /* DRTabBarView.swift */,
+			);
+			name = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		8EFA65931A1A893800066ACC /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				8E88DF011A19DA4000B0A992 /* MMScalableVector */,
+			);
+			name = "3rd Party";
+			sourceTree = "<group>";
+		};
+		8EFA65941A1A895700066ACC /* Table View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E047E2D1A0878AA00B2690A /* DRDoTableViewManager.swift */,
+				8E7E89771A0C17D60087C655 /* DRDontTableViewManager.swift */,
+			);
+			name = "Table View Controllers";
+			sourceTree = "<group>";
+		};
+		8EFA65951A1A8C2600066ACC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8EAA94C51A0161C50002659C /* DREntryTableViewCell.swift */,
+				8EFA65961A1A8C6500066ACC /* Icons */,
+				8E3369DC1A1A97BF005C8EA4 /* DRBubbleBackgroundView.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		8EFA65961A1A8C6500066ACC /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				8EC563401A19DFA1003EF8D2 /* DRNotificationIconView.swift */,
+				8EC563421A19E1B6003EF8D2 /* DRCheckmarkIcon.swift */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +361,7 @@
 				8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */,
 				8E047E2C1A08787300B2690A /* DREntryService.swift in Sources */,
 				8E047E341A08795600B2690A /* DRDontViewController.swift in Sources */,
+				8E3369DD1A1A97BF005C8EA4 /* DRBubbleBackgroundView.swift in Sources */,
 				8EC563431A19E1B6003EF8D2 /* DRCheckmarkIcon.swift in Sources */,
 				8E9C95AF1A0ED3CA009DCE60 /* DRDoTableViewManager.swift in Sources */,
 				8E189FCF19F637180056697C /* AppDelegate.swift in Sources */,

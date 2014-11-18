@@ -10,8 +10,28 @@ import UIKit
 
 @IBDesignable class DRNotificationIconView: MMScalableVectorView {
     
+    @IBInspectable var glyphColor:UIColor = UIColor.todayKiwiGreen()
+    
+    override func prepareForInterfaceBuilder() {
+        backgroundColor = UIColor.clearColor()
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    func setup() {
+        backgroundColor = UIColor.clearColor()
+    }
+    
     override func drawInCurrentContext() {
-        let color0 = UIColor(red: 0.432, green: 0.808, blue: 0.102, alpha: 1.000)
+        let color0 = glyphColor
 
         var shapePath = UIBezierPath()
         shapePath.moveToPoint(CGPointMake(20.61, 30.52))

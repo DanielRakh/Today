@@ -65,6 +65,7 @@ class DRTabBarView: UIView {
         dontLabel.textColor = currentButtonSelected == .Do ? UIColor.todayTabBarUnselectedText() : UIColor.todayPastyWhite()
         doLabel.textColor = currentButtonSelected == .Do ? UIColor.todayPastyWhite() : UIColor.todayTabBarUnselectedText()
         underlineView.backgroundColor = currentButtonSelected == .Do ? UIColor.todayKiwiGreen() : UIColor.todayWatermelonRed()
+        addEntryButton.backgroundColor = currentButtonSelected == .Do ? UIColor.todayKiwiGreen() : UIColor.todayWatermelonRed()
     }
     
     

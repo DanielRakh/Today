@@ -9,10 +9,11 @@
 import UIKit
 
 class DREntryTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var textField: UITextField!
     
-    @IBOutlet weak var bubbleBackgroundView: UIView!
+    @IBOutlet weak var bubbleBackgroundView: DRBubbleBackgroundView!
+    @IBOutlet weak var notificationIcon: DRNotificationIconView!
+    @IBOutlet weak var daysLabel: UILabel!
+    @IBOutlet weak var lineView: UIView!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,14 +21,6 @@ class DREntryTableViewCell: UITableViewCell {
         contentView.backgroundColor = UIColor.clearColor()
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        bubbleBackgroundView.backgroundColor = UIColor.todayCellBackground()
-        bubbleBackgroundView.layer.cornerRadius = 12.0
-
-        // Initialization code
-    }
-
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
