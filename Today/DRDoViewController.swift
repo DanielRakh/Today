@@ -11,25 +11,24 @@ import UIKit
 
 class DRDoViewController: UIViewController, DRMasterViewControllerDelegate {
 
-    @IBOutlet weak var tableView: DREntryTableView!
+    @IBOutlet weak var collectionView: DREntryCollectionView!
     
-    var tableViewManager:DRDoTableViewManager!
+    var collectionViewManager:DRDoCollectionViewManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.clearColor()
-        setupTableView()
-        let test = MMScalableVectorView()
+        setupCollectionView()
     }
     
-    func setupTableView() {
-        tableViewManager = DRDoTableViewManager(tableView: self.tableView, items:[1,2], withCellIdentifier: "DoCell")
+    func setupCollectionView() {
+        collectionViewManager = DRDoCollectionViewManager(collectionView: self.collectionView, items:[1,2], withCellIdentifier: "DoCell")
     }
 }
 
 
 extension DRDoViewController: DRMasterViewControllerDelegate {
     func addEntry() {
-        tableViewManager.insertRow()
+        collectionViewManager.insertRow()
     }
 }

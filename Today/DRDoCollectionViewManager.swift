@@ -1,0 +1,64 @@
+//
+//  TableViewManager.swift
+//  Today
+//
+//  Created by Daniel on 11/3/14.
+//  Copyright (c) 2014 Daniel Rakhamimov. All rights reserved.
+//
+
+import UIKit
+
+
+class DRDoCollectionViewManager:NSObject {
+    
+    private var collectionView:UICollectionView!
+    private var cellIdentifier:String!
+    private var items:[AnyObject]?
+    
+    
+    required init(collectionView:UICollectionView, items:[AnyObject]?, withCellIdentifier cellIdentifier:String) {
+        super.init()
+        self.items = items
+        self.cellIdentifier = cellIdentifier
+        self.collectionView = collectionView
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+    }
+    
+    // Inserts row at next available index path
+    func insertRow() {
+        
+        let nextAvailableIndexPath = NSIndexPath(forRow: self.items!.count, inSection: 0)
+        items! += [4]
+        collectionView.insertItemsAtIndexPaths([nextAvailableIndexPath])
+    }
+    
+}
+
+//MARK: <UICollectionViewDataSource>
+
+extension DRDoCollectionViewManager: UICollectionViewDataSource {
+    internal func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let entries = self.items {
+            return entries.count
+        } else {
+            return 0
+        }
+    }
+    
+    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(self.cellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
+        return cell
+    }
+}
+
+
+//MARK: <TableViewDelegate>
+extension DRDoCollectionViewManager: UICollectionViewDelegate {
+    
+}
+
+
+
+
