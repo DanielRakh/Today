@@ -20,7 +20,6 @@
 		8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A01F19F6E6880056697C /* DRCoreDataStack.swift */; };
 		8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02819F6EC9B0056697C /* Today.xcdatamodeld */; };
 		8E1971F61A1B2D53004074E7 /* DREntryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1971F51A1B2D53004074E7 /* DREntryCollectionView.swift */; };
-		8E3369DD1A1A97BF005C8EA4 /* DRBubbleBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3369DC1A1A97BF005C8EA4 /* DRBubbleBackgroundView.swift */; };
 		8E7E89781A0C17D60087C655 /* DRDontCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */; };
 		8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */; };
 		8E88DF041A19DA4000B0A992 /* MMScalableVectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88DF031A19DA4000B0A992 /* MMScalableVectorView.m */; };
@@ -61,7 +60,6 @@
 		8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRMasterViewController.swift; sourceTree = "<group>"; };
 		8E18A02919F6EC9B0056697C /* Today.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Today.xcdatamodel; sourceTree = "<group>"; };
 		8E1971F51A1B2D53004074E7 /* DREntryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntryCollectionView.swift; sourceTree = "<group>"; };
-		8E3369DC1A1A97BF005C8EA4 /* DRBubbleBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRBubbleBackgroundView.swift; sourceTree = "<group>"; };
 		8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAddEntryButton.swift; sourceTree = "<group>"; };
 		8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDontCollectionViewManager.swift; sourceTree = "<group>"; };
 		8E853BB619F719FA007128B3 /* UIColor+TodayColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TodayColorPalette.swift"; sourceTree = "<group>"; };
@@ -178,11 +176,19 @@
 			isa = PBXGroup;
 			children = (
 				8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */,
-				8EFA65941A1A895700066ACC /* Table View Controllers */,
-				8EAA94BB1A0155F00002659C /* DRDoViewController.swift */,
-				8E047E331A08795600B2690A /* DRDontViewController.swift */,
+				8E3A04031A1D4BF40054C905 /* Collection Managers */,
+				8EFA65941A1A895700066ACC /* Collection View Controllers */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8E3A04031A1D4BF40054C905 /* Collection Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8E047E2D1A0878AA00B2690A /* DRDoCollectionViewManager.swift */,
+				8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */,
+			);
+			name = "Collection Managers";
 			sourceTree = "<group>";
 		};
 		8E853BB519F71810007128B3 /* Helpers */ = {
@@ -229,13 +235,13 @@
 			name = "3rd Party";
 			sourceTree = "<group>";
 		};
-		8EFA65941A1A895700066ACC /* Table View Controllers */ = {
+		8EFA65941A1A895700066ACC /* Collection View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E047E2D1A0878AA00B2690A /* DRDoCollectionViewManager.swift */,
-				8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */,
+				8EAA94BB1A0155F00002659C /* DRDoViewController.swift */,
+				8E047E331A08795600B2690A /* DRDontViewController.swift */,
 			);
-			name = "Table View Controllers";
+			name = "Collection View Controllers";
 			sourceTree = "<group>";
 		};
 		8EFA65951A1A8C2600066ACC /* Cell */ = {
@@ -243,7 +249,6 @@
 			children = (
 				8EAA94C51A0161C50002659C /* DREntryCollectionViewCell.swift */,
 				8EFA65961A1A8C6500066ACC /* Icons */,
-				8E3369DC1A1A97BF005C8EA4 /* DRBubbleBackgroundView.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -361,7 +366,6 @@
 				8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */,
 				8E047E2C1A08787300B2690A /* DREntryService.swift in Sources */,
 				8E047E341A08795600B2690A /* DRDontViewController.swift in Sources */,
-				8E3369DD1A1A97BF005C8EA4 /* DRBubbleBackgroundView.swift in Sources */,
 				8EC563431A19E1B6003EF8D2 /* DRCheckmarkIcon.swift in Sources */,
 				8E9C95AF1A0ED3CA009DCE60 /* DRDoCollectionViewManager.swift in Sources */,
 				8E189FCF19F637180056697C /* AppDelegate.swift in Sources */,
