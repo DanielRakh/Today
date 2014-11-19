@@ -14,15 +14,17 @@ class DRDoCollectionViewManager:NSObject {
     private var collectionView:UICollectionView!
     private var cellIdentifier:String!
     private var items:[AnyObject]?
+    private var collectionViewLayout:UICollectionViewFlowLayout!
     
     
-    required init(collectionView:UICollectionView, items:[AnyObject]?, withCellIdentifier cellIdentifier:String) {
+    required init(collectionView:UICollectionView, items:[AnyObject]?, layout:UICollectionViewFlowLayout, withCellIdentifier cellIdentifier:String) {
         super.init()
         self.items = items
         self.cellIdentifier = cellIdentifier
         self.collectionView = collectionView
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        self.collectionViewLayout = layout
     }
     
     // Inserts row at next available index path
@@ -58,6 +60,21 @@ extension DRDoCollectionViewManager: UICollectionViewDataSource {
 extension DRDoCollectionViewManager: UICollectionViewDelegate {
     
 }
+
+
+extension DRDoCollectionViewManager: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            
+            return CGSizeMake(collectionView.bounds.size.width - 10, 100)
+            
+    }
+}
+
+
+
 
 
 

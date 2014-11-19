@@ -10,8 +10,11 @@ import UIKit
 
 
 class DRDoViewController: UIViewController, DRMasterViewControllerDelegate {
+    
+    let cellIdentifier = "DoCell"
 
     @IBOutlet weak var collectionView: DREntryCollectionView!
+    @IBOutlet weak var collectionViewLayout:UICollectionViewFlowLayout!
     
     var collectionViewManager:DRDoCollectionViewManager!
     
@@ -22,7 +25,7 @@ class DRDoViewController: UIViewController, DRMasterViewControllerDelegate {
     }
     
     func setupCollectionView() {
-        collectionViewManager = DRDoCollectionViewManager(collectionView: self.collectionView, items:[1,2], withCellIdentifier: "DoCell")
+        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: [1,2], layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
     }
 }
 
