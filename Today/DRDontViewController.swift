@@ -8,29 +8,29 @@
 
 import UIKit
 
-class DRDontViewController: UIViewController {
-
+class DRDontViewController: UIViewController, DRMasterViewControllerDelegate {
+    
+    let cellIdentifier = "DontCell"
+    
+    @IBOutlet weak var collectionView: DREntryCollectionView!
+    @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
+    
+    var collectionViewManager:DRDoCollectionViewManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
+        view.backgroundColor = UIColor.clearColor()
+        setupCollectionView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setupCollectionView() {
+        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: [1,2,4,5], layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
     }
-    */
+    
+}
 
+extension DRDontViewController: DRMasterViewControllerDelegate {
+    func addEntry() {
+        collectionViewManager.insertRow()
+    }
 }

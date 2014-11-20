@@ -19,19 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aB4-nZ-yq8">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
-                                </variation>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahT-QE-Gn3" userLabel="Do Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="682-1A-PU1" kind="embed" identifier="embedDoVC" id="Q9u-fy-5JL"/>
-                                </connections>
-                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbh-sc-k4Y" customClass="DRTabBarView" customModule="Today" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
@@ -232,41 +219,25 @@
                         <color key="backgroundColor" red="0.079050943260000006" green="0.078877195720000001" blue="0.084246784450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Kbh-sc-k4Y" secondAttribute="bottom" id="0qL-hd-gvx"/>
-                            <constraint firstAttribute="trailing" secondItem="ahT-QE-Gn3" secondAttribute="trailing" id="CbY-15-b0r"/>
                             <constraint firstItem="Kbh-sc-k4Y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="H0a-dU-aHa"/>
-                            <constraint firstItem="ahT-QE-Gn3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="MYB-Mi-id6"/>
                             <constraint firstAttribute="trailing" secondItem="Kbh-sc-k4Y" secondAttribute="trailing" id="RMo-z1-64h"/>
-                            <constraint firstItem="ahT-QE-Gn3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="RXh-x2-otc"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ahT-QE-Gn3" secondAttribute="bottom" id="h43-gv-WAE"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="aB4-nZ-yq8"/>
-                                <exclude reference="ahT-QE-Gn3"/>
                                 <exclude reference="Kbh-sc-k4Y"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0qL-hd-gvx"/>
-                                <exclude reference="h43-gv-WAE"/>
-                                <exclude reference="CbY-15-b0r"/>
-                                <exclude reference="MYB-Mi-id6"/>
-                                <exclude reference="RXh-x2-otc"/>
                                 <exclude reference="H0a-dU-aHa"/>
                                 <exclude reference="RMo-z1-64h"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="aB4-nZ-yq8"/>
-                                <include reference="ahT-QE-Gn3"/>
                                 <include reference="Kbh-sc-k4Y"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0qL-hd-gvx"/>
-                                <include reference="h43-gv-WAE"/>
-                                <include reference="CbY-15-b0r"/>
-                                <include reference="MYB-Mi-id6"/>
-                                <include reference="RXh-x2-otc"/>
                                 <include reference="H0a-dU-aHa"/>
                                 <include reference="RMo-z1-64h"/>
                             </mask>
@@ -275,7 +246,6 @@
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="doContainerView" destination="ahT-QE-Gn3" id="WIy-tA-YOi"/>
                         <outlet property="tabBar" destination="Kbh-sc-k4Y" id="Nww-KM-Kzd"/>
                     </connections>
                 </viewController>
@@ -286,7 +256,7 @@
         <!--Do View Controller-->
         <scene sceneID="vDQ-wv-xhG">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="682-1A-PU1" customClass="DRDoViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DRDoViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="682-1A-PU1" customClass="DRDoViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rlp-GW-TIu"/>
                         <viewControllerLayoutGuide type="bottom" id="Hxe-BP-wLr"/>
@@ -478,7 +448,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="qGa-kD-7U8" id="ux6-jD-9qz"/>
                         <outlet property="collectionViewLayout" destination="Iob-Fn-kDt" id="Cr6-jJ-mXg"/>
@@ -488,10 +460,10 @@
             </objects>
             <point key="canvasLocation" x="2578.5" y="345"/>
         </scene>
-        <!--Do View Controller-->
+        <!--Dont View Controller-->
         <scene sceneID="4F2-5D-LZX">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Hzv-X2-qH4" customClass="DRDoViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DRDontViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hzv-X2-qH4" customClass="DRDontViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y8r-0N-k1X"/>
                         <viewControllerLayoutGuide type="bottom" id="gQJ-2D-8pt"/>
@@ -510,7 +482,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DoCell" id="q5l-Ld-V3z" customClass="DREntryCollectionViewCell" customModule="Today" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DontCell" id="q5l-Ld-V3z" customClass="DREntryCollectionViewCell" customModule="Today" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -548,7 +520,7 @@
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zol-WX-KzL" userLabel="Line">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                                    <color key="backgroundColor" red="0.4315206707" green="0.8116003275" blue="0.1046745107" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.97351872920000004" green="0.0" blue="0.22287511830000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="2" id="5cJ-EB-sUC"/>
                                                         <constraint firstAttribute="width" constant="27" id="8Xw-ja-1kj"/>
@@ -573,6 +545,11 @@
                                                         <constraint firstAttribute="width" constant="17" id="LdR-7B-O3D"/>
                                                         <constraint firstAttribute="height" constant="17" id="eiq-RH-Lre"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="glyphColor">
+                                                            <color key="value" red="0.97351872920000004" green="0.0" blue="0.22287511830000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="LdR-7B-O3D"/>
@@ -657,8 +634,12 @@
                         <constraints>
                             <constraint firstItem="idR-ai-Dko" firstAttribute="leading" secondItem="qxX-Gy-uKc" secondAttribute="leading" id="1v2-Aa-iub"/>
                             <constraint firstAttribute="trailing" secondItem="idR-ai-Dko" secondAttribute="trailing" id="5SJ-WW-SSN"/>
-                            <constraint firstItem="gQJ-2D-8pt" firstAttribute="top" secondItem="idR-ai-Dko" secondAttribute="bottom" id="LP5-hY-Ztd"/>
-                            <constraint firstItem="idR-ai-Dko" firstAttribute="top" secondItem="Y8r-0N-k1X" secondAttribute="bottom" id="q4P-zL-b0R"/>
+                            <constraint firstItem="gQJ-2D-8pt" firstAttribute="top" secondItem="idR-ai-Dko" secondAttribute="bottom" id="LP5-hY-Ztd">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="idR-ai-Dko" firstAttribute="top" secondItem="Y8r-0N-k1X" secondAttribute="bottom" id="q4P-zL-b0R">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -683,15 +664,17 @@
                             </mask>
                         </variation>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="collectionView" destination="idR-ai-Dko" id="jUH-nQ-ULG"/>
-                        <outlet property="collectionViewLayout" destination="HGz-yr-iKg" id="Cwo-q4-jH6"/>
+                        <outlet property="collectionView" destination="idR-ai-Dko" id="OKe-cT-Uko"/>
+                        <outlet property="collectionViewLayout" destination="HGz-yr-iKg" id="ha9-ty-VS2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBW-eG-xb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2539.5" y="1101"/>
+            <point key="canvasLocation" x="2578.5" y="1036"/>
         </scene>
     </scenes>
 </document>

@@ -14,7 +14,7 @@ import UIKit
     optional func addEntryButtonDidTouch(sender:AnyObject)
 }
 
-enum Mode {
+public enum Mode {
     case Dont
     case Do
 }
@@ -129,6 +129,7 @@ class DRTabBarView: UIView {
         if currentButtonSelected == .Dont {
             delegate?.doButtonDidTouch?(sender)
             performUnderlineAnimationForMode(.Do)
+            currentButtonSelected = .Do
         }
     }
     
@@ -137,6 +138,7 @@ class DRTabBarView: UIView {
         if currentButtonSelected == .Do {
             delegate?.dontButtonDidTouch?(sender)
             performUnderlineAnimationForMode(.Dont)
+            currentButtonSelected = .Dont
         }
     }
     
