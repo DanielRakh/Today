@@ -38,9 +38,13 @@ class DRMasterViewController: UIViewController, DRTabBarViewDelegate  {
     //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor.todayBackgroundBlack()
+        
         tabBar.delegate = self
+        
         self.delegate = doVC
+        
         displayChildViewController(doVC)
         
     }
@@ -73,7 +77,6 @@ class DRMasterViewController: UIViewController, DRTabBarViewDelegate  {
     func cycleFromViewController(oldVC:UIViewController, toViewController newVC:UIViewController, forMode mode:Mode) {
         oldVC.willMoveToParentViewController(nil)
         addChildViewController(newVC)
-        
         let oldEndFrame = oldVC.view.frame
         newVC.view.frame = newViewStartFrameForMode(mode)!
         
@@ -82,6 +85,10 @@ class DRMasterViewController: UIViewController, DRTabBarViewDelegate  {
             duration: 0.5,
             options: .CurveEaseInOut,
             animations: { () -> Void in
+                UIView.performWithoutAnimation({ () -> Void in
+                    UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+                    self.view.insertSubview(self.tabBar, aboveSubview: newVC.view)
+                })
                 newVC.view.frame = oldVC.view.frame
                 if mode == .Do {
                     oldVC.view.frame = self.newViewStartFrameForMode(.Dont)
@@ -89,10 +96,14 @@ class DRMasterViewController: UIViewController, DRTabBarViewDelegate  {
                     oldVC.view.frame = self.newViewStartFrameForMode(.Do)
                 }
                 
+                
             }) { (success:Bool) -> Void in
             oldVC.removeFromParentViewController()
                 newVC.didMoveToParentViewController(self)
+                UIApplication.sharedApplication().endIgnoringInteractionEvents()
         }
+        
+
     }
     
     

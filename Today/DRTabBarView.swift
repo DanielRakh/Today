@@ -126,19 +126,18 @@ class DRTabBarView: UIView {
     //MARK: IBActions
     
     @IBAction func doButtonPressed(sender:AnyObject) {
+        println("Do Button Pressed")
         if currentButtonSelected == .Dont {
             delegate?.doButtonDidTouch?(sender)
             performUnderlineAnimationForMode(.Do)
-            currentButtonSelected = .Do
         }
     }
     
     @IBAction func dontButtonPressed(sender:AnyObject) {
-        
+        println("Dont Button Pressed")
         if currentButtonSelected == .Do {
             delegate?.dontButtonDidTouch?(sender)
             performUnderlineAnimationForMode(.Dont)
-            currentButtonSelected = .Dont
         }
     }
     

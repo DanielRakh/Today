@@ -24,7 +24,7 @@ class DRDontViewController: UIViewController, DRMasterViewControllerDelegate {
     }
     
     func setupCollectionView() {
-        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: [1,2,4,5], layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
+        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: [1,2,3,4,5,6,7], layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
     }
     
 }

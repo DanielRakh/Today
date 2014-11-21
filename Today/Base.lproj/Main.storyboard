@@ -68,7 +68,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="doButtonPressed:" destination="Kbh-sc-k4Y" eventType="touchUpInside" id="wBi-1C-kSD"/>
+                                            <action selector="doButtonPressed:" destination="Kbh-sc-k4Y" eventType="touchUpInside" id="gzQ-el-qHW"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYo-f4-ePv" userLabel="DO Label">
@@ -86,7 +86,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="dontButtonPressed:" destination="Kbh-sc-k4Y" eventType="touchUpInside" id="iYT-K8-XFY"/>
+                                            <action selector="dontButtonPressed:" destination="Kbh-sc-k4Y" eventType="touchUpInside" id="aZk-JU-6D8"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DON'T" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMt-nI-d6B" userLabel="DON'T Label">
