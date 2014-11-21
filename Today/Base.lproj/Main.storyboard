@@ -19,6 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kP-ow-rdQ" userLabel="Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.079050943260000006" green="0.078877195720000001" blue="0.084246784450000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbh-sc-k4Y" customClass="DRTabBarView" customModule="Today" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
@@ -219,33 +223,48 @@
                         <color key="backgroundColor" red="0.079050943260000006" green="0.078877195720000001" blue="0.084246784450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Kbh-sc-k4Y" secondAttribute="bottom" id="0qL-hd-gvx"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6kP-ow-rdQ" secondAttribute="bottom" id="3Li-jP-8AA"/>
                             <constraint firstItem="Kbh-sc-k4Y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="H0a-dU-aHa"/>
                             <constraint firstAttribute="trailing" secondItem="Kbh-sc-k4Y" secondAttribute="trailing" id="RMo-z1-64h"/>
+                            <constraint firstAttribute="trailing" secondItem="6kP-ow-rdQ" secondAttribute="trailing" id="VAR-da-qxh"/>
+                            <constraint firstItem="6kP-ow-rdQ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="eHY-7t-7Ci"/>
+                            <constraint firstItem="6kP-ow-rdQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="yMd-yA-hy2"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="6kP-ow-rdQ"/>
                                 <exclude reference="Kbh-sc-k4Y"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0qL-hd-gvx"/>
+                                <exclude reference="VAR-da-qxh"/>
+                                <exclude reference="eHY-7t-7Ci"/>
+                                <exclude reference="yMd-yA-hy2"/>
                                 <exclude reference="H0a-dU-aHa"/>
                                 <exclude reference="RMo-z1-64h"/>
+                                <exclude reference="0qL-hd-gvx"/>
+                                <exclude reference="3Li-jP-8AA"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="6kP-ow-rdQ"/>
                                 <include reference="Kbh-sc-k4Y"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0qL-hd-gvx"/>
+                                <include reference="VAR-da-qxh"/>
+                                <include reference="eHY-7t-7Ci"/>
+                                <include reference="yMd-yA-hy2"/>
                                 <include reference="H0a-dU-aHa"/>
                                 <include reference="RMo-z1-64h"/>
+                                <include reference="0qL-hd-gvx"/>
+                                <include reference="3Li-jP-8AA"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="innerContainerView" destination="6kP-ow-rdQ" id="bfj-o2-md9"/>
                         <outlet property="tabBar" destination="Kbh-sc-k4Y" id="Nww-KM-Kzd"/>
                     </connections>
                 </viewController>

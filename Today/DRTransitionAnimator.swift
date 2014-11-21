@@ -9,6 +9,9 @@
 import UIKit
 
 class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+    
+    
+    var mode:Mode?
    
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         
