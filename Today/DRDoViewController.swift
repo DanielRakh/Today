@@ -20,9 +20,34 @@ class DRDoViewController: UIViewController, DRMasterViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("DoVC viewDidLoad")
         view.backgroundColor = UIColor.clearColor()
         setupCollectionView()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        println("DoVC viewWillAppear")
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        println("DoVC viewDidAppear")
+
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        println("DoVC View will dissappear")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        println("DoVC View did dissappear")
+    }
+    
+    
     
     func setupCollectionView() {
         collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: [1,2], layout: collectionViewLayout, withCellIdentifier: cellIdentifier)

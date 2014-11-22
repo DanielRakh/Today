@@ -11,7 +11,23 @@ import UIKit
 class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     
-    var mode:Mode?
+    var mode:Mode!
+    /*
+    func newViewStartFrameForMode(mode:Mode) -> CGRect! {
+        switch mode {
+        case .Do:
+            return CGRectMake(-doVC.view.bounds.size.width, view.frame.origin.y, doVC.view.bounds.size.width, doVC.view.bounds.size.height)
+            
+        case .Dont:
+            return CGRectMake(dontVC.view.bounds.size.width, view.frame.origin.y, dontVC.view.bounds.size.width, dontVC.view.bounds.size.height)
+        default:
+            println("There was an error geting the new view start frame")
+            
+        }
+        
+        return nil
+    }
+    */
    
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         
@@ -19,17 +35,32 @@ class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
 
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        
-        let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
-        let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
+
         let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         let containerView = transitionContext.containerView()
         
         let animationDuration = transitionDuration(transitionContext)
         
-        toView.frame = CGRectMake(fromView.bounds.size.width, fromView.frame.origin.y, toView.bounds.size.width, toView.bounds.size.height)
-        containerView.addSubview(fromView)
+        var fromViewStartFrame:CGRect?
+        var fromViewEndFrame:CGRect?
+        var toViewStartFrame:CGRect?
+        var toViewEndFrame:CGRect?
+        
+        if mode == Mode.Do {
+            toViewStartFrame = CGRectMake(-toView.bounds.size.width, toView.frame.origin.y, toView.bounds.size.width, toView.bounds.size.height)
+            toViewEndFrame = CGRectMake(0, 0, toView.bounds.size.width, toView.bounds.size.height)
+            fromViewStartFrame = CGRectMake(0, 0, fromView.bounds.size.width, fromView.bounds.size.height)
+            fromViewEndFrame = CGRectMake(fromView.bounds.size.width, fromView.frame.origin.y, fromView.bounds.size.width, fromView.bounds.size.height)
+            
+        } else if mode == Mode.Dont {
+            toViewStartFrame = CGRectMake(toView.bounds.size.width, toView.frame.origin.y, toView.bounds.size.width, toView.bounds.size.height)
+            toViewEndFrame = CGRectMake(0, 0, toView.bounds.size.width, toView.bounds.size.height)
+            fromViewStartFrame = CGRectMake(0, 0, fromView.bounds.size.width, fromView.bounds.size.height)
+            fromViewEndFrame = CGRectMake(-fromView.bounds.size.width, fromView.frame.origin.y, fromView.bounds.size.width, fromView.bounds.size.height)
+        }
+        
+        toView.frame = toViewStartFrame!
         containerView.addSubview(toView)
     
         UIView.animateWithDuration(animationDuration,
@@ -38,8 +69,8 @@ class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             initialSpringVelocity: 0.5,
             options: .CurveEaseInOut,
             animations: { () -> Void in
-                fromView.frame = CGRectMake(-fromView.bounds.size.width, fromView.frame.origin.y, fromView.bounds.size.width, fromView.bounds.size.height)
-                toView.frame = CGRectMake(-toView.bounds.size.width, toView.frame.origin.y, toView.bounds.size.width, toView.bounds.size.height)
+                fromView.frame = fromViewEndFrame!
+                toView.frame = toViewEndFrame!
             }) { (success:Bool) -> Void in
             transitionContext.completeTransition(true)
         }
