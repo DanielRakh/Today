@@ -20,6 +20,7 @@
 		8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A01F19F6E6880056697C /* DRCoreDataStack.swift */; };
 		8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02819F6EC9B0056697C /* Today.xcdatamodeld */; };
 		8E1971F61A1B2D53004074E7 /* DREntryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1971F51A1B2D53004074E7 /* DREntryCollectionView.swift */; };
+		8E342E9D1A20737A00B97B7C /* DRTransitionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E342E9C1A20737A00B97B7C /* DRTransitionContext.swift */; };
 		8E3A04061A1D555E0054C905 /* DRTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A04051A1D555E0054C905 /* DRTransitionDelegate.swift */; };
 		8E3A04081A1D56730054C905 /* DRTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */; };
 		8E7E89781A0C17D60087C655 /* DRDontCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */; };
@@ -62,6 +63,7 @@
 		8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRMasterViewController.swift; sourceTree = "<group>"; };
 		8E18A02919F6EC9B0056697C /* Today.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Today.xcdatamodel; sourceTree = "<group>"; };
 		8E1971F51A1B2D53004074E7 /* DREntryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntryCollectionView.swift; sourceTree = "<group>"; };
+		8E342E9C1A20737A00B97B7C /* DRTransitionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionContext.swift; sourceTree = "<group>"; };
 		8E3A04051A1D555E0054C905 /* DRTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionDelegate.swift; sourceTree = "<group>"; };
 		8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionAnimator.swift; sourceTree = "<group>"; };
 		8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAddEntryButton.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				8E3A04051A1D555E0054C905 /* DRTransitionDelegate.swift */,
 				8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */,
+				8E342E9C1A20737A00B97B7C /* DRTransitionContext.swift */,
 			);
 			name = "Transition Controllers";
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				8E3A04061A1D555E0054C905 /* DRTransitionDelegate.swift in Sources */,
 				8E3A04081A1D56730054C905 /* DRTransitionAnimator.swift in Sources */,
 				8EC563411A19DFA1003EF8D2 /* DRNotificationIconView.swift in Sources */,
+				8E342E9D1A20737A00B97B7C /* DRTransitionContext.swift in Sources */,
 				8E044F5E1A0C5764005E7838 /* DRAddEntryButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

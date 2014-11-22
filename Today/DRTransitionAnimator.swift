@@ -12,67 +12,73 @@ class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     
     var mode:Mode!
-    /*
-    func newViewStartFrameForMode(mode:Mode) -> CGRect! {
-        switch mode {
-        case .Do:
-            return CGRectMake(-doVC.view.bounds.size.width, view.frame.origin.y, doVC.view.bounds.size.width, doVC.view.bounds.size.height)
-            
-        case .Dont:
-            return CGRectMake(dontVC.view.bounds.size.width, view.frame.origin.y, dontVC.view.bounds.size.width, dontVC.view.bounds.size.height)
-        default:
-            println("There was an error geting the new view start frame")
-            
+    private var fromView:UIView!
+    private var toView:UIView!
+    private var containerView:UIView!
+    var transitionContext:UIViewControllerContextTransitioning! {
+        didSet {
+            fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
+            toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
+            containerView = transitionContext.containerView()
+        }
+    }
+    
+    private enum Position {
+        case Left
+        case Right
+    }
+    
+    private func frameForView(view:UIView, offScreenPosition:Position) -> CGRect {
+        let xPosition = offScreenPosition == .Left ? -view.bounds.size.width : view.bounds.size.width
+        return CGRectMake(xPosition, view.frame.origin.y, view.bounds.size.width, view.bounds.size.height)
+    }
+    
+    private func framesForMode(mode:Mode) -> (toStartFrame:CGRect, fromEndFrame:CGRect) {
+        
+        if mode == .Do {
+            return (
+                frameForView(toView, offScreenPosition: .Left),
+                frameForView(fromView, offScreenPosition: .Right)
+            )
+        } else if mode == .Dont {
+            return (
+                frameForView(toView, offScreenPosition: .Right),
+                frameForView(fromView, offScreenPosition: .Left)
+            )
         }
         
-        return nil
+        return (CGRectZero,CGRectZero)
+        
     }
-    */
-   
+    
+    
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         
         return 1.0
     }
-
+    
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-
-        let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
-        let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
-        let containerView = transitionContext.containerView()
         
         let animationDuration = transitionDuration(transitionContext)
         
-        var fromViewStartFrame:CGRect?
-        var fromViewEndFrame:CGRect?
-        var toViewStartFrame:CGRect?
-        var toViewEndFrame:CGRect?
+        var toViewEndFrame:CGRect = CGRectMake(0, 0, toView.bounds.size.width, toView.bounds.size.height)
         
-        if mode == Mode.Do {
-            toViewStartFrame = CGRectMake(-toView.bounds.size.width, toView.frame.origin.y, toView.bounds.size.width, toView.bounds.size.height)
-            toViewEndFrame = CGRectMake(0, 0, toView.bounds.size.width, toView.bounds.size.height)
-            fromViewStartFrame = CGRectMake(0, 0, fromView.bounds.size.width, fromView.bounds.size.height)
-            fromViewEndFrame = CGRectMake(fromView.bounds.size.width, fromView.frame.origin.y, fromView.bounds.size.width, fromView.bounds.size.height)
-            
-        } else if mode == Mode.Dont {
-            toViewStartFrame = CGRectMake(toView.bounds.size.width, toView.frame.origin.y, toView.bounds.size.width, toView.bounds.size.height)
-            toViewEndFrame = CGRectMake(0, 0, toView.bounds.size.width, toView.bounds.size.height)
-            fromViewStartFrame = CGRectMake(0, 0, fromView.bounds.size.width, fromView.bounds.size.height)
-            fromViewEndFrame = CGRectMake(-fromView.bounds.size.width, fromView.frame.origin.y, fromView.bounds.size.width, fromView.bounds.size.height)
-        }
+        let (toViewStartFrame, fromViewEndFrame) = framesForMode(mode)
         
-        toView.frame = toViewStartFrame!
+        toView.frame = toViewStartFrame
+        
         containerView.addSubview(toView)
-    
+        
         UIView.animateWithDuration(animationDuration,
             delay: 0.0,
             usingSpringWithDamping: 0.5,
             initialSpringVelocity: 0.5,
             options: .CurveEaseInOut,
             animations: { () -> Void in
-                fromView.frame = fromViewEndFrame!
-                toView.frame = toViewEndFrame!
+                self.fromView.frame = fromViewEndFrame
+                self.toView.frame = toViewEndFrame
             }) { (success:Bool) -> Void in
-            transitionContext.completeTransition(true)
+                transitionContext.completeTransition(true)
         }
         
     }

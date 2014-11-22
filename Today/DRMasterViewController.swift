@@ -27,28 +27,29 @@ class DRMasterViewController: UIViewController {
     
     /* We add the children to this view instead of self.view because when you add a new child view controller,
      we don't want to obstruct that supplementary views on self.view (in this case DRTabBar). */
-    @IBOutlet private weak var innerContainerView: UIView!
+    @IBOutlet weak var innerContainerView: UIView!
     
     // The view controllers currently taking part in the transition
-    private var toViewController:UIViewController? {
+    var toViewController:UIViewController? {
         didSet {
             currentChildViewController = toViewController
         }
     }
-    private var fromViewController:UIViewController?
+    
+    var fromViewController:UIViewController?
     
     lazy private var transitionAnimator = DRTransitionAnimator()
     
     
     // First child. Visible at first start-up.
-    lazy private var doVC:DRDoViewController = {
+    lazy var doVC:DRDoViewController = {
         let vc = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("DRDoViewController") as DRDoViewController
         vc.view.backgroundColor = UIColor.clearColor()
         return vc
     }()
     
     // Second Child.
-    lazy private var dontVC:DRDontViewController = {
+    lazy var dontVC:DRDontViewController = {
         let vc = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("DRDontViewController") as DRDontViewController
         vc.view.backgroundColor = UIColor.clearColor()
         return vc
@@ -92,27 +93,36 @@ class DRMasterViewController: UIViewController {
     }
 
     func displayChildViewController(viewController:UIViewController) {
+        
         addChildViewController(viewController)
+        
         viewController.view.frame = innerContainerView.frame
         viewController.beginAppearanceTransition(true, animated: false)
+        
         innerContainerView.addSubview(viewController.view)
+        
         viewController.endAppearanceTransition()
         viewController.didMoveToParentViewController(self)
+        
         currentChildViewController = viewController
     }
+    
     func cycleFromViewController(fromVC:UIViewController, toViewController toVC:UIViewController, forMode mode:Mode) {
         
         toViewController = toVC
         fromViewController = fromVC
         
         addChildViewController(toViewController!)
+        
         fromViewController?.beginAppearanceTransition(false, animated: true)
         toViewController?.beginAppearanceTransition(true, animated: true)
+        
         transitionAnimator.mode = mode
+        transitionAnimator.transitionContext = self
         transitionAnimator.animateTransition(self)
         
     }
-    
+
     func transitionControllersForMode(mode:Mode) {
         let oldVc = mode == .Do ? dontVC : doVC
         let newVC = mode == .Do ? doVC : dontVC
@@ -133,9 +143,6 @@ protocol DRMasterViewControllerDelegate {
     func addEntry()
 }
 
-
-
-
 //MARK: 
 //MARK: Adopted Protocols:
 
@@ -154,69 +161,3 @@ extension DRMasterViewController: DRTabBarViewDelegate {
         transitionControllersForMode(.Dont)
     }
 }
-
-//MARK: UIViewControllerContextTransitioning
-
-extension DRMasterViewController: UIViewControllerContextTransitioning {
-    
-    func containerView() -> UIView {
-        return innerContainerView
-    }
-    func isAnimated() -> Bool { return true }
-    
-    func isInteractive() -> Bool  { return false }
-    
-    func transitionWasCancelled() -> Bool { return false }
-    
-    func presentationStyle() -> UIModalPresentationStyle {
-        return .Custom
-    }
-    func completeTransition(didComplete: Bool) {
-        if didComplete == true {
-            fromViewController?.view.removeFromSuperview()
-            fromViewController?.endAppearanceTransition()
-            toViewController?.endAppearanceTransition()
-            fromViewController?.removeFromParentViewController
-            toViewController?.didMoveToParentViewController(self)
-        } else {
-            fromViewController?.endAppearanceTransition()
-            toViewController?.endAppearanceTransition()
-        }
-        
-        fromViewController = nil
-        toViewController = nil
-    }
-    func viewControllerForKey(key: String) -> UIViewController? {
-        if key == UITransitionContextFromViewControllerKey {
-            return fromViewController
-        } else if key == UITransitionContextToViewControllerKey {
-            return toViewController
-        }
-        return nil
-    }
-    func viewForKey(key: String) -> UIView? {
-        if key == UITransitionContextFromViewKey {
-            return fromViewController?.view
-        } else if key == UITransitionContextToViewKey {
-            return toViewController?.view
-        }
-        return nil
-    }
-    func targetTransform() -> CGAffineTransform {
-        return CGAffineTransformIdentity
-    }
-    func initialFrameForViewController(vc: UIViewController) -> CGRect {
-        return CGRectZero
-    }
-    func finalFrameForViewController(vc: UIViewController) -> CGRect {
-        return CGRectZero
-    }
-    func updateInteractiveTransition(percentComplete: CGFloat) {}
-    func finishInteractiveTransition() {}
-    func cancelInteractiveTransition() {}
-    
-}
-
-
-
-
