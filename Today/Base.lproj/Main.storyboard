@@ -223,7 +223,9 @@
                         <color key="backgroundColor" red="0.079050943260000006" green="0.078877195720000001" blue="0.084246784450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Kbh-sc-k4Y" secondAttribute="bottom" id="0qL-hd-gvx"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6kP-ow-rdQ" secondAttribute="bottom" id="3Li-jP-8AA"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6kP-ow-rdQ" secondAttribute="bottom" id="3Li-jP-8AA">
+                                <variation key="widthClass=compact" constant="64"/>
+                            </constraint>
                             <constraint firstItem="Kbh-sc-k4Y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="H0a-dU-aHa"/>
                             <constraint firstAttribute="trailing" secondItem="Kbh-sc-k4Y" secondAttribute="trailing" id="RMo-z1-64h"/>
                             <constraint firstAttribute="trailing" secondItem="6kP-ow-rdQ" secondAttribute="trailing" id="VAR-da-qxh"/>
@@ -236,13 +238,13 @@
                                 <exclude reference="Kbh-sc-k4Y"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="0qL-hd-gvx"/>
+                                <exclude reference="3Li-jP-8AA"/>
                                 <exclude reference="VAR-da-qxh"/>
                                 <exclude reference="eHY-7t-7Ci"/>
                                 <exclude reference="yMd-yA-hy2"/>
                                 <exclude reference="H0a-dU-aHa"/>
                                 <exclude reference="RMo-z1-64h"/>
-                                <exclude reference="0qL-hd-gvx"/>
-                                <exclude reference="3Li-jP-8AA"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -251,16 +253,17 @@
                                 <include reference="Kbh-sc-k4Y"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="0qL-hd-gvx"/>
+                                <include reference="3Li-jP-8AA"/>
                                 <include reference="VAR-da-qxh"/>
                                 <include reference="eHY-7t-7Ci"/>
                                 <include reference="yMd-yA-hy2"/>
                                 <include reference="H0a-dU-aHa"/>
                                 <include reference="RMo-z1-64h"/>
-                                <include reference="0qL-hd-gvx"/>
-                                <include reference="3Li-jP-8AA"/>
                             </mask>
                         </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -281,7 +284,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Hxe-BP-wLr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="35E-36-nGM">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qGa-kD-7U8" customClass="DREntryCollectionView" customModule="Today" customModuleProvider="target">
@@ -467,7 +470,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
@@ -683,7 +686,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>

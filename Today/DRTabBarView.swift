@@ -55,6 +55,7 @@ class DRTabBarView: UIView {
     required init(coder aDecoder: NSCoder) {
         currentButtonSelected = .Do
         super.init(coder: aDecoder)
+        
         backgroundColor = UIColor.todayBackgroundBlack()
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class DRDoViewController: UIViewController, DRMasterViewControllerDelegate {
+class DRDoViewController: UIViewController {
     
     let cellIdentifier = "DoCell"
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DRDontViewController: UIViewController, DRMasterViewControllerDelegate {
+class DRDontViewController: UIViewController {
     
     let cellIdentifier = "DontCell"
     
@@ -25,7 +25,7 @@ class DRDontViewController: UIViewController, DRMasterViewControllerDelegate {
     }
     
     func setupCollectionView() {
-        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: [1,2,3,4,5,6,7], layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
+        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: [1,2,3], layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
     }
     
     override func viewWillAppear(animated: Bool) {
