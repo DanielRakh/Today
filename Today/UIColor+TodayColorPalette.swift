@@ -10,24 +10,45 @@ import UIKit
 
 extension UIColor {
     
-    // Main Colors
-    class func todayBackgroundBlack() -> UIColor {
+    // Dark Mode Colors
+    class func todayDarkViewBackground() -> UIColor {
         return UIColor(red: 0.073, green: 0.073, blue: 0.078, alpha: 1.0) }
     
-    class func todayWatermelonRed() -> UIColor {
+    class func todayDarkWatermelonRed() -> UIColor {
         return UIColor(red:0.974 , green: 0.000, blue: 0.223, alpha: 1.0) }
     
-    class func todayKiwiGreen() -> UIColor {
+    class func todayDarkKiwiGreen() -> UIColor {
         return UIColor(red:0.432 , green: 0.812, blue: 0.105, alpha: 1.0) }
     
-    class func todayCellBackground() -> UIColor {
+    class func todayDarkCellBackground() -> UIColor {
         return UIColor(white: 0.208, alpha: 1.000) }
     
-    class func todayCellText() -> UIColor {
+    class func todayDarkCellText() -> UIColor {
         return UIColor(white: 1.0, alpha: 1.000) }
     
-    class func todayTabBarUnselectedText() -> UIColor {
+    class func todayDarkNavBarUnselectedText() -> UIColor {
         return UIColor(red: 0.146, green: 0.146, blue: 0.151, alpha: 1.000)
+    }
+    
+    // Light Mode Colors
+    
+    class func todayLightViewBackground() -> UIColor {
+        return UIColor(red:0.976, green:0.976 , blue:0.976, alpha: 1.0) }
+    
+    class func todayLightOrange() -> UIColor {
+        return UIColor(red:0.922, green:0.337 , blue:0.208, alpha: 1.0) }
+    
+    class func todayLightBlue() -> UIColor {
+        return UIColor(red: 0.061, green: 0.479, blue: 0.887, alpha: 1.0) }
+    
+    class func todayLightCellBackground() -> UIColor {
+        return UIColor(red:0.996, green:0.996 , blue:0.996, alpha: 1.0) }
+    
+    class func todayLightCellText() -> UIColor {
+        return UIColor(red:0.200, green:0.200 , blue:0.208, alpha: 1.0) }
+    
+    class func todayLightNavBarUnselectedText() -> UIColor {
+        return UIColor(red:0.753, green:0.753 , blue:0.757, alpha: 1.0)
     }
     
     // Optional Colors

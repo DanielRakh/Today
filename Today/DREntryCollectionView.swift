@@ -13,5 +13,6 @@ class DREntryCollectionView: UICollectionView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = UIColor.clearColor()
+        contentInset = UIEdgeInsetsMake(74, 0, 0, 0)
     }
 }

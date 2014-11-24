@@ -56,16 +56,16 @@ class DRTabBarView: UIView {
         currentButtonSelected = .Do
         super.init(coder: aDecoder)
         
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.todayLightCellBackground()
     }
     
     //MARK: Helpers
     
     func adjustColorForMode(mode:Mode) {
-        dontLabel.textColor = currentButtonSelected == .Do ? UIColor.todayTabBarUnselectedText() : UIColor.todayPastyWhite()
-        doLabel.textColor = currentButtonSelected == .Do ? UIColor.todayPastyWhite() : UIColor.todayTabBarUnselectedText()
-        underlineView.backgroundColor = currentButtonSelected == .Do ? UIColor.todayKiwiGreen() : UIColor.todayWatermelonRed()
-        addEntryButton.backgroundColor = currentButtonSelected == .Do ? UIColor.todayKiwiGreen() : UIColor.todayWatermelonRed()
+        dontLabel.textColor = currentButtonSelected == .Do ? UIColor.todayLightNavBarUnselectedText() : UIColor.todayLightCellText()
+        doLabel.textColor = currentButtonSelected == .Do ? UIColor.todayLightCellText() : UIColor.todayLightNavBarUnselectedText()
+        underlineView.backgroundColor = currentButtonSelected == .Do ? UIColor.todayLightBlue() : UIColor.todayLightOrange()
+        addEntryButton.backgroundColor = currentButtonSelected == .Do ? UIColor.todayLightBlue() : UIColor.todayLightOrange()
     }
     
     

@@ -67,7 +67,7 @@ class DRMasterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.todayBackgroundBlack()
+        view.backgroundColor = UIColor.todayLightViewBackground()
         
         tabBar.delegate = self
         

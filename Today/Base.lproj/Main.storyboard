@@ -26,43 +26,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbh-sc-k4Y" customClass="DRTabBarView" customModule="Today" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo4-AZ-smG" userLabel="Add Entry Button" customClass="DRAddEntryButton" customModule="Today" customModuleProvider="target">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" red="0.4315206707" green="0.8116003275" blue="0.1046745107" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="bNg-lk-PmZ"/>
-                                            <constraint firstAttribute="height" constant="60" id="qWE-H6-KYL"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="30"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="glyphSizeAsPercentageOfSuperView">
-                                                <real key="value" value="0.29999999999999999"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="glyphColor">
-                                                <color key="value" red="0.97647058819999999" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="bNg-lk-PmZ"/>
-                                                <exclude reference="qWE-H6-KYL"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="bNg-lk-PmZ"/>
-                                                <include reference="qWE-H6-KYL"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <action selector="addEntryButtonPressed:" destination="Kbh-sc-k4Y" eventType="touchUpInside" id="fyF-dY-RK5"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81q-cJ-5nP" userLabel="Do Button">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -131,11 +94,7 @@
                                     </constraint>
                                     <constraint firstAttribute="width" secondItem="81q-cJ-5nP" secondAttribute="width" multiplier="400:160" id="Htk-fq-pG0"/>
                                     <constraint firstItem="6zy-Z4-ImB" firstAttribute="centerX" secondItem="BMt-nI-d6B" secondAttribute="centerX" id="OVk-8x-Di9"/>
-                                    <constraint firstAttribute="centerX" secondItem="Qo4-AZ-smG" secondAttribute="centerX" id="UFb-qt-Bvl"/>
                                     <constraint firstAttribute="bottom" secondItem="6zy-Z4-ImB" secondAttribute="bottom" id="W5T-KB-LqC"/>
-                                    <constraint firstAttribute="centerY" secondItem="Qo4-AZ-smG" secondAttribute="centerY" constant="33" id="XSL-Im-Hfq">
-                                        <variation key="widthClass=compact" constant="30"/>
-                                    </constraint>
                                     <constraint firstItem="6zy-Z4-ImB" firstAttribute="top" secondItem="Kbh-sc-k4Y" secondAttribute="top" id="XbO-IQ-8y2"/>
                                     <constraint firstItem="81q-cJ-5nP" firstAttribute="centerY" secondItem="UYo-f4-ePv" secondAttribute="centerY" constant="0.5" id="Z7C-87-hlV">
                                         <variation key="widthClass=compact" constant="0.0"/>
@@ -150,7 +109,6 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="Qo4-AZ-smG"/>
                                         <exclude reference="81q-cJ-5nP"/>
                                         <exclude reference="UYo-f4-ePv"/>
                                         <exclude reference="6zy-Z4-ImB"/>
@@ -173,14 +131,11 @@
                                         <exclude reference="Htk-fq-pG0"/>
                                         <exclude reference="Z7C-87-hlV"/>
                                         <exclude reference="zaK-Uq-8gb"/>
-                                        <exclude reference="UFb-qt-Bvl"/>
-                                        <exclude reference="XSL-Im-Hfq"/>
                                         <exclude reference="5Mt-Ry-deH"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="subviews">
-                                        <include reference="Qo4-AZ-smG"/>
                                         <include reference="81q-cJ-5nP"/>
                                         <include reference="UYo-f4-ePv"/>
                                         <include reference="6zy-Z4-ImB"/>
@@ -203,8 +158,6 @@
                                         <include reference="Htk-fq-pG0"/>
                                         <include reference="Z7C-87-hlV"/>
                                         <include reference="zaK-Uq-8gb"/>
-                                        <include reference="UFb-qt-Bvl"/>
-                                        <include reference="XSL-Im-Hfq"/>
                                         <include reference="5Mt-Ry-deH"/>
                                     </mask>
                                 </variation>
@@ -219,30 +172,74 @@
                                     <outlet property="underlineView" destination="HYv-Zc-vk6" id="tOD-IN-Uzs"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo4-AZ-smG" userLabel="Add Entry Button" customClass="DRAddEntryButton" customModule="Today" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.4315206707" green="0.8116003275" blue="0.1046745107" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="8iH-ZH-d4x"/>
+                                    <constraint firstAttribute="width" constant="60" id="DKA-k3-WCs"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="glyphSizeAsPercentageOfSuperView">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="glyphColor">
+                                        <color key="value" red="0.97647058819999999" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8iH-ZH-d4x"/>
+                                        <exclude reference="DKA-k3-WCs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="8iH-ZH-d4x"/>
+                                        <include reference="DKA-k3-WCs"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="addEntryButtonPressed:" destination="Kbh-sc-k4Y" eventType="touchUpInside" id="fyF-dY-RK5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.079050943260000006" green="0.078877195720000001" blue="0.084246784450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Kbh-sc-k4Y" secondAttribute="bottom" id="0qL-hd-gvx"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6kP-ow-rdQ" secondAttribute="bottom" id="3Li-jP-8AA">
-                                <variation key="widthClass=compact" constant="64"/>
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="Kbh-sc-k4Y" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="8To-b9-8Sh"/>
                             <constraint firstItem="Kbh-sc-k4Y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="H0a-dU-aHa"/>
                             <constraint firstAttribute="trailing" secondItem="Kbh-sc-k4Y" secondAttribute="trailing" id="RMo-z1-64h"/>
                             <constraint firstAttribute="trailing" secondItem="6kP-ow-rdQ" secondAttribute="trailing" id="VAR-da-qxh"/>
                             <constraint firstItem="6kP-ow-rdQ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="eHY-7t-7Ci"/>
+                            <constraint firstAttribute="centerX" secondItem="Qo4-AZ-smG" secondAttribute="centerX" id="pmC-ua-qC5"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Qo4-AZ-smG" secondAttribute="bottom" constant="30" id="wjQ-VH-cFf">
+                                <variation key="widthClass=compact" constant="25"/>
+                            </constraint>
                             <constraint firstItem="6kP-ow-rdQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="yMd-yA-hy2"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="6kP-ow-rdQ"/>
                                 <exclude reference="Kbh-sc-k4Y"/>
+                                <exclude reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0qL-hd-gvx"/>
                                 <exclude reference="3Li-jP-8AA"/>
+                                <exclude reference="wjQ-VH-cFf"/>
+                                <exclude reference="pmC-ua-qC5"/>
                                 <exclude reference="VAR-da-qxh"/>
                                 <exclude reference="eHY-7t-7Ci"/>
                                 <exclude reference="yMd-yA-hy2"/>
+                                <exclude reference="8To-b9-8Sh"/>
                                 <exclude reference="H0a-dU-aHa"/>
                                 <exclude reference="RMo-z1-64h"/>
                             </mask>
@@ -251,13 +248,16 @@
                             <mask key="subviews">
                                 <include reference="6kP-ow-rdQ"/>
                                 <include reference="Kbh-sc-k4Y"/>
+                                <include reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0qL-hd-gvx"/>
                                 <include reference="3Li-jP-8AA"/>
+                                <include reference="wjQ-VH-cFf"/>
+                                <include reference="pmC-ua-qC5"/>
                                 <include reference="VAR-da-qxh"/>
                                 <include reference="eHY-7t-7Ci"/>
                                 <include reference="yMd-yA-hy2"/>
+                                <include reference="8To-b9-8Sh"/>
                                 <include reference="H0a-dU-aHa"/>
                                 <include reference="RMo-z1-64h"/>
                             </mask>
@@ -311,7 +311,7 @@
                                                         <constraint firstAttribute="height" constant="42" id="3gn-h8-ATa"/>
                                                         <constraint firstAttribute="width" constant="122.5" id="KQk-i7-brN"/>
                                                     </constraints>
-                                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <variation key="default">
@@ -330,12 +330,12 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 Days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh4-pK-uwl">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
-                                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NuF-Az-I6W" userLabel="Line">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                                    <color key="backgroundColor" red="0.4315206707" green="0.8116003275" blue="0.1046745107" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.46666666670000001" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="2" id="SMr-0E-Lo0"/>
                                                         <constraint firstAttribute="width" constant="27" id="bTC-tB-WjO"/>
@@ -376,7 +376,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.20805411039999999" green="0.20804788169999999" blue="0.2080514282" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="eh4-pK-uwl" firstAttribute="leading" secondItem="NuF-Az-I6W" secondAttribute="trailing" constant="8" id="KcE-c3-fT3"/>
                                             <constraint firstItem="3om-N9-bmf" firstAttribute="top" secondItem="x6c-cX-MBU" secondAttribute="topMargin" constant="21" id="O3G-MP-EhV"/>
@@ -440,7 +440,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.072881929580000004" green="0.072727255520000006" blue="0.077509157359999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="qGa-kD-7U8" firstAttribute="leading" secondItem="35E-36-nGM" secondAttribute="leading" id="3cT-lZ-F2e"/>
                             <constraint firstAttribute="trailing" secondItem="qGa-kD-7U8" secondAttribute="trailing" id="Ore-4A-3zL"/>
@@ -518,7 +518,7 @@
                                                         <constraint firstAttribute="width" constant="122.5" id="Q3n-Fw-zm0"/>
                                                         <constraint firstAttribute="height" constant="42" id="sEi-Cc-9fS"/>
                                                     </constraints>
-                                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <variation key="default">
@@ -537,12 +537,12 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 Days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sp4-dy-OlF">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
-                                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zol-WX-KzL" userLabel="Line">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                                    <color key="backgroundColor" red="0.97351872920000004" green="0.0" blue="0.22287511830000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.90196078430000004" green="0.24313725489999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="2" id="5cJ-EB-sUC"/>
                                                         <constraint firstAttribute="width" constant="27" id="8Xw-ja-1kj"/>
@@ -569,7 +569,7 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="glyphColor">
-                                                            <color key="value" red="0.97351872920000004" green="0.0" blue="0.22287511830000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="value" red="0.90196078430000004" green="0.24313725489999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <variation key="default">
@@ -588,7 +588,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.20805411039999999" green="0.20804788169999999" blue="0.2080514282" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="D1n-gK-R4a" firstAttribute="leading" secondItem="q5l-Ld-V3z" secondAttribute="leading" constant="8" id="A7v-UN-moD"/>
                                             <constraint firstAttribute="trailing" secondItem="sp4-dy-OlF" secondAttribute="trailing" constant="8" id="OY3-Nz-W8t"/>
@@ -652,7 +652,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.072881929580000004" green="0.072727255520000006" blue="0.077509157359999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="idR-ai-Dko" firstAttribute="leading" secondItem="qxX-Gy-uKc" secondAttribute="leading" id="1v2-Aa-iub"/>
                             <constraint firstAttribute="trailing" secondItem="idR-ai-Dko" secondAttribute="trailing" id="5SJ-WW-SSN"/>
