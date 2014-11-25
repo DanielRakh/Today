@@ -21,32 +21,26 @@ import UIKit
         }
     }
     
-    var mode:Mode! = .Do {
-        willSet {
-            if newValue == Mode.Dont {
-                lineView.backgroundColor = .todayLightBlue()
-                notificationIcon.glyphColor = .todayLightBlue()
-
-            } else {
-                lineView.backgroundColor = .todayLightOrange()
-                notificationIcon.glyphColor = .todayLightOrange()
-            }
-        }
-    }
-    
     override func prepareForInterfaceBuilder() {
         backgroundColor = UIColor.todayLightCellBackground()
+        contentView.layer.borderWidth = 0.5
     }
     
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        backgroundColor = UIColor.todayLightCellBackground()
+        setupUI()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupUI()
+    }
+    
+    func setupUI() {
         backgroundColor = UIColor.todayLightCellBackground()
+        contentView.layer.borderWidth = 0.5
+        contentView.layer.borderColor = UIColor.todayLightBorderColor().CGColor
     }
     
 }

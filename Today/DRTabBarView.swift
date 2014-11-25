@@ -57,6 +57,8 @@ class DRTabBarView: UIView {
         super.init(coder: aDecoder)
         
         backgroundColor = UIColor.todayLightCellBackground()
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.todayLightBorderColor().CGColor
     }
     
     //MARK: Helpers

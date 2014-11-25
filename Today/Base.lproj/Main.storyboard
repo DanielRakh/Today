@@ -41,7 +41,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYo-f4-ePv" userLabel="DO Label">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zy-Z4-ImB" userLabel="DON'T Button">
@@ -59,14 +59,16 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DON'T" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMt-nI-d6B" userLabel="DON'T Label">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
-                                        <color key="textColor" red="0.23404696583747864" green="0.23403996229171753" blue="0.23404392600059509" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYv-Zc-vk6" userLabel="Underline View">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" red="0.4315206707" green="0.8116003275" blue="0.1046745107" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.46666666670000001" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="5Db-Uw-060"/>
+                                            <constraint firstAttribute="height" constant="2" id="5Db-Uw-060">
+                                                <variation key="widthClass=compact" constant="3"/>
+                                            </constraint>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -80,7 +82,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="81q-cJ-5nP" secondAttribute="bottom" id="1lx-XS-5Ia"/>
                                     <constraint firstItem="UYo-f4-ePv" firstAttribute="width" secondItem="HYv-Zc-vk6" secondAttribute="width" id="2Qk-lA-Dmn"/>
@@ -97,7 +99,7 @@
                                     <constraint firstAttribute="bottom" secondItem="6zy-Z4-ImB" secondAttribute="bottom" id="W5T-KB-LqC"/>
                                     <constraint firstItem="6zy-Z4-ImB" firstAttribute="top" secondItem="Kbh-sc-k4Y" secondAttribute="top" id="XbO-IQ-8y2"/>
                                     <constraint firstItem="81q-cJ-5nP" firstAttribute="centerY" secondItem="UYo-f4-ePv" secondAttribute="centerY" constant="0.5" id="Z7C-87-hlV">
-                                        <variation key="widthClass=compact" constant="0.0"/>
+                                        <variation key="widthClass=compact" constant="-4"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="64" id="ZpX-uP-iLl"/>
                                     <constraint firstAttribute="width" secondItem="6zy-Z4-ImB" secondAttribute="width" multiplier="400:160" id="dCu-hF-WtX"/>
@@ -210,7 +212,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.079050943260000006" green="0.078877195720000001" blue="0.084246784450000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6kP-ow-rdQ" secondAttribute="bottom" id="3Li-jP-8AA">
                                 <variation key="widthClass=compact" constant="0.0"/>

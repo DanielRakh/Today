@@ -130,11 +130,7 @@ class DRMasterViewController: UIViewController {
     }
     
     //MARK: General Helpers
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
 }
-
 
 //MARK:
 //MARK: Protocols

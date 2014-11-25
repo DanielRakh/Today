@@ -51,6 +51,10 @@ extension UIColor {
         return UIColor(red:0.753, green:0.753 , blue:0.757, alpha: 1.0)
     }
     
+    class func todayLightBorderColor() -> UIColor {
+        return UIColor(red:0.847, green:0.847 , blue:0.847, alpha: 1.0)
+    }
+    
     // Optional Colors
     class func todayPastyWhite() -> UIColor {
         return UIColor(red: 0.975, green: 0.988, blue: 0.987, alpha: 1.0) }
