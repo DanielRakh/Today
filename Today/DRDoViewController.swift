@@ -33,6 +33,7 @@ class DRDoViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        collectionView.reloadData()
         println("DoVC viewDidAppear")
 
     }
@@ -50,7 +51,7 @@ class DRDoViewController: UIViewController {
     
     
     func setupCollectionView() {
-        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: [1,2], layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
+        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: [1,2,3], layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
     }
 }
 

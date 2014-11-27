@@ -31,7 +31,6 @@ extension UIColor {
     }
     
     // Light Mode Colors
-    
     class func todayLightViewBackground() -> UIColor {
         return UIColor(red:0.976, green:0.976 , blue:0.976, alpha: 1.0) }
     
@@ -48,12 +47,10 @@ extension UIColor {
         return UIColor(red:0.200, green:0.200 , blue:0.208, alpha: 1.0) }
     
     class func todayLightNavBarUnselectedText() -> UIColor {
-        return UIColor(red:0.753, green:0.753 , blue:0.757, alpha: 1.0)
-    }
-    
+        return UIColor(red:0.753, green:0.753 , blue:0.757, alpha: 1.0) }
+
     class func todayLightBorderColor() -> UIColor {
-        return UIColor(red:0.847, green:0.847 , blue:0.847, alpha: 1.0)
-    }
+        return UIColor(red:0.847, green:0.847 , blue:0.847, alpha: 1.0) }
     
     // Optional Colors
     class func todayPastyWhite() -> UIColor {

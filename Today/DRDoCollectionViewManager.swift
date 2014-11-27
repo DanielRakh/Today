@@ -31,7 +31,7 @@ class DRDoCollectionViewManager:NSObject {
     func insertRow() {
         
         let nextAvailableIndexPath = NSIndexPath(forRow: self.items!.count, inSection: 0)
-        items! += [4]
+        items!.append(items!.count)
         collectionView.insertItemsAtIndexPaths([nextAvailableIndexPath])
     }
     
@@ -40,12 +40,8 @@ class DRDoCollectionViewManager:NSObject {
 //MARK: <UICollectionViewDataSource>
 
 extension DRDoCollectionViewManager: UICollectionViewDataSource {
-    internal func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let entries = self.items {
-            return entries.count
-        } else {
-            return 0
-        }
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items!.count
     }
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -69,7 +65,6 @@ extension DRDoCollectionViewManager: UICollectionViewDelegateFlowLayout {
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             
             return CGSizeMake(collectionView.bounds.size.width - 10, 100)
-            
     }
 }
 

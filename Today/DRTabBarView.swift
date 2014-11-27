@@ -56,7 +56,7 @@ class DRTabBarView: UIView {
         currentButtonSelected = .Do
         super.init(coder: aDecoder)
         
-        backgroundColor = UIColor.todayLightCellBackground()
+        backgroundColor = UIColor.clearColor()
         layer.borderWidth = 0.5
         layer.borderColor = UIColor.todayLightBorderColor().CGColor
     }

@@ -23,6 +23,7 @@
 		8E342E9D1A20737A00B97B7C /* DRTransitionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E342E9C1A20737A00B97B7C /* DRTransitionContext.swift */; };
 		8E3A04061A1D555E0054C905 /* DRTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A04051A1D555E0054C905 /* DRTransitionDelegate.swift */; };
 		8E3A04081A1D56730054C905 /* DRTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */; };
+		8E7167031A241A5B0026EC6B /* DRSpringyFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7167021A241A5B0026EC6B /* DRSpringyFlowLayout.swift */; };
 		8E7E89781A0C17D60087C655 /* DRDontCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */; };
 		8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */; };
 		8E88DF041A19DA4000B0A992 /* MMScalableVectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88DF031A19DA4000B0A992 /* MMScalableVectorView.m */; };
@@ -32,6 +33,7 @@
 		8EAF9E031A0D9EF4005BB9D0 /* DRTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF9E021A0D9EF4005BB9D0 /* DRTabBarView.swift */; };
 		8EC563411A19DFA1003EF8D2 /* DRNotificationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563401A19DFA1003EF8D2 /* DRNotificationIconView.swift */; };
 		8EC563431A19E1B6003EF8D2 /* DRCheckmarkIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563421A19E1B6003EF8D2 /* DRCheckmarkIcon.swift */; };
+		8EE12FAE1A2478EC00719E67 /* TLSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE12FAD1A2478EC00719E67 /* TLSpringFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		8E342E9C1A20737A00B97B7C /* DRTransitionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionContext.swift; sourceTree = "<group>"; };
 		8E3A04051A1D555E0054C905 /* DRTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionDelegate.swift; sourceTree = "<group>"; };
 		8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionAnimator.swift; sourceTree = "<group>"; };
+		8E7167021A241A5B0026EC6B /* DRSpringyFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRSpringyFlowLayout.swift; sourceTree = "<group>"; };
 		8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAddEntryButton.swift; sourceTree = "<group>"; };
 		8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDontCollectionViewManager.swift; sourceTree = "<group>"; };
 		8E853BB619F719FA007128B3 /* UIColor+TodayColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TodayColorPalette.swift"; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 		8EC5633C1A19DCFA003EF8D2 /* Today-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Today-Bridging-Header.h"; sourceTree = "<group>"; };
 		8EC563401A19DFA1003EF8D2 /* DRNotificationIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRNotificationIconView.swift; sourceTree = "<group>"; };
 		8EC563421A19E1B6003EF8D2 /* DRCheckmarkIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCheckmarkIcon.swift; sourceTree = "<group>"; };
+		8EE12FAC1A2478EC00719E67 /* TLSpringFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSpringFlowLayout.h; sourceTree = "<group>"; };
+		8EE12FAD1A2478EC00719E67 /* TLSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSpringFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +186,8 @@
 		8E18A02719F6EC670056697C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8EE12FAC1A2478EC00719E67 /* TLSpringFlowLayout.h */,
+				8EE12FAD1A2478EC00719E67 /* TLSpringFlowLayout.m */,
 				8E3A04041A1D55380054C905 /* Transition Controllers */,
 				8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */,
 				8E3A04031A1D4BF40054C905 /* Collection Managers */,
@@ -257,6 +264,7 @@
 			children = (
 				8EAA94BB1A0155F00002659C /* DRDoViewController.swift */,
 				8E047E331A08795600B2690A /* DRDontViewController.swift */,
+				8E7167021A241A5B0026EC6B /* DRSpringyFlowLayout.swift */,
 			);
 			name = "Collection View Controllers";
 			sourceTree = "<group>";
@@ -379,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE12FAE1A2478EC00719E67 /* TLSpringFlowLayout.m in Sources */,
 				8E047E2A1A08766800B2690A /* DRFetchedResultsManager.swift in Sources */,
 				8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */,
 				8E047E2C1A08787300B2690A /* DREntryService.swift in Sources */,
@@ -391,6 +400,7 @@
 				8E1971F61A1B2D53004074E7 /* DREntryCollectionView.swift in Sources */,
 				8EAA94C61A0161C50002659C /* DREntryCollectionViewCell.swift in Sources */,
 				8E047E281A08204D00B2690A /* DREntry.swift in Sources */,
+				8E7167031A241A5B0026EC6B /* DRSpringyFlowLayout.swift in Sources */,
 				8EAF9E031A0D9EF4005BB9D0 /* DRTabBarView.swift in Sources */,
 				8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */,
 				8EAA94BC1A0155F00002659C /* DRDoViewController.swift in Sources */,
