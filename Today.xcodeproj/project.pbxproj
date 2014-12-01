@@ -20,8 +20,7 @@
 		8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A01F19F6E6880056697C /* DRCoreDataStack.swift */; };
 		8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02819F6EC9B0056697C /* Today.xcdatamodeld */; };
 		8E1971F61A1B2D53004074E7 /* DREntryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1971F51A1B2D53004074E7 /* DREntryCollectionView.swift */; };
-		8E342E9D1A20737A00B97B7C /* DRTransitionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E342E9C1A20737A00B97B7C /* DRTransitionContext.swift */; };
-		8E3A04061A1D555E0054C905 /* DRTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A04051A1D555E0054C905 /* DRTransitionDelegate.swift */; };
+		8E354D921A2C3A8B001B1C24 /* DRNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E354D911A2C3A8B001B1C24 /* DRNavigationControllerDelegate.swift */; };
 		8E3A04081A1D56730054C905 /* DRTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */; };
 		8E7167031A241A5B0026EC6B /* DRSpringyFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7167021A241A5B0026EC6B /* DRSpringyFlowLayout.swift */; };
 		8E7E89781A0C17D60087C655 /* DRDontCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */; };
@@ -65,6 +64,7 @@
 		8E18A02919F6EC9B0056697C /* Today.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Today.xcdatamodel; sourceTree = "<group>"; };
 		8E1971F51A1B2D53004074E7 /* DREntryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntryCollectionView.swift; sourceTree = "<group>"; };
 		8E342E9C1A20737A00B97B7C /* DRTransitionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionContext.swift; sourceTree = "<group>"; };
+		8E354D911A2C3A8B001B1C24 /* DRNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		8E3A04051A1D555E0054C905 /* DRTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionDelegate.swift; sourceTree = "<group>"; };
 		8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionAnimator.swift; sourceTree = "<group>"; };
 		8E7167021A241A5B0026EC6B /* DRSpringyFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRSpringyFlowLayout.swift; sourceTree = "<group>"; };
@@ -187,6 +187,7 @@
 				8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */,
 				8E3A04031A1D4BF40054C905 /* Collection Managers */,
 				8EFA65941A1A895700066ACC /* Collection View Controllers */,
+				8E354D911A2C3A8B001B1C24 /* DRNavigationControllerDelegate.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -388,6 +389,7 @@
 				8E047E341A08795600B2690A /* DRDontViewController.swift in Sources */,
 				8EC563431A19E1B6003EF8D2 /* DRCheckmarkIcon.swift in Sources */,
 				8E9C95AF1A0ED3CA009DCE60 /* DRDoCollectionViewManager.swift in Sources */,
+				8E354D921A2C3A8B001B1C24 /* DRNavigationControllerDelegate.swift in Sources */,
 				8E189FCF19F637180056697C /* AppDelegate.swift in Sources */,
 				8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */,
 				8E7E89781A0C17D60087C655 /* DRDontCollectionViewManager.swift in Sources */,
@@ -400,10 +402,8 @@
 				8EAA94BC1A0155F00002659C /* DRDoViewController.swift in Sources */,
 				8E88DF041A19DA4000B0A992 /* MMScalableVectorView.m in Sources */,
 				8E044F5F1A0C5778005E7838 /* UIColor+TodayColorPalette.swift in Sources */,
-				8E3A04061A1D555E0054C905 /* DRTransitionDelegate.swift in Sources */,
 				8E3A04081A1D56730054C905 /* DRTransitionAnimator.swift in Sources */,
 				8EC563411A19DFA1003EF8D2 /* DRNotificationIconView.swift in Sources */,
-				8E342E9D1A20737A00B97B7C /* DRTransitionContext.swift in Sources */,
 				8E044F5E1A0C5764005E7838 /* DRAddEntryButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

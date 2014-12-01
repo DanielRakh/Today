@@ -15,13 +15,6 @@ class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     private var fromView:UIView!
     private var toView:UIView!
     private var containerView:UIView!
-    var transitionContext:UIViewControllerContextTransitioning! {
-        didSet {
-            fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
-            toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
-            containerView = transitionContext.containerView()
-        }
-    }
     
     private enum Position {
         case Left
@@ -54,12 +47,16 @@ class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         
-        return 1.0
+        return 0.8
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
         let animationDuration = transitionDuration(transitionContext)
+        
+        fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
+        toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
+        containerView = transitionContext.containerView()
         
         var toViewEndFrame:CGRect = CGRectMake(0, 0, toView.bounds.size.width, toView.bounds.size.height)
         
@@ -71,7 +68,7 @@ class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         UIView.animateWithDuration(animationDuration,
             delay: 0.0,
-            usingSpringWithDamping: 0.5,
+            usingSpringWithDamping: 0.7,
             initialSpringVelocity: 0.5,
             options: .CurveEaseInOut,
             animations: { () -> Void in

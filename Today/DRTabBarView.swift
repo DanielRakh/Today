@@ -71,11 +71,11 @@ class DRTabBarView: UIView {
     }
     
     
-    func performUnderlineAnimationForMode(mode:Mode) {
+    func performUnderlineAnimationForMode(mode:Mode, withDuration duration:NSTimeInterval) {
         
         adjustContraintsForMode(mode)
         
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping:0.7, initialSpringVelocity:1.0, options: .CurveEaseInOut, animations: {
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping:0.7, initialSpringVelocity:0.5, options: .CurveEaseInOut, animations: {
             UIView.performWithoutAnimation({ () -> Void in
                 self.currentButtonSelected = mode
             })
@@ -130,14 +130,14 @@ class DRTabBarView: UIView {
     @IBAction func doButtonPressed(sender:AnyObject) {
         if currentButtonSelected == .Dont {
             delegate?.doButtonDidTouch?(sender)
-            performUnderlineAnimationForMode(.Do)
+//            performUnderlineAnimationForMode(.Do, withDuration: 0.5)
         }
     }
     
     @IBAction func dontButtonPressed(sender:AnyObject) {
         if currentButtonSelected == .Do {
             delegate?.dontButtonDidTouch?(sender)
-            performUnderlineAnimationForMode(.Dont)
+//            performUnderlineAnimationForMode(.Dont)
         }
     }
     

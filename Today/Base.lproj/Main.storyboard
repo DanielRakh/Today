@@ -18,10 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kP-ow-rdQ" userLabel="Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PvF-vZ-WUE">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <connections>
+                                    <segue destination="xq0-zM-jyq" kind="embed" identifier="navControllerEmbed" id="Y02-2L-36x"/>
+                                </connections>
+                            </containerView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8p-4a-z2h">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0LN-SL-KNI">
@@ -281,54 +283,52 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6kP-ow-rdQ" secondAttribute="bottom" id="3Li-jP-8AA">
-                                <variation key="widthClass=compact" constant="0.0"/>
-                            </constraint>
+                            <constraint firstItem="PvF-vZ-WUE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="3o1-pz-fCQ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="PvF-vZ-WUE" secondAttribute="bottom" id="FD5-p8-Nd7"/>
                             <constraint firstItem="N8p-4a-z2h" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="FJy-cx-C4F"/>
-                            <constraint firstAttribute="trailing" secondItem="6kP-ow-rdQ" secondAttribute="trailing" id="VAR-da-qxh"/>
+                            <constraint firstAttribute="trailing" secondItem="PvF-vZ-WUE" secondAttribute="trailing" id="JVA-eA-Xm7"/>
                             <constraint firstItem="N8p-4a-z2h" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="axJ-8h-Cjg"/>
-                            <constraint firstItem="6kP-ow-rdQ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="eHY-7t-7Ci"/>
                             <constraint firstAttribute="trailing" secondItem="N8p-4a-z2h" secondAttribute="trailing" id="enJ-5U-UMo"/>
                             <constraint firstAttribute="centerX" secondItem="Qo4-AZ-smG" secondAttribute="centerX" id="pmC-ua-qC5"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Qo4-AZ-smG" secondAttribute="bottom" constant="30" id="wjQ-VH-cFf">
                                 <variation key="widthClass=compact" constant="25"/>
                             </constraint>
-                            <constraint firstItem="6kP-ow-rdQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="yMd-yA-hy2"/>
+                            <constraint firstItem="PvF-vZ-WUE" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="wrf-0f-N6E"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="6kP-ow-rdQ"/>
+                                <exclude reference="PvF-vZ-WUE"/>
                                 <exclude reference="N8p-4a-z2h"/>
                                 <exclude reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="3Li-jP-8AA"/>
-                                <exclude reference="wjQ-VH-cFf"/>
-                                <exclude reference="pmC-ua-qC5"/>
                                 <exclude reference="FJy-cx-C4F"/>
                                 <exclude reference="axJ-8h-Cjg"/>
                                 <exclude reference="enJ-5U-UMo"/>
-                                <exclude reference="VAR-da-qxh"/>
-                                <exclude reference="eHY-7t-7Ci"/>
-                                <exclude reference="yMd-yA-hy2"/>
+                                <exclude reference="3o1-pz-fCQ"/>
+                                <exclude reference="JVA-eA-Xm7"/>
+                                <exclude reference="wrf-0f-N6E"/>
+                                <exclude reference="pmC-ua-qC5"/>
+                                <exclude reference="FD5-p8-Nd7"/>
+                                <exclude reference="wjQ-VH-cFf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="6kP-ow-rdQ"/>
+                                <include reference="PvF-vZ-WUE"/>
                                 <include reference="N8p-4a-z2h"/>
                                 <include reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="3Li-jP-8AA"/>
-                                <include reference="wjQ-VH-cFf"/>
-                                <include reference="pmC-ua-qC5"/>
                                 <include reference="FJy-cx-C4F"/>
                                 <include reference="axJ-8h-Cjg"/>
                                 <include reference="enJ-5U-UMo"/>
-                                <include reference="VAR-da-qxh"/>
-                                <include reference="eHY-7t-7Ci"/>
-                                <include reference="yMd-yA-hy2"/>
+                                <include reference="3o1-pz-fCQ"/>
+                                <include reference="JVA-eA-Xm7"/>
+                                <include reference="wrf-0f-N6E"/>
+                                <include reference="pmC-ua-qC5"/>
+                                <include reference="FD5-p8-Nd7"/>
+                                <include reference="wjQ-VH-cFf"/>
                             </mask>
                         </variation>
                     </view>
@@ -336,13 +336,12 @@
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="innerContainerView" destination="6kP-ow-rdQ" id="bfj-o2-md9"/>
                         <outlet property="tabBar" destination="Kbh-sc-k4Y" id="Nww-KM-Kzd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821" y="345"/>
+            <point key="canvasLocation" x="1527" y="327"/>
         </scene>
         <!--Do View Controller-->
         <scene sceneID="vDQ-wv-xhG">
@@ -370,7 +369,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Stay Present." translatesAutoresizingMaskIntoConstraints="NO" id="3om-N9-bmf">
@@ -540,16 +539,18 @@
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="CUF-CI-jvm"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="qGa-kD-7U8" id="ux6-jD-9qz"/>
                         <outlet property="collectionViewLayout" destination="Iob-Fn-kDt" id="EdX-xn-5Wm"/>
+                        <segue destination="Hzv-X2-qH4" kind="show" identifier="pushToDontVC" id="2UF-E5-tZY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijb-qG-Ian" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2578.5" y="345"/>
+            <point key="canvasLocation" x="3264" y="327"/>
         </scene>
         <!--Dont View Controller-->
         <scene sceneID="4F2-5D-LZX">
@@ -577,7 +578,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Stay Present." translatesAutoresizingMaskIntoConstraints="NO" id="taA-ea-nGw">
@@ -765,7 +766,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBW-eG-xb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2578.5" y="1036"/>
+            <point key="canvasLocation" x="4192.5" y="327"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Q0D-Mv-kCg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="xq0-zM-jyq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="01g-LJ-okJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="682-1A-PU1" kind="relationship" relationship="rootViewController" id="CYa-Do-xGV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXE-9J-HQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2362.5" y="327"/>
         </scene>
     </scenes>
 </document>
