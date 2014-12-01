@@ -20,7 +20,6 @@
 		8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A01F19F6E6880056697C /* DRCoreDataStack.swift */; };
 		8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02819F6EC9B0056697C /* Today.xcdatamodeld */; };
 		8E1971F61A1B2D53004074E7 /* DREntryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1971F51A1B2D53004074E7 /* DREntryCollectionView.swift */; };
-		8E354D921A2C3A8B001B1C24 /* DRNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E354D911A2C3A8B001B1C24 /* DRNavigationControllerDelegate.swift */; };
 		8E3A04081A1D56730054C905 /* DRTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */; };
 		8E7167031A241A5B0026EC6B /* DRSpringyFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7167021A241A5B0026EC6B /* DRSpringyFlowLayout.swift */; };
 		8E7E89781A0C17D60087C655 /* DRDontCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */; };
@@ -30,6 +29,7 @@
 		8EAA94BC1A0155F00002659C /* DRDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94BB1A0155F00002659C /* DRDoViewController.swift */; };
 		8EAA94C61A0161C50002659C /* DREntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94C51A0161C50002659C /* DREntryCollectionViewCell.swift */; };
 		8EAF9E031A0D9EF4005BB9D0 /* DRTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF9E021A0D9EF4005BB9D0 /* DRTabBarView.swift */; };
+		8EB18CDB1A2D041300CF0AB2 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB18CDA1A2D041300CF0AB2 /* TransitionAnimator.swift */; };
 		8EC563411A19DFA1003EF8D2 /* DRNotificationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563401A19DFA1003EF8D2 /* DRNotificationIconView.swift */; };
 		8EC563431A19E1B6003EF8D2 /* DRCheckmarkIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563421A19E1B6003EF8D2 /* DRCheckmarkIcon.swift */; };
 /* End PBXBuildFile section */
@@ -63,7 +63,6 @@
 		8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRMasterViewController.swift; sourceTree = "<group>"; };
 		8E18A02919F6EC9B0056697C /* Today.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Today.xcdatamodel; sourceTree = "<group>"; };
 		8E1971F51A1B2D53004074E7 /* DREntryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntryCollectionView.swift; sourceTree = "<group>"; };
-		8E354D911A2C3A8B001B1C24 /* DRNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionAnimator.swift; sourceTree = "<group>"; };
 		8E7167021A241A5B0026EC6B /* DRSpringyFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRSpringyFlowLayout.swift; sourceTree = "<group>"; };
 		8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAddEntryButton.swift; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		8EAA94BB1A0155F00002659C /* DRDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDoViewController.swift; sourceTree = "<group>"; };
 		8EAA94C51A0161C50002659C /* DREntryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntryCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EAF9E021A0D9EF4005BB9D0 /* DRTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTabBarView.swift; sourceTree = "<group>"; };
+		8EB18CDA1A2D041300CF0AB2 /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionAnimator.swift; path = ../TransitionAnimator.swift; sourceTree = "<group>"; };
 		8EC5633C1A19DCFA003EF8D2 /* Today-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Today-Bridging-Header.h"; sourceTree = "<group>"; };
 		8EC563401A19DFA1003EF8D2 /* DRNotificationIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRNotificationIconView.swift; sourceTree = "<group>"; };
 		8EC563421A19E1B6003EF8D2 /* DRCheckmarkIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCheckmarkIcon.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		8E3A04041A1D55380054C905 /* Transition Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E354D911A2C3A8B001B1C24 /* DRNavigationControllerDelegate.swift */,
+				8EB18CDA1A2D041300CF0AB2 /* TransitionAnimator.swift */,
 				8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */,
 			);
 			name = "Transition Controllers";
@@ -380,12 +380,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E047E2A1A08766800B2690A /* DRFetchedResultsManager.swift in Sources */,
+				8EB18CDB1A2D041300CF0AB2 /* TransitionAnimator.swift in Sources */,
 				8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */,
 				8E047E2C1A08787300B2690A /* DREntryService.swift in Sources */,
 				8E047E341A08795600B2690A /* DRDontViewController.swift in Sources */,
 				8EC563431A19E1B6003EF8D2 /* DRCheckmarkIcon.swift in Sources */,
 				8E9C95AF1A0ED3CA009DCE60 /* DRDoCollectionViewManager.swift in Sources */,
-				8E354D921A2C3A8B001B1C24 /* DRNavigationControllerDelegate.swift in Sources */,
 				8E189FCF19F637180056697C /* AppDelegate.swift in Sources */,
 				8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */,
 				8E7E89781A0C17D60087C655 /* DRDontCollectionViewManager.swift in Sources */,

@@ -18,7 +18,7 @@ class DRMasterViewController: UIViewController {
 //MARK: Properties
     
     var delegate:DRMasterViewControllerDelegate?
-    var navControllerDelegate:DRNavigationControllerDelegate?
+//    var navControllerDelegate:DRNavigationControllerDelegate?
     
     // This is the bottom bar view used to switch between the children. Similar to UITabBar.
     @IBOutlet private weak var navBar: DRNavBarView!
@@ -27,7 +27,7 @@ class DRMasterViewController: UIViewController {
     private(set) var navController:UINavigationController!
     
     // Transition Animator
-    lazy private var transitionAnimator = DRTransitionAnimator()
+//    lazy private var transitionAnimator = TransitionAnimator()
     
     // Core Data MOC set in AppDelegate.
     var managedObjectContext:NSManagedObjectContext!
@@ -42,15 +42,16 @@ class DRMasterViewController: UIViewController {
         
         view.backgroundColor = UIColor.todayLightViewBackground()
         
-        navControllerDelegate = DRNavigationControllerDelegate()
+//        navControllerDelegate = DRNavigationControllerDelegate()
         
         navBar.delegate = self
+//        transitionAnimator.delegate = self
         
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        navController.delegate = navControllerDelegate!
+//        navController.delegate = self
         if navController.topViewController is DRDoViewController {
             self.delegate = navController.topViewController as DRDoViewController
         }
@@ -107,3 +108,25 @@ extension DRMasterViewController: DRNavBarViewDelegate {
         }
     }
 }
+
+
+
+//extension DRMasterViewController: UINavigationControllerDelegate {
+//    
+//    
+//    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        
+//        transitionAnimator.operation = operation
+//        transitionAnimator.transitionType = .Nervous
+//        return transitionAnimator
+//    }
+//}
+//
+//
+//extension DRMasterViewController: TranstionAnimatorDelegate {
+//    
+//    func visibleCells() -> [UICollectionViewCell] {
+//
+//        return [UICollectionViewCell]()
+//    }
+//}

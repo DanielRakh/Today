@@ -44,7 +44,6 @@ class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
     }
     
-    
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         
         return 0.8
@@ -77,6 +76,5 @@ class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             }) { (success:Bool) -> Void in
                 transitionContext.completeTransition(true)
         }
-        
     }
 }

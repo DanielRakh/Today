@@ -17,11 +17,16 @@ class DRDoViewController: UIViewController {
     @IBOutlet weak var collectionViewLayout:UICollectionViewFlowLayout!
     
     var collectionViewManager:DRDoCollectionViewManager!
+    lazy private var transitionAnimator = TransitionAnimator()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         println("DoVC viewDidLoad")
         view.backgroundColor = UIColor.clearColor()
+        self.navigationController?.delegate = self
+        transitionAnimator.delegate = self
+
         setupCollectionView()
     }
     
@@ -51,7 +56,7 @@ class DRDoViewController: UIViewController {
     
     
     func setupCollectionView() {
-        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: [1,2,3], layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
+        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: Array(1...20), layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
     }
 }
 
@@ -61,3 +66,27 @@ extension DRDoViewController: DRMasterViewControllerDelegate {
         collectionViewManager.insertRow()
     }
 }
+
+extension DRDoViewController: UINavigationControllerDelegate {
+    
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        transitionAnimator.operation = operation
+        transitionAnimator.transitionType = .Nervous
+        return transitionAnimator
+    }
+    
+}
+
+
+extension DRDoViewController: TranstionAnimatorDelegate {
+    
+    func visibleCells() -> [UICollectionViewCell] {
+        
+        return collectionView.visibleCells() as [UICollectionViewCell]
+    }
+}
+
+
+
+

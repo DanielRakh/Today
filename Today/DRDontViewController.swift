@@ -14,6 +14,7 @@ class DRDontViewController: UIViewController {
     
     @IBOutlet weak var collectionView: DREntryCollectionView!
     @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
+    lazy private var transitionAnimator = TransitionAnimator()
     
     var collectionViewManager:DRDoCollectionViewManager!
     
@@ -21,11 +22,13 @@ class DRDontViewController: UIViewController {
         super.viewDidLoad()
         println("DontVC viewDidLoad")
         view.backgroundColor = UIColor.clearColor()
+        self.navigationController?.delegate = self
+        transitionAnimator.delegate = self
         setupCollectionView()
     }
     
     func setupCollectionView() {
-        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: [1,2,3], layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
+        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: Array(1...20), layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -57,3 +60,25 @@ extension DRDontViewController: DRMasterViewControllerDelegate {
         collectionViewManager.insertRow()
     }
 }
+
+
+extension DRDontViewController: UINavigationControllerDelegate {
+    
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        transitionAnimator.operation = operation
+        transitionAnimator.transitionType = .Nervous
+        return transitionAnimator
+    }
+    
+}
+
+
+extension DRDontViewController: TranstionAnimatorDelegate {
+    
+    func visibleCells() -> [UICollectionViewCell] {
+        
+        return collectionView.visibleCells() as [UICollectionViewCell]
+    }
+}
+
