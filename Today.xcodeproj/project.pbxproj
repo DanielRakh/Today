@@ -33,7 +33,6 @@
 		8EAF9E031A0D9EF4005BB9D0 /* DRTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF9E021A0D9EF4005BB9D0 /* DRTabBarView.swift */; };
 		8EC563411A19DFA1003EF8D2 /* DRNotificationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563401A19DFA1003EF8D2 /* DRNotificationIconView.swift */; };
 		8EC563431A19E1B6003EF8D2 /* DRCheckmarkIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563421A19E1B6003EF8D2 /* DRCheckmarkIcon.swift */; };
-		8EE12FAE1A2478EC00719E67 /* TLSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE12FAD1A2478EC00719E67 /* TLSpringFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +79,6 @@
 		8EC5633C1A19DCFA003EF8D2 /* Today-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Today-Bridging-Header.h"; sourceTree = "<group>"; };
 		8EC563401A19DFA1003EF8D2 /* DRNotificationIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRNotificationIconView.swift; sourceTree = "<group>"; };
 		8EC563421A19E1B6003EF8D2 /* DRCheckmarkIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCheckmarkIcon.swift; sourceTree = "<group>"; };
-		8EE12FAC1A2478EC00719E67 /* TLSpringFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSpringFlowLayout.h; sourceTree = "<group>"; };
-		8EE12FAD1A2478EC00719E67 /* TLSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSpringFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,8 +183,6 @@
 		8E18A02719F6EC670056697C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8EE12FAC1A2478EC00719E67 /* TLSpringFlowLayout.h */,
-				8EE12FAD1A2478EC00719E67 /* TLSpringFlowLayout.m */,
 				8E3A04041A1D55380054C905 /* Transition Controllers */,
 				8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */,
 				8E3A04031A1D4BF40054C905 /* Collection Managers */,
@@ -387,7 +382,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EE12FAE1A2478EC00719E67 /* TLSpringFlowLayout.m in Sources */,
 				8E047E2A1A08766800B2690A /* DRFetchedResultsManager.swift in Sources */,
 				8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */,
 				8E047E2C1A08787300B2690A /* DREntryService.swift in Sources */,
