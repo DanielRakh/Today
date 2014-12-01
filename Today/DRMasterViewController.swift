@@ -21,41 +21,13 @@ class DRMasterViewController: UIViewController {
     var navControllerDelegate:DRNavigationControllerDelegate?
     
     // This is the bottom bar view used to switch between the children. Similar to UITabBar.
-    @IBOutlet private weak var tabBar: DRTabBarView!
+    @IBOutlet private weak var navBar: DRNavBarView!
     
-    // Read-only property of the current child
+    // Read-only property of the current navigation controller
     private(set) var navController:UINavigationController!
     
-    /* We add the children to this view instead of self.view because when you add a new child view controller,
-     we don't want to obstruct that supplementary views on self.view (in this case DRTabBar). */
-//    @IBOutlet weak var innerContainerView: UIView!
-    
-    // The view controllers currently taking part in the transition
-//    var toViewController:UIViewController? {
-//        didSet {
-//            currentChildViewController = toViewController
-//        }
-//    }
-    
-    var fromViewController:UIViewController?
-    
+    // Transition Animator
     lazy private var transitionAnimator = DRTransitionAnimator()
-    
-    
-//    // First child. Visible at first start-up.
-//    lazy var doVC:DRDoViewController = {
-//        let vc = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("DRDoViewController") as DRDoViewController
-//        vc.view.backgroundColor = UIColor.clearColor()
-//        return vc
-//    }()
-//    
-//    // Second Child.
-//    lazy var dontVC:DRDontViewController = {
-//        let vc = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("DRDontViewController") as DRDontViewController
-//        vc.view.backgroundColor = UIColor.clearColor()
-//        return vc
-//        }()
-    
     
     // Core Data MOC set in AppDelegate.
     var managedObjectContext:NSManagedObjectContext!
@@ -69,28 +41,12 @@ class DRMasterViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.todayLightViewBackground()
+        
         navControllerDelegate = DRNavigationControllerDelegate()
         
-        tabBar.delegate = self
+        navBar.delegate = self
         
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Apple adds children in viewWillAppear as well with UINavigationController and UITabBarController.
-        // Our custom container should follow suite. 
-        
-//        if childViewControllers[0] is UINavigationController {
-//            navController = childViewControllers[0] as UINavigationController
-//            navController.delegate = DRNavigationControllerDelegate()
-//            if navController.topViewController is DRDoViewController {
-//                self.delegate = navController.topViewController as DRDoViewController
-//            }
-//        }
-        
-    }
-    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -106,53 +62,17 @@ class DRMasterViewController: UIViewController {
         }
     }
     
+//MARK:
+//MARK: Helpers
     
-    
-    /*
-    //MARK: Container View Controller Helpers
-    
-    override func shouldAutomaticallyForwardAppearanceMethods() -> Bool {
-        return false
+    func animateNavBarAlongsideForMode(mode:Mode) {
+        
+        navController.transitionCoordinator()?.animateAlongsideTransitionInView(navBar, animation: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
+            self.navBar.performUnderlineAnimationForMode(mode, withDuration: context.transitionDuration())
+            }, completion: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
+                //
+        })
     }
-
-    func displayChildViewController(viewController:UIViewController) {
-        
-        addChildViewController(viewController)
-        
-        viewController.view.frame = innerContainerView.frame
-        viewController.beginAppearanceTransition(true, animated: false)
-        
-        innerContainerView.addSubview(viewController.view)
-        
-        viewController.endAppearanceTransition()
-        viewController.didMoveToParentViewController(self)
-        
-        currentChildViewController = viewController
-    }
-    
-    func cycleFromViewController(fromVC:UIViewController, toViewController toVC:UIViewController, forMode mode:Mode) {
-        
-        toViewController = toVC
-        fromViewController = fromVC
-        
-        addChildViewController(toViewController!)
-        
-        fromViewController?.beginAppearanceTransition(false, animated: true)
-        toViewController?.beginAppearanceTransition(true, animated: true)
-        
-        transitionAnimator.mode = mode
-        transitionAnimator.transitionContext = self
-        transitionAnimator.animateTransition(self)
-        
-    }
-
-    func transitionControllersForMode(mode:Mode) {
-        let oldVc = mode == .Do ? dontVC : doVC
-        let newVC = mode == .Do ? doVC : dontVC
-        cycleFromViewController(oldVc, toViewController: newVC, forMode: mode)
-    }
-    */
-    //MARK: General Helpers
 }
 
 //MARK:
@@ -167,7 +87,7 @@ protocol DRMasterViewControllerDelegate {
 
 //MARK: DRTabBarViewDelegate
 
-extension DRMasterViewController: DRTabBarViewDelegate {
+extension DRMasterViewController: DRNavBarViewDelegate {
     
     func addEntryButtonDidTouch(sender: AnyObject) {
         delegate?.addEntry()
@@ -176,25 +96,14 @@ extension DRMasterViewController: DRTabBarViewDelegate {
     func doButtonDidTouch(sender: AnyObject) {
         if navController.topViewController is DRDontViewController {
             navController.popToRootViewControllerAnimated(true)
+            animateNavBarAlongsideForMode(.Do)
         }
-        
-        navController.transitionCoordinator()?.animateAlongsideTransitionInView(tabBar, animation: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
-            self.tabBar.performUnderlineAnimationForMode(.Do, withDuration: context.transitionDuration())
-            }, completion: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
-                //
-        })
-    
     }
     
     func dontButtonDidTouch(sender: AnyObject) {
-//        transitionControllersForMode(.Dont)
         if navController.topViewController is DRDoViewController {
             navController.topViewController.performSegueWithIdentifier("pushToDontVC", sender:self.navController.topViewController)
+            animateNavBarAlongsideForMode(.Dont)
         }
-        navController.transitionCoordinator()?.animateAlongsideTransitionInView(tabBar, animation: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
-            self.tabBar.performUnderlineAnimationForMode(.Dont, withDuration: context.transitionDuration())
-            }, completion: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
-                //
-        })
     }
 }

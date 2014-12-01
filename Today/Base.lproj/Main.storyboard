@@ -30,7 +30,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbh-sc-k4Y" customClass="DRTabBarView" customModule="Today" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbh-sc-k4Y" customClass="DRNavBarView" customModule="Today" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81q-cJ-5nP" userLabel="Do Button">
@@ -302,15 +302,15 @@
                                 <exclude reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="FD5-p8-Nd7"/>
+                                <exclude reference="wjQ-VH-cFf"/>
+                                <exclude reference="pmC-ua-qC5"/>
                                 <exclude reference="FJy-cx-C4F"/>
                                 <exclude reference="axJ-8h-Cjg"/>
                                 <exclude reference="enJ-5U-UMo"/>
                                 <exclude reference="3o1-pz-fCQ"/>
                                 <exclude reference="JVA-eA-Xm7"/>
                                 <exclude reference="wrf-0f-N6E"/>
-                                <exclude reference="pmC-ua-qC5"/>
-                                <exclude reference="FD5-p8-Nd7"/>
-                                <exclude reference="wjQ-VH-cFf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -320,15 +320,15 @@
                                 <include reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="FD5-p8-Nd7"/>
+                                <include reference="wjQ-VH-cFf"/>
+                                <include reference="pmC-ua-qC5"/>
                                 <include reference="FJy-cx-C4F"/>
                                 <include reference="axJ-8h-Cjg"/>
                                 <include reference="enJ-5U-UMo"/>
                                 <include reference="3o1-pz-fCQ"/>
                                 <include reference="JVA-eA-Xm7"/>
                                 <include reference="wrf-0f-N6E"/>
-                                <include reference="pmC-ua-qC5"/>
-                                <include reference="FD5-p8-Nd7"/>
-                                <include reference="wjQ-VH-cFf"/>
                             </mask>
                         </variation>
                     </view>
@@ -336,7 +336,7 @@
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="tabBar" destination="Kbh-sc-k4Y" id="Nww-KM-Kzd"/>
+                        <outlet property="navBar" destination="Kbh-sc-k4Y" id="GX7-X6-48s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -352,7 +352,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Hxe-BP-wLr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="35E-36-nGM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qGa-kD-7U8" customClass="DREntryCollectionView" customModule="Today" customModuleProvider="target">
@@ -561,7 +561,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gQJ-2D-8pt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qxX-Gy-uKc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="idR-ai-Dko" customClass="DREntryCollectionView" customModule="Today" customModuleProvider="target">

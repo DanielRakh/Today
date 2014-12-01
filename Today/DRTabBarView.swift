@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc protocol DRTabBarViewDelegate {
+@objc protocol DRNavBarViewDelegate {
     optional func doButtonDidTouch(sender:AnyObject)
     optional func dontButtonDidTouch(sender:AnyObject)
     optional func addEntryButtonDidTouch(sender:AnyObject)
@@ -19,9 +19,9 @@ public enum Mode {
     case Do
 }
 
-class DRTabBarView: UIView {
+class DRNavBarView: UIView {
     
-    var delegate:DRTabBarViewDelegate?
+    var delegate:DRNavBarViewDelegate?
     
     @IBOutlet weak var dontButton:UIButton!
     @IBOutlet weak var doButton:UIButton!
