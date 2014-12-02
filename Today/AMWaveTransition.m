@@ -430,6 +430,8 @@ const CGFloat MAX_DELAY = 0.15;
             if (!fromMode) {
                 [view setTransform:CGAffineTransformMakeTranslation(delta, 0)];
             }
+            
+            
             void (^animation)() = ^{
                 if (fromMode) {
                     view.transform = CGAffineTransformMakeTranslation(-delta, 0);

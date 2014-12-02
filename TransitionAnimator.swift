@@ -116,10 +116,22 @@ class TransitionAnimator: NSObject {
 }
 
 
-//MARK:
+//MARK: Non-Interactive
 //MARK: UIViewControllerAnimatedTransitioningDelegate
 
 extension TransitionAnimator:UIViewControllerAnimatedTransitioning {
+    
+    
+    func visibleCellsForViewController(viewController:UIViewController) -> NSArray? {
+        
+        if viewController.respondsToSelector("visibleCells") {
+            let visibleCells = (viewController as TranstionAnimatorDelegate).visibleCells()
+            if visibleCells.count > 0 {
+                return visibleCells
+            }
+        }
+        return nil
+    }
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         return Double(duration) + Double(maxDelay)
@@ -142,15 +154,18 @@ extension TransitionAnimator:UIViewControllerAnimatedTransitioning {
         var delta:CGFloat
         
         if operation == .Push {
-            delta = screenWidth
+            delta = screenWidth + viewControllerInset
         } else {
-            delta = -screenWidth
+            delta = -screenWidth - viewControllerInset
         }
         
         //Move the destination in place
-        toView.frame = source
+        toView.frame = transitionContext.finalFrameForViewController(toVC)
         //Kick it aside
-        toView.transform = CGAffineTransformMakeTranslation(screenWidth, 0)
+        toView.transform = CGAffineTransformMakeTranslation(delta, 0)
+        
+        containerView.backgroundColor = fromView.backgroundColor
+        
         
         //First step is required to trigger the load of the visible cells.
         UIView.animateWithDuration(0,
@@ -180,63 +195,123 @@ extension TransitionAnimator:UIViewControllerAnimatedTransitioning {
                         delay: 0,
                         options: .CurveEaseIn,
                         animations: { () -> Void in
-                            fromView.transform = CGAffineTransformMakeTranslation(self.screenWidth, 0)
+                            fromView.transform = CGAffineTransformMakeTranslation(0, 0)
                         }, completion: { (finished:Bool) -> Void in
                             transitionContext.completeTransition(true)
                             fromView.removeFromSuperview()
+
                     })
                 }
                 
-                //Animates the cells of the starting view controller
-                if fromVC is TranstionAnimatorDelegate {
-                    if fromVC.respondsToSelector("visibleCells") {
-                        let visibleCells = (fromVC as TranstionAnimatorDelegate).visibleCells() as NSArray
-                        visibleCells.enumerateObjectsWithOptions(NSEnumerationOptions.Reverse, usingBlock: { (object:AnyObject!, idx:Int, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-                            let delay:NSTimeInterval = Double(idx)/Double(visibleCells.count) * Double(self.maxDelay)
-                            
-                            if self.transitionType == .Subtle {
-                                UIView.animateWithDuration(Double(self.duration), delay: delay, options:.CurveEaseIn, animations: { () -> Void in
-                                    (object as UICollectionViewCell).transform = CGAffineTransformMakeTranslation(-delta, 0)
-                                    (object as UICollectionViewCell).alpha = 0
-                                    }, completion: { (finished:Bool) -> Void in
-                                        (object as UICollectionViewCell).transform = CGAffineTransformIdentity
-                                })
-                            } else {
-                                UIView.animateWithDuration(Double(self.duration), delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 1.0, options: .CurveEaseIn, animations: { () -> Void in
-                                    (object as UICollectionViewCell).transform = CGAffineTransformMakeTranslation(-delta, 0)
-                                    (object as UICollectionViewCell).alpha = 0
-                                    }, completion: { (finished:Bool) -> Void in
-                                        (object as UICollectionViewCell).transform = CGAffineTransformIdentity
-                                })
-                            }
-                        })
+                let fromViews = self.visibleCellsForViewController(fromVC)!
+                let toViews = self.visibleCellsForViewController(toVC)!
+                
+                var currentViews:NSArray!
+                var currentVisibleViewCount:Int!
+                
+                var cellAnimation = { (object:AnyObject!, idx:Int, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+                    let fromMode = currentViews == fromViews
+                    let delay:NSTimeInterval = Double(idx) / Double(currentVisibleViewCount) * Double(self.maxDelay)
+                    let view = object as UICollectionViewCell
+                    
+                    if fromMode == false {
+                        view.transform = CGAffineTransformMakeTranslation(delta, 0)
+                    }
+                    
+                    let animation = { () -> Void in
+                        if fromMode == true {
+                            view.transform = CGAffineTransformMakeTranslation(-delta, 0)
+                            view.alpha = 0
+                        } else {
+                            view.transform = CGAffineTransformIdentity;
+                            view.alpha = 1;
+                        }
+                    }
+                    
+                    let completion = { (finished:Bool) -> Void in
+                        if fromMode == true {
+                            view.transform = CGAffineTransformIdentity
+                        }
+                    }
+                    
+                    if self.transitionType == .Subtle {
+                        UIView.animateWithDuration(Double(self.duration), delay: delay, options: .CurveEaseIn, animations: animation, completion: completion)
+                    } else if self.transitionType == .Nervous {
+                        UIView.animateWithDuration(Double(self.duration), delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 1, options: .CurveEaseIn, animations: animation, completion: completion)
+                    } else if self.transitionType == .Bounce {
+                        UIView.animateWithDuration(Double(self.duration), delay: delay, options: .CurveEaseInOut, animations: animation, completion: completion)
                     }
                 }
                 
-                if toVC is TranstionAnimatorDelegate {
-                    if toVC.respondsToSelector("visibleCells") {
-                        let visibleCells = (toVC as TranstionAnimatorDelegate).visibleCells() as NSArray
-                        visibleCells.enumerateObjectsWithOptions(NSEnumerationOptions.Reverse, usingBlock: { (object:AnyObject!, idx:Int, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-                            let delay:NSTimeInterval = Double(idx)/Double(visibleCells.count) * Double(self.maxDelay)
-                            
-                            (object as UICollectionViewCell).transform = CGAffineTransformMakeTranslation(delta, 0)
-                            
-                            if self.transitionType == .Subtle {
-                                UIView.animateWithDuration(Double(self.duration), delay: delay, options:.CurveEaseIn, animations: { () -> Void in
-                                    (object as UICollectionViewCell).transform = CGAffineTransformIdentity
-                                    (object as UICollectionViewCell).alpha = 1
-                                    }, completion: { (finished:Bool) -> Void in
-                                })
-                            } else {
-                                UIView.animateWithDuration(Double(self.duration), delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 1.0, options: .CurveEaseIn, animations: { () -> Void in
-                                    (object as UICollectionViewCell).transform = CGAffineTransformIdentity
-                                    (object as UICollectionViewCell).alpha = 1
-                                    }, completion: { (finished:Bool) -> Void in
-                                })
-                            }
-                        })
+                
+                currentViews = fromViews
+                let viewsArrays = [fromViews, toViews]
+                
+                for array in viewsArrays {
+                    if array.isEqualToArray(currentViews) {
+                        currentVisibleViewCount = currentViews.count
+                        println(currentVisibleViewCount)
+                        print(currentViews)
+                        currentViews.enumerateObjectsWithOptions(.Reverse, usingBlock: cellAnimation)
                     }
                 }
         }
     }
 }
+
+
+                
+                
+//                //Animates the cells of the starting view controller
+//                if fromVC is TranstionAnimatorDelegate {
+//                    if fromVC.respondsToSelector("visibleCells") {
+//                        let visibleCells = (fromVC as TranstionAnimatorDelegate).visibleCells() as NSArray
+//                        visibleCells.enumerateObjectsWithOptions(NSEnumerationOptions.Reverse, usingBlock: { (object:AnyObject!, idx:Int, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+//                            let delay:NSTimeInterval = Double(idx)/Double(visibleCells.count) * Double(self.maxDelay)
+//                            
+//                            if self.transitionType == .Subtle {
+//                                UIView.animateWithDuration(Double(self.duration), delay: delay, options:.CurveEaseIn, animations: { () -> Void in
+//                                    (object as UICollectionViewCell).transform = CGAffineTransformMakeTranslation(-delta, 0)
+//                                    (object as UICollectionViewCell).alpha = 0
+//                                    }, completion: { (finished:Bool) -> Void in
+//                                        (object as UICollectionViewCell).transform = CGAffineTransformIdentity
+//                                })
+//                            } else {
+//                                UIView.animateWithDuration(Double(self.duration), delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 1.0, options: .CurveEaseIn, animations: { () -> Void in
+//                                    (object as UICollectionViewCell).transform = CGAffineTransformMakeTranslation(-delta, 0)
+//                                    (object as UICollectionViewCell).alpha = 0
+//                                    }, completion: { (finished:Bool) -> Void in
+//                                        (object as UICollectionViewCell).transform = CGAffineTransformIdentity
+//                                })
+//                            }
+//                        })
+//                    }
+//                }
+//                
+//                if toVC is TranstionAnimatorDelegate {
+//                    if toVC.respondsToSelector("visibleCells") {
+//                        let visibleCells = (toVC as TranstionAnimatorDelegate).visibleCells() as NSArray
+//                        visibleCells.enumerateObjectsWithOptions(NSEnumerationOptions.Reverse, usingBlock: { (object:AnyObject!, idx:Int, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+//                            let delay:NSTimeInterval = Double(idx)/Double(visibleCells.count) * Double(self.maxDelay)
+//                            
+//                            (object as UICollectionViewCell).transform = CGAffineTransformMakeTranslation(delta, 0)
+//                            
+//                            if self.transitionType == .Subtle {
+//                                UIView.animateWithDuration(Double(self.duration), delay: delay, options:.CurveEaseIn, animations: { () -> Void in
+//                                    (object as UICollectionViewCell).transform = CGAffineTransformIdentity
+//                                    (object as UICollectionViewCell).alpha = 1
+//                                    }, completion: { (finished:Bool) -> Void in
+//                                })
+//                            } else {
+//                                UIView.animateWithDuration(Double(self.duration), delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 1.0, options: .CurveEaseIn, animations: { () -> Void in
+//                                    (object as UICollectionViewCell).transform = CGAffineTransformIdentity
+//                                    (object as UICollectionViewCell).alpha = 1
+//                                    }, completion: { (finished:Bool) -> Void in
+//                                })
+//                            }
+//                        })
+//                    }
+//                }
+//        }
+//    }
+//}
