@@ -8,34 +8,118 @@
 
 import UIKit
 
+//MARK:
+//MARK: Protocol
 @objc protocol TranstionAnimatorDelegate {
     func visibleCells() -> [UICollectionViewCell]
 }
 
-enum TransitionType {
-    case Subtle
-    case Nervous
-}
 
-class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+//MARK:
+//MARK: Class
+//*** This is the wave transition class used to between controllers ***//
+class TransitionAnimator: NSObject {
     
-    let duration:CGFloat = 0.65
-    let maxDelay:CGFloat = 0.15
-    let screenWidth = UIScreen.mainScreen().bounds.width
+    /** Transition Style
     
-    var transitionType:TransitionType?
-    var operation:UINavigationControllerOperation?
-    var delegate:TranstionAnimatorDelegate?
+    - Subtle: Boring
+    - Nervous: Default
+    - Bounce: Exciting
+    */
+    enum TransitionType {
+        case Subtle
+        case Nervous
+        case Bounce
+    }
     
-    convenience init(operation:UINavigationControllerOperation, transitionType:TransitionType) {
-        self.init()
-        self.operation! = operation
-        self.transitionType! = transitionType
+    /** Interactive transition Style
+    
+    - EdgePan: Standard UINavigationController edge gesture
+    - FullScreenPan: The whole screen is game
+    */
+    enum InteractiveTransitionType {
+        case EdgePan
+        case FullScreenPan
     }
     
     
+    //MARK: Properties
     
-    //MARK: UIViewControllerAnimatedTransitioningDelegate Methods
+    /** Transition Type:
+    - Subtle: Boring
+    - Nervous: Default
+    - Bounce: Exciting
+    */
+    var transitionType:TransitionType! = .Nervous
+    
+    /** Operation Type: Push or Pop */
+    var operation:UINavigationControllerOperation!
+    
+    /** Transition Animator Delegate */
+    var delegate:TranstionAnimatorDelegate?
+    
+    /** Animation Duration:
+    The duration of the animation. The whole duration accounts for the maxDelay property.
+    */
+    let duration:CGFloat = 0.65
+    
+    /** Maximum Animation Delay:
+    Max Delay that a call can wait before animating.
+    */
+    let maxDelay:CGFloat = 0.15
+    
+
+    /** Inset between view controllers:
+    Sets the inset between view controllers. Defaults to 20 points.
+    */
+    var viewControllerInset:CGFloat = 20.0
+    
+    
+    /** Alpha animation with interactive transition:
+    Defualts to false
+    */
+    var animateAlphaWithInteractiveTransition = false
+    
+    
+    /** Interactive Transition Type:
+    Defaults to edge.
+    */
+    var interactiveTranstionType:InteractiveTransitionType! = .EdgePan
+    
+    
+    //MARK: Private Properties
+    private let screenWidth = UIScreen.mainScreen().bounds.width
+    private let gesture:UIGestureRecognizer!
+    
+    
+    
+    
+    
+    //MARK:
+    //MARK: Functions
+    
+    /**
+    Attach the interactive gesture to the navigation controller. This will pop the current view controller when the user swipes from the left edge.
+    Make sure to detach the gesture when done.
+    
+    :param: navigationController The UINavigationController that holds the current view controller
+    */
+    func attachInteractiveGestureToNavigationController(navigationController:UINavigationController) {
+        
+    }
+    
+    /** Detach the interactive gesture. */
+    func detachInteractiveGesture() {
+        
+    }
+
+}
+
+
+//MARK:
+//MARK: UIViewControllerAnimatedTransitioningDelegate
+
+extension TransitionAnimator:UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         return Double(duration) + Double(maxDelay)
@@ -150,47 +234,9 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                                     }, completion: { (finished:Bool) -> Void in
                                 })
                             }
-                            
                         })
+                    }
                 }
-            }
         }
     }
-    
-    
-   /*
-    func hideView(view:UIView, withDelay delay:NSTimeInterval, andDelta delta:CGFloat) {
-    
-        let animation = { () -> Void in
-            view.transform = CGAffineTransformMakeTranslation(delta, 0)
-            view.alpha = 0
-        }
-        
-        let completion = { (finished:Bool) -> Void in
-            view.transform = CGAffineTransformIdentity
-        }
-        
-        if transitionType == .Subtle {
-            UIView.animateWithDuration(Double(self.duration), delay: delay, options: .CurveEaseIn, animations: animation, completion: completion)
-        } else {
-            UIView.animateWithDuration(Double(self.duration), delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 1, options: .CurveEaseIn, animations: animation, completion: completion)
-        }
-    }
-    
-    func presentView(view:UIView, withDelay delay:NSTimeInterval, andDelta delta:CGFloat) {
-        view.transform = CGAffineTransformMakeTranslation(delta, 0)
-        let animation = { () -> Void in
-            view.transform = CGAffineTransformIdentity
-            view.alpha = 1
-        }
-        
-        if transitionType == .Subtle {
-            UIView.animateWithDuration(Double(self.duration), delay: delay, options: .CurveEaseIn, animations: animation, completion: nil)
-        } else {
-            UIView.animateWithDuration(Double(self.duration), delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 1, options: .CurveEaseIn, animations: animation, completion: nil)
-        }
-        
-    }
-    */
-    
 }

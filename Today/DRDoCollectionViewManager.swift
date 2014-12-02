@@ -57,7 +57,6 @@ extension DRDoCollectionViewManager: UICollectionViewDelegate {
     
 }
 
-
 extension DRDoCollectionViewManager: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView,
