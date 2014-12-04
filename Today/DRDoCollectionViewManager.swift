@@ -63,7 +63,7 @@ extension DRDoCollectionViewManager: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             
-            return CGSizeMake(collectionView.bounds.size.width - 10, 100)
+            return CGSizeMake(collectionView.bounds.size.width - 30, 120)
     }
 }
 

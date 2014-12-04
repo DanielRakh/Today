@@ -40,8 +40,7 @@ class DRMasterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.todayLightViewBackground()
-        
+        view.backgroundColor = UIColor.todayDarkViewBackground()
 //        navControllerDelegate = DRNavigationControllerDelegate()
         
         navBar.delegate = self
@@ -65,6 +64,10 @@ class DRMasterViewController: UIViewController {
     
 //MARK:
 //MARK: Helpers
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     
     func animateNavBarAlongsideForMode(mode:Mode) {
         

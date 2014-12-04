@@ -56,16 +56,14 @@ class DRNavBarView: UIView {
         currentButtonSelected = .Do
         super.init(coder: aDecoder)
         
-        backgroundColor = UIColor.clearColor()
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.todayLightBorderColor().CGColor
+        backgroundColor = UIColor.todayDarkViewBackground()
     }
     
     //MARK: Helpers
     
     func adjustColorForMode(mode:Mode) {
-        dontLabel.textColor = currentButtonSelected == .Do ? UIColor.todayLightNavBarUnselectedText() : UIColor.todayLightCellText()
-        doLabel.textColor = currentButtonSelected == .Do ? UIColor.todayLightCellText() : UIColor.todayLightNavBarUnselectedText()
+        dontLabel.textColor = currentButtonSelected == .Do ? UIColor.todayDarkNavBarUnselectedText() : UIColor.todayDarkCellText()
+        doLabel.textColor = currentButtonSelected == .Do ? UIColor.todayDarkCellText() : UIColor.todayDarkNavBarUnselectedText()
         underlineView.backgroundColor = currentButtonSelected == .Do ? UIColor.todayLightBlue() : UIColor.todayLightOrange()
         addEntryButton.backgroundColor = currentButtonSelected == .Do ? UIColor.todayLightBlue() : UIColor.todayLightOrange()
     }

@@ -14,33 +14,32 @@ import UIKit
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
     
-    @IBInspectable var cornerRadius:CGFloat = 12 {
+    @IBInspectable var cornerRadius:CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
             contentView.layer.cornerRadius = cornerRadius
         }
     }
     
-    override func prepareForInterfaceBuilder() {
-        backgroundColor = UIColor.todayLightCellBackground()
-        contentView.layer.borderWidth = 0.5
-    }
-    
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupUI()
+//        setupUI()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+//        setupUI()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
         setupUI()
     }
     
     func setupUI() {
-        backgroundColor = UIColor.todayLightCellBackground()
-        contentView.layer.borderWidth = 0.5
-        contentView.layer.borderColor = UIColor.todayLightBorderColor().CGColor
+        backgroundColor = UIColor.clearColor()
+        daysLabel.textColor = UIColor.todayDarkCellText()
     }
     
 }
