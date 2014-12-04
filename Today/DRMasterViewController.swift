@@ -100,14 +100,14 @@ extension DRMasterViewController: DRNavBarViewDelegate {
     func doButtonDidTouch(sender: AnyObject) {
         if navController.topViewController is DRDontViewController {
             navController.popToRootViewControllerAnimated(true)
-            animateNavBarAlongsideForMode(.Do)
+//            animateNavBarAlongsideForMode(.Do)
         }
     }
     
     func dontButtonDidTouch(sender: AnyObject) {
         if navController.topViewController is DRDoViewController {
             navController.topViewController.performSegueWithIdentifier("pushToDontVC", sender:self.navController.topViewController)
-            animateNavBarAlongsideForMode(.Dont)
+//            animateNavBarAlongsideForMode(.Dont)
         }
     }
 }

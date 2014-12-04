@@ -43,6 +43,20 @@ class DRNavBarView: UIView {
         }
     }
     
+    required init(coder aDecoder: NSCoder) {
+        currentButtonSelected = .Do
+        super.init(coder: aDecoder)
+        
+        backgroundColor = UIColor.todayDarkViewBackground()
+    }
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        doLabel.textColor = UIColor.todayDarkCellText()
+        dontLabel.textColor = UIColor.todayDarkNavBarUnselectedText()
+    }
+    
     //MARK: Functions
     
     override func updateConstraints() {
@@ -51,14 +65,7 @@ class DRNavBarView: UIView {
         }
             super.updateConstraints()
         }
-    
-    required init(coder aDecoder: NSCoder) {
-        currentButtonSelected = .Do
-        super.init(coder: aDecoder)
-        
-        backgroundColor = UIColor.todayDarkViewBackground()
-    }
-    
+
     //MARK: Helpers
     
     func adjustColorForMode(mode:Mode) {
@@ -128,14 +135,14 @@ class DRNavBarView: UIView {
     @IBAction func doButtonPressed(sender:AnyObject) {
         if currentButtonSelected == .Dont {
             delegate?.doButtonDidTouch?(sender)
-//            performUnderlineAnimationForMode(.Do, withDuration: 0.5)
+            performUnderlineAnimationForMode(.Do, withDuration: 0.5)
         }
     }
     
     @IBAction func dontButtonPressed(sender:AnyObject) {
         if currentButtonSelected == .Do {
             delegate?.dontButtonDidTouch?(sender)
-//            performUnderlineAnimationForMode(.Dont)
+            performUnderlineAnimationForMode(.Dont, withDuration: 0.5)
         }
     }
     

@@ -27,8 +27,12 @@ extension UIColor {
         return UIColor(white: 1.0, alpha: 1.000) }
     
     class func todayDarkNavBarUnselectedText() -> UIColor {
-        return UIColor(red: 0.146, green: 0.146, blue: 0.151, alpha: 1.000)
+        return UIColor(red:0.200, green:0.200 , blue:0.200, alpha: 1.0)
     }
+    
+//    class func today{
+//    <#properties and methods#>
+//    }
     
     // Light Mode Colors
     class func todayLightViewBackground() -> UIColor {
