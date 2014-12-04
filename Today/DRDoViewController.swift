@@ -13,10 +13,9 @@ class DRDoViewController: UIViewController {
     
     let cellIdentifier = "DoCell"
 
-    @IBOutlet weak var collectionView: DREntryCollectionView!
-    @IBOutlet weak var collectionViewLayout:UICollectionViewFlowLayout!
+    @IBOutlet weak var tableView: DREntryTableView!
     
-    var collectionViewManager:DRDoCollectionViewManager!
+    var tableViewManager:DRDoTableViewManager!
     lazy private var transitionAnimator = TransitionAnimator()
 
     
@@ -27,7 +26,7 @@ class DRDoViewController: UIViewController {
         self.navigationController?.delegate = self
         transitionAnimator.delegate = self
 
-        setupCollectionView()
+        setupTableView()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -38,7 +37,7 @@ class DRDoViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        collectionView.reloadData()
+        tableView.reloadData()
         println("DoVC viewDidAppear")
 
     }
@@ -53,17 +52,15 @@ class DRDoViewController: UIViewController {
         println("DoVC View did dissappear")
     }
     
-    
-    
-    func setupCollectionView() {
-        collectionViewManager = DRDoCollectionViewManager(collectionView: collectionView, items: Array(1...20), layout: collectionViewLayout, withCellIdentifier: cellIdentifier)
+    func setupTableView() {
+        tableViewManager = DRDoTableViewManager(tableView: tableView, items: Array(1...20), withCellIdentifier: cellIdentifier)
     }
 }
 
 
 extension DRDoViewController: DRMasterViewControllerDelegate {
     func addEntry() {
-        collectionViewManager.insertRow()
+        tableViewManager.insertRow()
     }
 }
 
@@ -88,9 +85,9 @@ extension DRDoViewController: UINavigationControllerDelegate {
 
 extension DRDoViewController: TranstionAnimatorDelegate {
     
-    func visibleCells() -> [UICollectionViewCell] {
+    func visibleCells() -> [UITableViewCell] {
         
-        return collectionView.visibleCells() as [UICollectionViewCell]
+        return tableView.visibleCells() as [UITableViewCell]
     }
 }
 

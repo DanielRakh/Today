@@ -21,10 +21,10 @@
 		8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02819F6EC9B0056697C /* Today.xcdatamodeld */; };
 		8E1971F61A1B2D53004074E7 /* DREntryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1971F51A1B2D53004074E7 /* DREntryCollectionView.swift */; };
 		8E3A04081A1D56730054C905 /* DRTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */; };
-		8E7E89781A0C17D60087C655 /* DRDontCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */; };
+		8E7E89781A0C17D60087C655 /* DRDontTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E89771A0C17D60087C655 /* DRDontTableViewManager.swift */; };
 		8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */; };
 		8E88DF041A19DA4000B0A992 /* MMScalableVectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88DF031A19DA4000B0A992 /* MMScalableVectorView.m */; };
-		8E9C95AF1A0ED3CA009DCE60 /* DRDoCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E047E2D1A0878AA00B2690A /* DRDoCollectionViewManager.swift */; };
+		8E9C95AF1A0ED3CA009DCE60 /* DRDoTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E047E2D1A0878AA00B2690A /* DRDoTableViewManager.swift */; };
 		8EAA94BC1A0155F00002659C /* DRDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94BB1A0155F00002659C /* DRDoViewController.swift */; };
 		8EAA94C61A0161C50002659C /* DREntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94C51A0161C50002659C /* DREntryCollectionViewCell.swift */; };
 		8EAF9E031A0D9EF4005BB9D0 /* DRTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF9E021A0D9EF4005BB9D0 /* DRTabBarView.swift */; };
@@ -49,7 +49,7 @@
 		8E047E271A08204D00B2690A /* DREntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntry.swift; sourceTree = "<group>"; };
 		8E047E291A08766800B2690A /* DRFetchedResultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRFetchedResultsManager.swift; sourceTree = "<group>"; };
 		8E047E2B1A08787300B2690A /* DREntryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntryService.swift; sourceTree = "<group>"; };
-		8E047E2D1A0878AA00B2690A /* DRDoCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDoCollectionViewManager.swift; sourceTree = "<group>"; };
+		8E047E2D1A0878AA00B2690A /* DRDoTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDoTableViewManager.swift; sourceTree = "<group>"; };
 		8E047E331A08795600B2690A /* DRDontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDontViewController.swift; sourceTree = "<group>"; };
 		8E189FC919F637180056697C /* Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E189FCD19F637180056697C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		8E1971F51A1B2D53004074E7 /* DREntryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntryCollectionView.swift; sourceTree = "<group>"; };
 		8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionAnimator.swift; sourceTree = "<group>"; };
 		8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAddEntryButton.swift; sourceTree = "<group>"; };
-		8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDontCollectionViewManager.swift; sourceTree = "<group>"; };
+		8E7E89771A0C17D60087C655 /* DRDontTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDontTableViewManager.swift; sourceTree = "<group>"; };
 		8E853BB619F719FA007128B3 /* UIColor+TodayColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TodayColorPalette.swift"; sourceTree = "<group>"; };
 		8E88DF021A19DA4000B0A992 /* MMScalableVectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMScalableVectorView.h; sourceTree = "<group>"; };
 		8E88DF031A19DA4000B0A992 /* MMScalableVectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMScalableVectorView.m; sourceTree = "<group>"; };
@@ -198,8 +198,8 @@
 		8E3A04031A1D4BF40054C905 /* Collection Managers */ = {
 			isa = PBXGroup;
 			children = (
-				8E047E2D1A0878AA00B2690A /* DRDoCollectionViewManager.swift */,
-				8E7E89771A0C17D60087C655 /* DRDontCollectionViewManager.swift */,
+				8E047E2D1A0878AA00B2690A /* DRDoTableViewManager.swift */,
+				8E7E89771A0C17D60087C655 /* DRDontTableViewManager.swift */,
 			);
 			name = "Collection Managers";
 			sourceTree = "<group>";
@@ -390,10 +390,10 @@
 				8E047E2C1A08787300B2690A /* DREntryService.swift in Sources */,
 				8E047E341A08795600B2690A /* DRDontViewController.swift in Sources */,
 				8EC563431A19E1B6003EF8D2 /* DRCheckmarkIcon.swift in Sources */,
-				8E9C95AF1A0ED3CA009DCE60 /* DRDoCollectionViewManager.swift in Sources */,
+				8E9C95AF1A0ED3CA009DCE60 /* DRDoTableViewManager.swift in Sources */,
 				8E189FCF19F637180056697C /* AppDelegate.swift in Sources */,
 				8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */,
-				8E7E89781A0C17D60087C655 /* DRDontCollectionViewManager.swift in Sources */,
+				8E7E89781A0C17D60087C655 /* DRDontTableViewManager.swift in Sources */,
 				8EB18CDE1A2D29CC00CF0AB2 /* AMWaveTransition.m in Sources */,
 				8EB18D1E1A2FF60D00CF0AB2 /* DRSeperatorLine.swift in Sources */,
 				8E1971F61A1B2D53004074E7 /* DREntryCollectionView.swift in Sources */,

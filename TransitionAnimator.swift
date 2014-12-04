@@ -11,7 +11,7 @@ import UIKit
 //MARK:
 //MARK: Protocol
 @objc protocol TranstionAnimatorDelegate {
-    func visibleCells() -> [UICollectionViewCell]
+    func visibleCells() -> [UITableViewCell]
 }
 
 
