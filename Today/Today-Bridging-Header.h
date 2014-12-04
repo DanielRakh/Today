@@ -11,5 +11,8 @@
 
 
 #import "MMScalableVectorView.h"
+#import "AMWaveTransition.h"
+#import "BPXLFlowLayout.h"
+#import "TLSpringFlowLayout.h"
 
 #endif

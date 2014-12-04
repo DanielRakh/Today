@@ -155,8 +155,10 @@ extension TransitionAnimator:UIViewControllerAnimatedTransitioning {
         
         if operation == .Push {
             delta = screenWidth + viewControllerInset
+            println("Push Delta: \(delta)")
         } else {
             delta = -screenWidth - viewControllerInset
+            println("Pop Delta: \(delta)")
         }
         
         //Move the destination in place
@@ -220,8 +222,10 @@ extension TransitionAnimator:UIViewControllerAnimatedTransitioning {
                     
                     let animation = { () -> Void in
                         if fromMode == true {
+//                            println("Delta:\(delta)")
                             view.transform = CGAffineTransformMakeTranslation(-delta, 0)
                             view.alpha = 0
+                            println(view.transform.tx)
                         } else {
                             view.transform = CGAffineTransformIdentity;
                             view.alpha = 1;
@@ -250,8 +254,6 @@ extension TransitionAnimator:UIViewControllerAnimatedTransitioning {
                 for array in viewsArrays {
                     if array.isEqualToArray(currentViews) {
                         currentVisibleViewCount = currentViews.count
-                        println(currentVisibleViewCount)
-                        print(currentViews)
                         currentViews.enumerateObjectsWithOptions(.Reverse, usingBlock: cellAnimation)
                     }
                 }

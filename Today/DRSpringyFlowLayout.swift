@@ -11,20 +11,26 @@ import UIKit
 class DRSpringyFlowLayout: UICollectionViewFlowLayout {
     
     let kScrollResistanceFactor:CGFloat = 900.0
-    var scrollResistanceFactor:CGFloat?
-    var dynamicAnimator:UIDynamicAnimator!
-    var latestDelta:CGFloat = 0
-    var visibleIndexPathsSet:NSMutableSet = NSMutableSet()
+
+    private var dynamicAnimator:UIDynamicAnimator
+    private var latestDelta:CGFloat = 0
+    private var visibleIndexPathsSet:NSMutableSet
+    private var visibleHeaderAndFooterSet:NSMutableSet
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        dynamicAnimator = UIDynamicAnimator(collectionViewLayout: self)
-
+        setup()
     }
     
     override init() {
         super.init()
+        setup()
+    }
+    
+    func setup() {
         dynamicAnimator = UIDynamicAnimator(collectionViewLayout: self)
+        visibleIndexPathsSet = NSMutableSet()
+        visibleHeaderAndFooterSet = NSMutableSet()
     }
     
     
@@ -32,9 +38,10 @@ class DRSpringyFlowLayout: UICollectionViewFlowLayout {
         super.prepareLayout()
         
         let contentSize = collectionViewContentSize()
-        let visibleRect = CGRectInset(CGRectMake(collectionView!.bounds.origin.x, collectionView!.bounds.origin.y, contentSize.width, contentSize.height), -100, -100)
+        let visibleRect = CGRectInset(CGRectMake(collectionView!.bounds.origin.x, collectionView!.bounds.origin.y, collectionView!.frame.size.width, collectionView!.frame.size.height), -100, -100)
         
         let itemsInVisibleRectArray = super.layoutAttributesForElementsInRect(visibleRect) as NSArray!
+        
         let itemsIndexPathsInVisibleRectSet = NSSet(array:(itemsInVisibleRectArray.valueForKey("indexPath") as NSArray))
 
         
@@ -189,7 +196,6 @@ class DRSpringyFlowLayout: UICollectionViewFlowLayout {
         return false
         
     }
-    
     
     override func prepareForCollectionViewUpdates(updateItems: [AnyObject]!) {
         super.prepareForCollectionViewUpdates(updateItems)

@@ -15,6 +15,8 @@ class DRDontViewController: UIViewController {
     @IBOutlet weak var collectionView: DREntryCollectionView!
     @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
     lazy private var transitionAnimator = TransitionAnimator()
+    var interactive = AMWaveTransition()
+
     
     var collectionViewManager:DRDoCollectionViewManager!
     
@@ -39,6 +41,7 @@ class DRDontViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        interactive.attachInteractiveGestureToNavigationController(self.navigationController)
         println("DontVC viewDidAppear")
         
     }
@@ -50,6 +53,7 @@ class DRDontViewController: UIViewController {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
+        self.interactive.detachInteractiveGesture()
         println("DontVC View did dissappear")
     }
     
@@ -66,9 +70,16 @@ extension DRDontViewController: UINavigationControllerDelegate {
     
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        transitionAnimator.operation = operation
-        transitionAnimator.transitionType = .Nervous
-        return transitionAnimator
+//        transitionAnimator.operation = operation
+//        transitionAnimator.transitionType = .Nervous
+//        return transitionAnimator
+        
+        if operation != .None {
+            // Return your preferred transition operation
+            return AMWaveTransition(operation: operation)
+        }
+        
+        return nil;
     }
     
 }

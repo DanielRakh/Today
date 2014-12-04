@@ -71,9 +71,16 @@ extension DRDoViewController: UINavigationControllerDelegate {
     
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        transitionAnimator.operation = operation
-        transitionAnimator.transitionType = .Nervous
-        return transitionAnimator
+//        transitionAnimator.operation = operation
+//        transitionAnimator.transitionType = .Nervous
+//        return transitionAnimator
+        
+        if operation != .None {
+            // Return your preferred transition operation
+            return AMWaveTransition(operation: operation)
+        }
+        
+        return nil;
     }
     
 }
