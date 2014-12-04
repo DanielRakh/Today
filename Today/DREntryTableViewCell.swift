@@ -8,19 +8,20 @@
 
 import UIKit
 
-@IBDesignable class DREntryCollectionViewCell: UICollectionViewCell {
+class DREntryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var notificationIcon: DRNotificationIconView!
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var textView: UITextView!
     
-    @IBInspectable var cornerRadius:CGFloat = 0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-            contentView.layer.cornerRadius = cornerRadius
-        }
-    }
-    
+//    @IBInspectable var cornerRadius:CGFloat = 0 {
+//        didSet {
+//            layer.cornerRadius = cornerRadius
+//            contentView.layer.cornerRadius = cornerRadius
+//        }
+//    }
+//
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -40,6 +41,9 @@ import UIKit
     func setupUI() {
         backgroundColor = UIColor.clearColor()
         daysLabel.textColor = UIColor.todayDarkCellText()
+        textView.textColor = UIColor.todayDarkCellText()
+        textView.backgroundColor = UIColor.clearColor()
+        lineView.backgroundColor = UIColor.todayLightBlue()
     }
     
 }

@@ -12,7 +12,18 @@ class DREntryTableView: UITableView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+   
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setup()
+        
+    }
+    
+    func setup() {
         backgroundColor = UIColor.clearColor()
         contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
+        separatorColor = UIColor.todayDarkNavBarUnselectedText()
     }
 }
