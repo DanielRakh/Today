@@ -14,14 +14,7 @@ class DREntryTableViewCell: UITableViewCell {
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var textView: UITextView!
-    
-//    @IBInspectable var cornerRadius:CGFloat = 0 {
-//        didSet {
-//            layer.cornerRadius = cornerRadius
-//            contentView.layer.cornerRadius = cornerRadius
-//        }
-//    }
-//
+
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -150,7 +150,7 @@
                                     <constraint firstAttribute="centerX" secondItem="2Wo-yv-gqH" secondAttribute="centerX" id="OYO-ER-zal"/>
                                     <constraint firstAttribute="trailing" secondItem="6zy-Z4-ImB" secondAttribute="trailing" id="RB9-T7-mvx"/>
                                     <constraint firstItem="81q-cJ-5nP" firstAttribute="centerY" secondItem="UYo-f4-ePv" secondAttribute="centerY" constant="0.5" id="Z7C-87-hlV">
-                                        <variation key="widthClass=compact" constant="0.0"/>
+                                        <variation key="widthClass=compact" constant="4"/>
                                     </constraint>
                                     <constraint firstAttribute="bottom" secondItem="6zy-Z4-ImB" secondAttribute="bottom" id="aoX-nK-fUX"/>
                                     <constraint firstItem="81q-cJ-5nP" firstAttribute="top" secondItem="Kbh-sc-k4Y" secondAttribute="top" id="cdB-5o-6w7"/>
@@ -478,7 +478,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1Su-Md-trS" secondAttribute="trailing" id="5Xi-TX-CCs"/>
                             <constraint firstItem="1Su-Md-trS" firstAttribute="top" secondItem="pFp-o4-n3f" secondAttribute="bottom" id="Ath-gm-k3A"/>
