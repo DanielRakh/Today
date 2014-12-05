@@ -36,7 +36,6 @@ class DREntryTableViewCell: UITableViewCell {
         daysLabel.textColor = UIColor.todayDarkCellText()
         textView.textColor = UIColor.todayDarkCellText()
         textView.backgroundColor = UIColor.clearColor()
-        lineView.backgroundColor = UIColor.todayLightBlue()
     }
     
 }

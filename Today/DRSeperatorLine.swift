@@ -20,7 +20,7 @@ class DRSeperatorLine: UIView {
         let sortaPixel = 1.0 / UIScreen.mainScreen().scale
         let topSepratorView = UIView(frame: CGRectMake(0, 0, bounds.size.width, sortaPixel))
         topSepratorView.userInteractionEnabled = false
-        topSepratorView.backgroundColor = UIColor.todayDarkNavBarUnselectedText()
+        topSepratorView.backgroundColor = UIColor.blackColor()
         addSubview(topSepratorView)
         
         backgroundColor = UIColor.clearColor()
