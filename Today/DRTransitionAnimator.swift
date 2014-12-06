@@ -53,6 +53,11 @@ class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         let animationDuration = transitionDuration(transitionContext)
         
+        let array:NSArray = NSArray()
+        
+ 
+     
+        
         fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         containerView = transitionContext.containerView()

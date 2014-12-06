@@ -8,7 +8,27 @@
 
 import UIKit
 
+
+//MARK:
+//MARK: Flat Colors
 extension UIColor {
+    
+    // Gradient Colors
+    class func todayGradientRedStart() -> UIColor {
+        return UIColor(red:0.992, green:0.263 , blue:0.314, alpha: 1.0)
+    }
+    
+    class func todayGradientRedEnd() -> UIColor {
+        return UIColor(red:0.992, green:0.192 , blue:0.373, alpha: 1.0)
+    }
+    
+    class func todayGradientGreenStart() -> UIColor {
+        return UIColor(red:0.286, green:0.831 , blue:0.486, alpha: 1.0)
+    }
+    
+    class func todayGradientGreenEnd() -> UIColor {
+        return UIColor(red:0.231, green:0.800 , blue:0.620, alpha: 1.0)
+    }
     
     // Dark Mode Colors
     class func todayDarkViewBackground() -> UIColor {
@@ -63,3 +83,28 @@ extension UIColor {
         return UIColor(red: 0.925, green: 0.225, blue: 0.112, alpha: 1.0) }
 
 }
+
+//MARK:
+//MARK: Gradients
+// Gradient Functions
+extension CAGradientLayer {
+    
+    class func electricRed() -> CAGradientLayer {
+        return CAGradientLayer.gradientLayerForColors(UIColor.todayGradientRedStart(), endColor: UIColor.todayGradientRedEnd())
+    }
+    
+    class func frogGreen() -> CAGradientLayer {
+        return CAGradientLayer.gradientLayerForColors(UIColor.todayGradientGreenStart(), endColor: UIColor.todayGradientGreenEnd())
+    }
+    
+    private class func gradientLayerForColors(startColor:UIColor, endColor:UIColor) -> CAGradientLayer {
+        let colors = [startColor.CGColor, endColor.CGColor] as [AnyObject]!
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = colors
+        gradientLayer.locations = [0.0, 1.0]
+        return gradientLayer
+    }
+}
+
+
+
