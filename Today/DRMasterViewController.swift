@@ -13,12 +13,25 @@ import CoreData
     DRMasterViewController is a custom container controller that serves as the root controller of the app.
 */
 
+
+enum Mode {
+    
+    case Dont
+    case Do
+    
+    func gradientColors() -> (startColor:UIColor, endColor:UIColor) {
+        return self == .Do ?
+            (UIColor.todayGradientGreenStart(), UIColor.todayGradientGreenEnd()) :
+            (UIColor.todayGradientRedStart(), UIColor.todayGradientRedEnd())
+    }
+}
+
+
 class DRMasterViewController: UIViewController {
     
 //MARK: Properties
     
     var delegate:DRMasterViewControllerDelegate?
-//    var navControllerDelegate:DRNavigationControllerDelegate?
     
     // This is the bottom bar view used to switch between the children. Similar to UITabBar.
     @IBOutlet private weak var navBar: DRNavBarView!
@@ -26,8 +39,10 @@ class DRMasterViewController: UIViewController {
     // Read-only property of the current navigation controller
     private(set) var navController:UINavigationController!
     
-    // Transition Animator
-//    lazy private var transitionAnimator = TransitionAnimator()
+    
+    // Add Entry Button
+    @IBOutlet weak var addEntryButton: DRAddEntryButton!
+    
     
     // Core Data MOC set in AppDelegate.
     var managedObjectContext:NSManagedObjectContext!
@@ -40,17 +55,13 @@ class DRMasterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.todayDarkViewBackground()
-//        navControllerDelegate = DRNavigationControllerDelegate()
-        
+        view.backgroundColor = UIColor.todayDarkGray()
         navBar.delegate = self
-//        transitionAnimator.delegate = self
-        
     }
     
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-//        navController.delegate = self
         if navController.topViewController is DRDoViewController {
             self.delegate = navController.topViewController as DRDoViewController
         }
@@ -72,7 +83,7 @@ class DRMasterViewController: UIViewController {
     func animateNavBarAlongsideForMode(mode:Mode) {
         
         navController.transitionCoordinator()?.animateAlongsideTransitionInView(navBar, animation: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
-            self.navBar.performUnderlineAnimationForMode(mode, withDuration: context.transitionDuration())
+            self.navBar.performAnimationsForMode(mode, withDuration: context.transitionDuration())
             }, completion: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
                 //
         })
@@ -93,7 +104,7 @@ protocol DRMasterViewControllerDelegate {
 
 extension DRMasterViewController: DRNavBarViewDelegate {
     
-    func addEntryButtonDidTouch(sender: AnyObject) {
+    @IBAction func addEntryButtonDidTouch(sender: AnyObject) {
         delegate?.addEntry()
     }
     
@@ -112,24 +123,3 @@ extension DRMasterViewController: DRNavBarViewDelegate {
     }
 }
 
-
-
-//extension DRMasterViewController: UINavigationControllerDelegate {
-//    
-//    
-//    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        
-//        transitionAnimator.operation = operation
-//        transitionAnimator.transitionType = .Nervous
-//        return transitionAnimator
-//    }
-//}
-//
-//
-//extension DRMasterViewController: TranstionAnimatorDelegate {
-//    
-//    func visibleCells() -> [UICollectionViewCell] {
-//
-//        return [UICollectionViewCell]()
-//    }
-//}

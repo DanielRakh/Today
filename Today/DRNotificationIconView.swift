@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class DRNotificationIconView: MMScalableVectorView {
     
-    @IBInspectable var glyphColor:UIColor = UIColor.todayLightBlue()
+    @IBInspectable var glyphColor:UIColor = UIColor.todayWhite()
     
     override func prepareForInterfaceBuilder() {
         backgroundColor = UIColor.clearColor()

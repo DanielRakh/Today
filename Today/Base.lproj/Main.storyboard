@@ -54,7 +54,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYo-f4-ePv" userLabel="DO Label">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
                                         <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -85,13 +85,13 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DON'T" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMt-nI-d6B" userLabel="DON'T Label">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
                                         <color key="textColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70588237047195435" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYv-Zc-vk6" userLabel="Underline View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYv-Zc-vk6" userLabel="Underline View" customClass="DRGradientView" customModule="Today" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" red="0.0" green="0.46666666670000001" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="5Db-Uw-060">
                                                 <variation key="widthClass=compact" constant="2"/>
@@ -222,7 +222,6 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="addEntryButton" destination="Qo4-AZ-smG" id="aP0-6H-4lK"/>
                                     <outlet property="centerXAlignUnderlineToDoLabel" destination="kCK-fK-Kc0" id="06l-Ud-yrA"/>
                                     <outlet property="doButton" destination="81q-cJ-5nP" id="Qhj-zB-pdt"/>
                                     <outlet property="doLabel" destination="UYo-f4-ePv" id="Oop-lR-7bu"/>
@@ -232,9 +231,9 @@
                                     <outlet property="underlineView" destination="HYv-Zc-vk6" id="tOD-IN-Uzs"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo4-AZ-smG" userLabel="Add Entry Button" customClass="DRAddEntryButton" customModule="Today" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo4-AZ-smG" userLabel="Add Entry Button" customClass="DRAddEntryButton" customModule="Today" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.4315206707" green="0.8116003275" blue="0.1046745107" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="8iH-ZH-d4x"/>
                                     <constraint firstAttribute="width" constant="60" id="DKA-k3-WCs"/>
@@ -248,9 +247,6 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="glyphSizeAsPercentageOfSuperView">
                                         <real key="value" value="0.29999999999999999"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="glyphColor">
-                                        <color key="value" red="0.97647058819999999" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -266,7 +262,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="addEntryButtonPressed:" destination="Kbh-sc-k4Y" eventType="touchUpInside" id="fyF-dY-RK5"/>
+                                    <action selector="addEntryButtonDidTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8JP-70-73y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -297,15 +293,15 @@
                                 <exclude reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="FD5-p8-Nd7"/>
-                                <exclude reference="wjQ-VH-cFf"/>
-                                <exclude reference="pmC-ua-qC5"/>
-                                <exclude reference="3o1-pz-fCQ"/>
-                                <exclude reference="JVA-eA-Xm7"/>
-                                <exclude reference="wrf-0f-N6E"/>
                                 <exclude reference="Bph-4A-sgM"/>
                                 <exclude reference="JJV-xY-chy"/>
                                 <exclude reference="ste-zV-jNV"/>
+                                <exclude reference="3o1-pz-fCQ"/>
+                                <exclude reference="JVA-eA-Xm7"/>
+                                <exclude reference="wrf-0f-N6E"/>
+                                <exclude reference="pmC-ua-qC5"/>
+                                <exclude reference="FD5-p8-Nd7"/>
+                                <exclude reference="wjQ-VH-cFf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -315,15 +311,15 @@
                                 <include reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="FD5-p8-Nd7"/>
-                                <include reference="wjQ-VH-cFf"/>
-                                <include reference="pmC-ua-qC5"/>
-                                <include reference="3o1-pz-fCQ"/>
-                                <include reference="JVA-eA-Xm7"/>
-                                <include reference="wrf-0f-N6E"/>
                                 <include reference="Bph-4A-sgM"/>
                                 <include reference="JJV-xY-chy"/>
                                 <include reference="ste-zV-jNV"/>
+                                <include reference="3o1-pz-fCQ"/>
+                                <include reference="JVA-eA-Xm7"/>
+                                <include reference="wrf-0f-N6E"/>
+                                <include reference="pmC-ua-qC5"/>
+                                <include reference="FD5-p8-Nd7"/>
+                                <include reference="wjQ-VH-cFf"/>
                             </mask>
                         </variation>
                     </view>
@@ -331,6 +327,7 @@
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addEntryButton" destination="Qo4-AZ-smG" id="j6C-hh-CRP"/>
                         <outlet property="navBar" destination="Kbh-sc-k4Y" id="GX7-X6-48s"/>
                     </connections>
                 </viewController>
@@ -382,7 +379,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 Days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feD-Vg-EPy">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -408,13 +405,13 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="This textview should only fill two lines of text and not anymore. Does that make 3?" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrg-se-xwe">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="This textview should only fill two lines of text and not anymore. Does that make 3?" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrg-se-xwe">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <variation key="widthClass=compact">
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                                     </variation>
                                                 </textView>
                                             </subviews>
@@ -426,8 +423,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="hrg-se-xwe" secondAttribute="trailing" constant="15" id="RFs-94-GeP"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="feD-Vg-EPy" secondAttribute="trailing" constant="15" id="TVt-Da-SJe"/>
                                                 <constraint firstAttribute="bottom" secondItem="hrg-se-xwe" secondAttribute="bottom" constant="15" id="VKC-Ze-6IJ"/>
-                                                <constraint firstItem="hrg-se-xwe" firstAttribute="top" secondItem="feD-Vg-EPy" secondAttribute="bottom" constant="10.5" id="ZKS-g2-jrY"/>
-                                                <constraint firstItem="feD-Vg-EPy" firstAttribute="top" secondItem="J6A-k4-9Ir" secondAttribute="topMargin" constant="20" id="wDd-Nz-Hw3">
+                                                <constraint firstItem="hrg-se-xwe" firstAttribute="top" secondItem="feD-Vg-EPy" secondAttribute="bottom" constant="15" id="ZKS-g2-jrY"/>
+                                                <constraint firstItem="feD-Vg-EPy" firstAttribute="top" secondItem="J6A-k4-9Ir" secondAttribute="topMargin" constant="10" id="wDd-Nz-Hw3">
                                                     <variation key="widthClass=compact" constant="10"/>
                                                 </constraint>
                                                 <constraint firstItem="feD-Vg-EPy" firstAttribute="leading" secondItem="VWp-cC-B12" secondAttribute="trailing" constant="186" id="zmh-mb-tXH">

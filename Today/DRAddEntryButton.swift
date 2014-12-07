@@ -9,25 +9,19 @@
 import UIKit
 import QuartzCore
 
-@IBDesignable class DRAddEntryButton: UIButton {
+@IBDesignable class DRAddEntryButton: DRGradientButton {
     
     var additionGlyph:CALayer!
+    var mode:Mode = .Do
     
     @IBInspectable var glyphSizeAsPercentageOfSuperView:CGFloat = 0
-    @IBInspectable var glyphColor:UIColor = UIColor.todayPastyWhite()
+    
+    @IBInspectable var glyphColor:UIColor = UIColor.todayWhite()
+    
     @IBInspectable var cornerRadius:CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
         }
-    }
-    
-    override func prepareForInterfaceBuilder() {
-        backgroundColor = UIColor.todayLightBlue()
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        backgroundColor = UIColor.todayLightBlue()
     }
     
     override func layoutSubviews() {
@@ -38,9 +32,11 @@ import QuartzCore
     func setup() {
         additionGlyph = createAdditionGlyph()
         layer.addSublayer(additionGlyph)
+        applyGradientColors(mode.gradientColors().startColor, endColor:mode.gradientColors().endColor)
     }
     
-    
+
+    //MARK:
     //MARK: Addition Glyph Drawing
     
     enum LineType {
@@ -74,6 +70,7 @@ import QuartzCore
     }
     
     func lineShapeForPath(path:UIBezierPath) -> CAShapeLayer {
+        
         let shape = CAShapeLayer()
         shape.path = path.CGPath
         shape.bounds = CGRectMake(0, 0, path.bounds.size.width, path.bounds.size.height)
@@ -97,7 +94,7 @@ import QuartzCore
         lineBezier.addLineToPoint(endPoint)
         return lineBezier
     }
-
+    
 }
 
 

@@ -11,13 +11,8 @@ import UIKit
 @objc protocol DRNavBarViewDelegate {
     optional func doButtonDidTouch(sender:AnyObject)
     optional func dontButtonDidTouch(sender:AnyObject)
-    optional func addEntryButtonDidTouch(sender:AnyObject)
 }
 
-public enum Mode {
-    case Dont
-    case Do
-}
 
 class DRNavBarView: UIView {
     
@@ -27,34 +22,27 @@ class DRNavBarView: UIView {
     @IBOutlet weak var doButton:UIButton!
     @IBOutlet weak var dontLabel:UILabel!
     @IBOutlet weak var doLabel:UILabel!
-    @IBOutlet weak var underlineView:UIView!
-    @IBOutlet weak var addEntryButton:DRAddEntryButton!
+    @IBOutlet weak var underlineView:DRGradientView!
     
     @IBOutlet var centerXAlignUnderlineToDoLabel:NSLayoutConstraint!
     @IBOutlet var equalWidthUnderlineToDoLabel:NSLayoutConstraint!
     var centerXAlignUnderlineToDontLabel:NSLayoutConstraint?
     var equalWidthUnderlineToDontLabel:NSLayoutConstraint?
     
-    var currentButtonSelected:Mode? {
-        didSet {
-            if currentButtonSelected != nil {
-                adjustColorForMode(currentButtonSelected!)
-            }
-        }
-    }
+    var mode:Mode
     
     required init(coder aDecoder: NSCoder) {
-        currentButtonSelected = .Do
+        mode = .Do
         super.init(coder: aDecoder)
-        
-        backgroundColor = UIColor.todayDarkViewBackground()
+        backgroundColor = UIColor.todayDarkGray()
     }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        doLabel.textColor = UIColor.todayDarkCellText()
-        dontLabel.textColor = UIColor.todayDarkNavBarUnselectedText()
+        doLabel.textColor = UIColor.todayWhite()
+        dontLabel.textColor = UIColor.todayFadedGray()
+        underlineView.applyGradientColors(mode.gradientColors().startColor, endColor: mode.gradientColors().endColor)
     }
     
     //MARK: Functions
@@ -66,27 +54,16 @@ class DRNavBarView: UIView {
             super.updateConstraints()
         }
 
-    //MARK: Helpers
-    
-    func adjustColorForMode(mode:Mode) {
-        dontLabel.textColor = currentButtonSelected == .Do ? UIColor.todayDarkNavBarUnselectedText() : UIColor.todayDarkCellText()
-        doLabel.textColor = currentButtonSelected == .Do ? UIColor.todayDarkCellText() : UIColor.todayDarkNavBarUnselectedText()
-        underlineView.backgroundColor = currentButtonSelected == .Do ? UIColor.todayLightBlue() : UIColor.todayLightOrange()
-        addEntryButton.backgroundColor = currentButtonSelected == .Do ? UIColor.todayLightBlue() : UIColor.todayLightOrange()
-    }
-    
-    
-    func performUnderlineAnimationForMode(mode:Mode, withDuration duration:NSTimeInterval) {
+    func performAnimationsForMode(mode:Mode, withDuration duration:NSTimeInterval) {
         
         adjustContraintsForMode(mode)
         
         UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping:0.7, initialSpringVelocity:0.5, options: .CurveEaseInOut, animations: {
-            UIView.performWithoutAnimation({ () -> Void in
-                self.currentButtonSelected = mode
-            })
+            self.dontLabel.textColor = mode == .Do ? UIColor.todayFadedGray() : UIColor.todayWhite()
+            self.doLabel.textColor = mode == .Do ? UIColor.todayWhite() : UIColor.todayFadedGray()
             self.layoutIfNeeded()
             }, completion: { finished in
-                //
+                self.mode = mode
         })
         
     }
@@ -133,21 +110,17 @@ class DRNavBarView: UIView {
     //MARK: IBActions
     
     @IBAction func doButtonPressed(sender:AnyObject) {
-        if currentButtonSelected == .Dont {
+        if mode == .Dont {
             delegate?.doButtonDidTouch?(sender)
-            performUnderlineAnimationForMode(.Do, withDuration: 0.5)
+            performAnimationsForMode(.Do, withDuration: 0.5)
         }
     }
     
     @IBAction func dontButtonPressed(sender:AnyObject) {
-        if currentButtonSelected == .Do {
+        if mode == .Do {
             delegate?.dontButtonDidTouch?(sender)
-            performUnderlineAnimationForMode(.Dont, withDuration: 0.5)
+            performAnimationsForMode(.Dont, withDuration: 0.5)
         }
-    }
-    
-    @IBAction func addEntryButtonPressed(sender: AnyObject) {
-        delegate?.addEntryButtonDidTouch?(sender)
     }
     
 }
