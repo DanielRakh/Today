@@ -31,6 +31,7 @@ class DREntryTableViewCell: UITableViewCell {
         setupUI()
     }
     
+    
     func setupUI() {
         backgroundColor = UIColor.clearColor()
         daysLabel.textColor = UIColor.todayWhite()
