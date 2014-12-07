@@ -42,7 +42,7 @@ class DRNavBarView: UIView {
         super.awakeFromNib()
         doLabel.textColor = UIColor.todayWhite()
         dontLabel.textColor = UIColor.todayFadedGray()
-        underlineView.applyGradientColors(mode.gradientColors().startColor, endColor: mode.gradientColors().endColor)
+        underlineView.applyGradientColorsForMode(.Do)
     }
     
     //MARK: Functions

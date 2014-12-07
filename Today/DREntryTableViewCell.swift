@@ -12,7 +12,7 @@ class DREntryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var notificationIcon: DRNotificationIconView!
     @IBOutlet weak var daysLabel: UILabel!
-    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var lineView: DRGradientView!
     @IBOutlet weak var textView: UITextView!
 
     
@@ -36,6 +36,7 @@ class DREntryTableViewCell: UITableViewCell {
         daysLabel.textColor = UIColor.todayWhite()
         textView.textColor = UIColor.todayWhite()
         textView.backgroundColor = UIColor.clearColor()
+        lineView.applyGradientColorsForMode(.Do)
     }
     
 }

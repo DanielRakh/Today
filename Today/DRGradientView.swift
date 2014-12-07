@@ -38,8 +38,18 @@ class DRGradientView: UIView {
         self.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
     
+    func applyGradientColorsForMode(mode:Mode) {
+        
+        mode == .Do ?
+            applyGradientColors(UIColor.todayGradientGreenStart(), endColor: UIColor.todayGradientGreenEnd()) :
+            applyGradientColors(UIColor.todayGradientRedStart(), endColor: UIColor.todayGradientRedEnd())
+
+    }
+    
     func applyGradientColors(startColor:UIColor, endColor:UIColor) {
         gradientLayer.colors = [startColor.CGColor, endColor.CGColor]
     }
+    
+    
 
 }

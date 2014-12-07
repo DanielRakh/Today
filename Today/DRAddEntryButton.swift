@@ -32,7 +32,7 @@ import QuartzCore
     func setup() {
         additionGlyph = createAdditionGlyph()
         layer.addSublayer(additionGlyph)
-        applyGradientColors(mode.gradientColors().startColor, endColor:mode.gradientColors().endColor)
+        applyGradientColorsForMode(.Do)
     }
     
 

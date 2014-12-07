@@ -383,7 +383,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWp-cC-B12" userLabel="Line View">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWp-cC-B12" userLabel="Line View" customClass="DRGradientView" customModule="Today" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <color key="backgroundColor" red="0.06128438562" green="0.4794761837" blue="0.88656342030000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
