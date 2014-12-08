@@ -111,15 +111,57 @@ extension DRMasterViewController: DRNavBarViewDelegate {
     func doButtonDidTouch(sender: AnyObject) {
         if navController.topViewController is DRDontViewController {
             navController.popToRootViewControllerAnimated(true)
-//            animateNavBarAlongsideForMode(.Do)
+            
+            UIView.animateWithDuration(0.35,
+                delay: 0,
+                options: .CurveEaseInOut,
+                animations: { () -> Void in
+                    CATransaction.begin()
+                    CATransaction.setAnimationDuration(0.35)
+                    self.addEntryButton.applyGradientColorsForMode(.Do)
+                    self.navBar.underlineView.applyGradientColorsForMode(.Do)
+                    CATransaction.commit()
+                }, completion: { (stop:Bool) -> Void in
+                    //
+            })
         }
     }
     
     func dontButtonDidTouch(sender: AnyObject) {
         if navController.topViewController is DRDoViewController {
             navController.topViewController.performSegueWithIdentifier("pushToDontVC", sender:self.navController.topViewController)
+            
+            UIView.animateWithDuration(0.35,
+                delay: 0,
+                options: .CurveEaseInOut,
+                animations: { () -> Void in
+                    CATransaction.begin()
+                    CATransaction.setAnimationDuration(0.35)
+                    self.addEntryButton.applyGradientColorsForMode(.Dont)
+                    self.navBar.underlineView.applyGradientColorsForMode(.Dont)
+                    CATransaction.commit()
+                }, completion: { (stop:Bool) -> Void in
+                //
+            })
 //            animateNavBarAlongsideForMode(.Dont)
         }
     }
 }
+
+
+
+/*
+
+1. NavBar: Underline View
+2. Add Entry Button. 
+3. Cell: Streak Line
+4. Cell: Small Alert Icon
+5. Cell: Checkmark Icon
+6. Cell: Large Alert Icon
+7. Cell: Trashcan Icon
+8. Cell: Checkmark Icon 
+
+*/
+
+
 

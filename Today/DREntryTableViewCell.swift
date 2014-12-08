@@ -11,7 +11,6 @@ import UIKit
 class DREntryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var alertOnIcon: DRAlertOnIconView!
-    @IBOutlet weak var alertOffIcon: DRAlertOffIconView!
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var lineView: DRGradientView!
     @IBOutlet weak var textView: UITextView!

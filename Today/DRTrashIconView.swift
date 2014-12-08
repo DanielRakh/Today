@@ -35,7 +35,6 @@ import UIKit
         //// Gradient Declarations
         let gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [gradientColor.CGColor, gradientColor2.CGColor], [0, 1])
         
-
         //// Shape Drawing
         var shapePath = UIBezierPath()
         shapePath.moveToPoint(CGPointMake(2, 23.79))

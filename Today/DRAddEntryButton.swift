@@ -33,9 +33,8 @@ import QuartzCore
         additionGlyph = createAdditionGlyph()
         layer.addSublayer(additionGlyph)
         applyGradientColorsForMode(.Do)
+        
     }
-    
-
     //MARK:
     //MARK: Addition Glyph Drawing
     
