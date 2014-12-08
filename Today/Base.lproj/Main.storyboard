@@ -414,8 +414,29 @@
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                                     </variation>
                                                 </textView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QsU-A4-Fc2" customClass="DRAlertOnIconView" customModule="Today" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="dCS-de-cln"/>
+                                                        <constraint firstAttribute="width" constant="16" id="dqI-vW-NZN"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="dCS-de-cln"/>
+                                                            <exclude reference="dqI-vW-NZN"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="dCS-de-cln"/>
+                                                            <include reference="dqI-vW-NZN"/>
+                                                        </mask>
+                                                    </variation>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="QsU-A4-Fc2" firstAttribute="leading" secondItem="J6A-k4-9Ir" secondAttribute="leading" constant="15" id="7NU-Xs-XZ8"/>
                                                 <constraint firstItem="hrg-se-xwe" firstAttribute="leading" secondItem="J6A-k4-9Ir" secondAttribute="leading" constant="15" id="H7l-bg-Ms3"/>
                                                 <constraint firstItem="feD-Vg-EPy" firstAttribute="centerY" secondItem="VWp-cC-B12" secondAttribute="centerY" constant="-7.75" id="NAX-l3-e19">
                                                     <variation key="widthClass=compact" constant="0.0"/>
@@ -423,6 +444,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="hrg-se-xwe" secondAttribute="trailing" constant="15" id="RFs-94-GeP"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="feD-Vg-EPy" secondAttribute="trailing" constant="15" id="TVt-Da-SJe"/>
                                                 <constraint firstAttribute="bottom" secondItem="hrg-se-xwe" secondAttribute="bottom" constant="15" id="VKC-Ze-6IJ"/>
+                                                <constraint firstItem="VWp-cC-B12" firstAttribute="centerY" secondItem="QsU-A4-Fc2" secondAttribute="centerY" constant="2.5" id="ZAX-4b-2gn"/>
                                                 <constraint firstItem="hrg-se-xwe" firstAttribute="top" secondItem="feD-Vg-EPy" secondAttribute="bottom" constant="15" id="ZKS-g2-jrY"/>
                                                 <constraint firstItem="feD-Vg-EPy" firstAttribute="top" secondItem="J6A-k4-9Ir" secondAttribute="topMargin" constant="10" id="wDd-Nz-Hw3">
                                                     <variation key="widthClass=compact" constant="10"/>
@@ -436,16 +458,19 @@
                                                     <exclude reference="feD-Vg-EPy"/>
                                                     <exclude reference="VWp-cC-B12"/>
                                                     <exclude reference="hrg-se-xwe"/>
+                                                    <exclude reference="QsU-A4-Fc2"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="NAX-l3-e19"/>
-                                                    <exclude reference="TVt-Da-SJe"/>
-                                                    <exclude reference="wDd-Nz-Hw3"/>
-                                                    <exclude reference="zmh-mb-tXH"/>
+                                                    <exclude reference="7NU-Xs-XZ8"/>
                                                     <exclude reference="H7l-bg-Ms3"/>
                                                     <exclude reference="RFs-94-GeP"/>
                                                     <exclude reference="VKC-Ze-6IJ"/>
                                                     <exclude reference="ZKS-g2-jrY"/>
+                                                    <exclude reference="ZAX-4b-2gn"/>
+                                                    <exclude reference="NAX-l3-e19"/>
+                                                    <exclude reference="TVt-Da-SJe"/>
+                                                    <exclude reference="wDd-Nz-Hw3"/>
+                                                    <exclude reference="zmh-mb-tXH"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -453,20 +478,24 @@
                                                     <include reference="feD-Vg-EPy"/>
                                                     <include reference="VWp-cC-B12"/>
                                                     <include reference="hrg-se-xwe"/>
+                                                    <include reference="QsU-A4-Fc2"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="NAX-l3-e19"/>
-                                                    <include reference="TVt-Da-SJe"/>
-                                                    <include reference="wDd-Nz-Hw3"/>
-                                                    <include reference="zmh-mb-tXH"/>
+                                                    <include reference="7NU-Xs-XZ8"/>
                                                     <include reference="H7l-bg-Ms3"/>
                                                     <include reference="RFs-94-GeP"/>
                                                     <include reference="VKC-Ze-6IJ"/>
                                                     <include reference="ZKS-g2-jrY"/>
+                                                    <include reference="ZAX-4b-2gn"/>
+                                                    <include reference="NAX-l3-e19"/>
+                                                    <include reference="TVt-Da-SJe"/>
+                                                    <include reference="wDd-Nz-Hw3"/>
+                                                    <include reference="zmh-mb-tXH"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="alertOnIcon" destination="QsU-A4-Fc2" id="Qqk-sy-OV0"/>
                                             <outlet property="daysLabel" destination="feD-Vg-EPy" id="Ayr-cK-X76"/>
                                             <outlet property="lineView" destination="VWp-cC-B12" id="niJ-iD-l7g"/>
                                             <outlet property="textView" destination="hrg-se-xwe" id="ZHR-t3-S26"/>

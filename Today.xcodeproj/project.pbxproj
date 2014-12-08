@@ -31,10 +31,13 @@
 		8EB18CDB1A2D041300CF0AB2 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB18CDA1A2D041300CF0AB2 /* TransitionAnimator.swift */; };
 		8EB18CDE1A2D29CC00CF0AB2 /* AMWaveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB18CDD1A2D29CC00CF0AB2 /* AMWaveTransition.m */; };
 		8EB18D1E1A2FF60D00CF0AB2 /* DRSeperatorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB18D1D1A2FF60D00CF0AB2 /* DRSeperatorLine.swift */; };
-		8EC563411A19DFA1003EF8D2 /* DRNotificationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563401A19DFA1003EF8D2 /* DRNotificationIconView.swift */; };
-		8EC563431A19E1B6003EF8D2 /* DRCheckmarkIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563421A19E1B6003EF8D2 /* DRCheckmarkIcon.swift */; };
+		8EC563411A19DFA1003EF8D2 /* DRAlertOnIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563401A19DFA1003EF8D2 /* DRAlertOnIconView.swift */; };
+		8EC563431A19E1B6003EF8D2 /* DRCheckmarkIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563421A19E1B6003EF8D2 /* DRCheckmarkIconView.swift */; };
 		8EFA12831A342A6D004BC7F1 /* DRGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA12821A342A6D004BC7F1 /* DRGradientView.swift */; };
 		8EFA12851A34314B004BC7F1 /* DRGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA12841A34314B004BC7F1 /* DRGradientButton.swift */; };
+		8EFA12871A34FDB5004BC7F1 /* DRGradientGlyphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA12861A34FDB5004BC7F1 /* DRGradientGlyphView.swift */; };
+		8EFA12891A354653004BC7F1 /* DRAlertOffIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA12881A354653004BC7F1 /* DRAlertOffIconView.swift */; };
+		8EFA128B1A354B74004BC7F1 /* DRTrashIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA128A1A354B74004BC7F1 /* DRTrashIconView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,10 +83,13 @@
 		8EB18CDD1A2D29CC00CF0AB2 /* AMWaveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMWaveTransition.m; sourceTree = "<group>"; };
 		8EB18D1D1A2FF60D00CF0AB2 /* DRSeperatorLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRSeperatorLine.swift; sourceTree = "<group>"; };
 		8EC5633C1A19DCFA003EF8D2 /* Today-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Today-Bridging-Header.h"; sourceTree = "<group>"; };
-		8EC563401A19DFA1003EF8D2 /* DRNotificationIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRNotificationIconView.swift; sourceTree = "<group>"; };
-		8EC563421A19E1B6003EF8D2 /* DRCheckmarkIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCheckmarkIcon.swift; sourceTree = "<group>"; };
+		8EC563401A19DFA1003EF8D2 /* DRAlertOnIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAlertOnIconView.swift; sourceTree = "<group>"; };
+		8EC563421A19E1B6003EF8D2 /* DRCheckmarkIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCheckmarkIconView.swift; sourceTree = "<group>"; };
 		8EFA12821A342A6D004BC7F1 /* DRGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRGradientView.swift; sourceTree = "<group>"; };
 		8EFA12841A34314B004BC7F1 /* DRGradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRGradientButton.swift; sourceTree = "<group>"; };
+		8EFA12861A34FDB5004BC7F1 /* DRGradientGlyphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRGradientGlyphView.swift; sourceTree = "<group>"; };
+		8EFA12881A354653004BC7F1 /* DRAlertOffIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAlertOffIconView.swift; sourceTree = "<group>"; };
+		8EFA128A1A354B74004BC7F1 /* DRTrashIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTrashIconView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,7 @@
 				8EFA65911A1A88EB00066ACC /* Table View */,
 				8EB18D1D1A2FF60D00CF0AB2 /* DRSeperatorLine.swift */,
 				8EFA12821A342A6D004BC7F1 /* DRGradientView.swift */,
+				8EFA12861A34FDB5004BC7F1 /* DRGradientGlyphView.swift */,
 				8EFA12841A34314B004BC7F1 /* DRGradientButton.swift */,
 			);
 			name = Views;
@@ -284,8 +291,10 @@
 		8EFA65961A1A8C6500066ACC /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				8EC563401A19DFA1003EF8D2 /* DRNotificationIconView.swift */,
-				8EC563421A19E1B6003EF8D2 /* DRCheckmarkIcon.swift */,
+				8EC563401A19DFA1003EF8D2 /* DRAlertOnIconView.swift */,
+				8EC563421A19E1B6003EF8D2 /* DRCheckmarkIconView.swift */,
+				8EFA12881A354653004BC7F1 /* DRAlertOffIconView.swift */,
+				8EFA128A1A354B74004BC7F1 /* DRTrashIconView.swift */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -393,12 +402,14 @@
 				8E047E2A1A08766800B2690A /* DRFetchedResultsManager.swift in Sources */,
 				8EB18CDB1A2D041300CF0AB2 /* TransitionAnimator.swift in Sources */,
 				8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */,
+				8EFA12871A34FDB5004BC7F1 /* DRGradientGlyphView.swift in Sources */,
 				8E047E2C1A08787300B2690A /* DREntryService.swift in Sources */,
 				8E047E341A08795600B2690A /* DRDontViewController.swift in Sources */,
-				8EC563431A19E1B6003EF8D2 /* DRCheckmarkIcon.swift in Sources */,
+				8EC563431A19E1B6003EF8D2 /* DRCheckmarkIconView.swift in Sources */,
 				8E9C95AF1A0ED3CA009DCE60 /* DRDoTableViewManager.swift in Sources */,
 				8E189FCF19F637180056697C /* AppDelegate.swift in Sources */,
 				8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */,
+				8EFA12891A354653004BC7F1 /* DRAlertOffIconView.swift in Sources */,
 				8E7E89781A0C17D60087C655 /* DRDontTableViewManager.swift in Sources */,
 				8EB18CDE1A2D29CC00CF0AB2 /* AMWaveTransition.m in Sources */,
 				8EB18D1E1A2FF60D00CF0AB2 /* DRSeperatorLine.swift in Sources */,
@@ -413,7 +424,8 @@
 				8E88DF041A19DA4000B0A992 /* MMScalableVectorView.m in Sources */,
 				8E044F5F1A0C5778005E7838 /* UIColor+TodayColorPalette.swift in Sources */,
 				8E3A04081A1D56730054C905 /* DRTransitionAnimator.swift in Sources */,
-				8EC563411A19DFA1003EF8D2 /* DRNotificationIconView.swift in Sources */,
+				8EFA128B1A354B74004BC7F1 /* DRTrashIconView.swift in Sources */,
+				8EC563411A19DFA1003EF8D2 /* DRAlertOnIconView.swift in Sources */,
 				8E044F5E1A0C5764005E7838 /* DRAddEntryButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
