@@ -1,0 +1,16 @@
+PODS:
+  - AMWaveTransition (0.5.5)
+  - MMScalableVectorView (0.1.0)
+  - pop (1.0.7)
+
+DEPENDENCIES:
+  - AMWaveTransition (~> 0.5)
+  - MMScalableVectorView (~> 0.1)
+  - pop (~> 1.0)
+
+SPEC CHECKSUMS:
+  AMWaveTransition: af3c5baf82bf9d414f39ab42adf3a3f6c734d127
+  MMScalableVectorView: c8f1b86036c8d1056ff5d5c3be59044ef93fd9fe
+  pop: 2f14a1ea61339767af9e66741b418c831b3844df
+
+COCOAPODS: 0.35.0

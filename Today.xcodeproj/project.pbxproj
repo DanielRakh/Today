@@ -23,13 +23,11 @@
 		8E3A04081A1D56730054C905 /* DRTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A04071A1D56730054C905 /* DRTransitionAnimator.swift */; };
 		8E7E89781A0C17D60087C655 /* DRDontTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E89771A0C17D60087C655 /* DRDontTableViewManager.swift */; };
 		8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18A02219F6EAEC0056697C /* DRMasterViewController.swift */; };
-		8E88DF041A19DA4000B0A992 /* MMScalableVectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88DF031A19DA4000B0A992 /* MMScalableVectorView.m */; };
 		8E9C95AF1A0ED3CA009DCE60 /* DRDoTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E047E2D1A0878AA00B2690A /* DRDoTableViewManager.swift */; };
 		8EAA94BC1A0155F00002659C /* DRDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94BB1A0155F00002659C /* DRDoViewController.swift */; };
 		8EAA94C61A0161C50002659C /* DREntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94C51A0161C50002659C /* DREntryTableViewCell.swift */; };
 		8EAF9E031A0D9EF4005BB9D0 /* DRNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF9E021A0D9EF4005BB9D0 /* DRNavBarView.swift */; };
 		8EB18CDB1A2D041300CF0AB2 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB18CDA1A2D041300CF0AB2 /* TransitionAnimator.swift */; };
-		8EB18CDE1A2D29CC00CF0AB2 /* AMWaveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB18CDD1A2D29CC00CF0AB2 /* AMWaveTransition.m */; };
 		8EB18D1E1A2FF60D00CF0AB2 /* DRSeperatorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB18D1D1A2FF60D00CF0AB2 /* DRSeperatorLine.swift */; };
 		8EC563411A19DFA1003EF8D2 /* DRAlertOnIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563401A19DFA1003EF8D2 /* DRAlertOnIconView.swift */; };
 		8EC563431A19E1B6003EF8D2 /* DRCheckmarkIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC563421A19E1B6003EF8D2 /* DRCheckmarkIconView.swift */; };
@@ -39,6 +37,7 @@
 		8EFA12891A354653004BC7F1 /* DRAlertOffIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA12881A354653004BC7F1 /* DRAlertOffIconView.swift */; };
 		8EFA128B1A354B74004BC7F1 /* DRTrashIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA128A1A354B74004BC7F1 /* DRTrashIconView.swift */; };
 		8EFA128D1A3668A4004BC7F1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA128C1A3668A4004BC7F1 /* Enums.swift */; };
+		9243E29856E3C30B982D3FB8 /* libPods-Today.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD57866255A23D28CD4CD5AA /* libPods-Today.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1145C9CA478E5B85ADDC43F2 /* Pods-Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Today/Pods-Today.debug.xcconfig"; sourceTree = "<group>"; };
+		31A15D296928260C851A912F /* Pods-Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.release.xcconfig"; path = "Pods/Target Support Files/Pods-Today/Pods-Today.release.xcconfig"; sourceTree = "<group>"; };
 		8E047E271A08204D00B2690A /* DREntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntry.swift; sourceTree = "<group>"; };
 		8E047E291A08766800B2690A /* DRFetchedResultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRFetchedResultsManager.swift; sourceTree = "<group>"; };
 		8E047E2B1A08787300B2690A /* DREntryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntryService.swift; sourceTree = "<group>"; };
@@ -74,14 +75,10 @@
 		8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAddEntryButton.swift; sourceTree = "<group>"; };
 		8E7E89771A0C17D60087C655 /* DRDontTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDontTableViewManager.swift; sourceTree = "<group>"; };
 		8E853BB619F719FA007128B3 /* UIColor+TodayColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TodayColorPalette.swift"; sourceTree = "<group>"; };
-		8E88DF021A19DA4000B0A992 /* MMScalableVectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMScalableVectorView.h; sourceTree = "<group>"; };
-		8E88DF031A19DA4000B0A992 /* MMScalableVectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMScalableVectorView.m; sourceTree = "<group>"; };
 		8EAA94BB1A0155F00002659C /* DRDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDoViewController.swift; sourceTree = "<group>"; };
 		8EAA94C51A0161C50002659C /* DREntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntryTableViewCell.swift; sourceTree = "<group>"; };
 		8EAF9E021A0D9EF4005BB9D0 /* DRNavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRNavBarView.swift; sourceTree = "<group>"; };
 		8EB18CDA1A2D041300CF0AB2 /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionAnimator.swift; path = ../TransitionAnimator.swift; sourceTree = "<group>"; };
-		8EB18CDC1A2D29CC00CF0AB2 /* AMWaveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMWaveTransition.h; sourceTree = "<group>"; };
-		8EB18CDD1A2D29CC00CF0AB2 /* AMWaveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMWaveTransition.m; sourceTree = "<group>"; };
 		8EB18D1D1A2FF60D00CF0AB2 /* DRSeperatorLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRSeperatorLine.swift; sourceTree = "<group>"; };
 		8EC5633C1A19DCFA003EF8D2 /* Today-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Today-Bridging-Header.h"; sourceTree = "<group>"; };
 		8EC563401A19DFA1003EF8D2 /* DRAlertOnIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAlertOnIconView.swift; sourceTree = "<group>"; };
@@ -92,6 +89,7 @@
 		8EFA12881A354653004BC7F1 /* DRAlertOffIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAlertOffIconView.swift; sourceTree = "<group>"; };
 		8EFA128A1A354B74004BC7F1 /* DRTrashIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTrashIconView.swift; sourceTree = "<group>"; };
 		8EFA128C1A3668A4004BC7F1 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		BD57866255A23D28CD4CD5AA /* libPods-Today.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Today.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9243E29856E3C30B982D3FB8 /* libPods-Today.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,12 +111,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DB7592BB6E2531F9150CDB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD57866255A23D28CD4CD5AA /* libPods-Today.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8E189FC019F637180056697C = {
 			isa = PBXGroup;
 			children = (
 				8E189FCB19F637180056697C /* Today */,
 				8E189FE119F637180056697C /* TodayTests */,
 				8E189FCA19F637180056697C /* Products */,
+				CE66F077157D21C6DC8D7732 /* Pods */,
+				1DB7592BB6E2531F9150CDB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,9 +142,6 @@
 		8E189FCB19F637180056697C /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				8EFA128C1A3668A4004BC7F1 /* Enums.swift */,
-				8EB18CDC1A2D29CC00CF0AB2 /* AMWaveTransition.h */,
-				8EB18CDD1A2D29CC00CF0AB2 /* AMWaveTransition.m */,
 				8E189FCE19F637180056697C /* AppDelegate.swift */,
 				8E18A02519F6EC340056697C /* Model */,
 				8E18A02719F6EC670056697C /* Controllers */,
@@ -231,19 +237,10 @@
 		8E853BB519F71810007128B3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8EFA65931A1A893800066ACC /* 3rd Party */,
+				8EFA128C1A3668A4004BC7F1 /* Enums.swift */,
 				8E853BB619F719FA007128B3 /* UIColor+TodayColorPalette.swift */,
 			);
 			name = Helpers;
-			sourceTree = "<group>";
-		};
-		8E88DF011A19DA4000B0A992 /* MMScalableVector */ = {
-			isa = PBXGroup;
-			children = (
-				8E88DF021A19DA4000B0A992 /* MMScalableVectorView.h */,
-				8E88DF031A19DA4000B0A992 /* MMScalableVectorView.m */,
-			);
-			path = MMScalableVector;
 			sourceTree = "<group>";
 		};
 		8EFA65911A1A88EB00066ACC /* Table View */ = {
@@ -262,14 +259,6 @@
 				8EAF9E021A0D9EF4005BB9D0 /* DRNavBarView.swift */,
 			);
 			name = "Tab Bar";
-			sourceTree = "<group>";
-		};
-		8EFA65931A1A893800066ACC /* 3rd Party */ = {
-			isa = PBXGroup;
-			children = (
-				8E88DF011A19DA4000B0A992 /* MMScalableVector */,
-			);
-			name = "3rd Party";
 			sourceTree = "<group>";
 		};
 		8EFA65941A1A895700066ACC /* Table View Controllers */ = {
@@ -302,6 +291,15 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
+		CE66F077157D21C6DC8D7732 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1145C9CA478E5B85ADDC43F2 /* Pods-Today.debug.xcconfig */,
+				31A15D296928260C851A912F /* Pods-Today.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,9 +307,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E189FE819F637180056697C /* Build configuration list for PBXNativeTarget "Today" */;
 			buildPhases = (
+				46FA83DF0496055A539FAC33 /* Check Pods Manifest.lock */,
 				8E189FC519F637180056697C /* Sources */,
 				8E189FC619F637180056697C /* Frameworks */,
 				8E189FC719F637180056697C /* Resources */,
+				1B106463C1EB0B56FB8861CB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -397,6 +397,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B106463C1EB0B56FB8861CB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Today/Pods-Today-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46FA83DF0496055A539FAC33 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8E189FC519F637180056697C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -414,7 +447,6 @@
 				8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */,
 				8EFA12891A354653004BC7F1 /* DRAlertOffIconView.swift in Sources */,
 				8E7E89781A0C17D60087C655 /* DRDontTableViewManager.swift in Sources */,
-				8EB18CDE1A2D29CC00CF0AB2 /* AMWaveTransition.m in Sources */,
 				8EB18D1E1A2FF60D00CF0AB2 /* DRSeperatorLine.swift in Sources */,
 				8E1971F61A1B2D53004074E7 /* DREntryTableView.swift in Sources */,
 				8EAA94C61A0161C50002659C /* DREntryTableViewCell.swift in Sources */,
@@ -425,7 +457,6 @@
 				8EAF9E031A0D9EF4005BB9D0 /* DRNavBarView.swift in Sources */,
 				8E18A02A19F6EC9B0056697C /* Today.xcdatamodeld in Sources */,
 				8EAA94BC1A0155F00002659C /* DRDoViewController.swift in Sources */,
-				8E88DF041A19DA4000B0A992 /* MMScalableVectorView.m in Sources */,
 				8E044F5F1A0C5778005E7838 /* UIColor+TodayColorPalette.swift in Sources */,
 				8E3A04081A1D56730054C905 /* DRTransitionAnimator.swift in Sources */,
 				8EFA128B1A354B74004BC7F1 /* DRTrashIconView.swift in Sources */,
@@ -554,6 +585,7 @@
 		};
 		8E189FE919F637180056697C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1145C9CA478E5B85ADDC43F2 /* Pods-Today.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Today/Info.plist;
@@ -565,6 +597,7 @@
 		};
 		8E189FEA19F637180056697C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31A15D296928260C851A912F /* Pods-Today.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Today/Info.plist;

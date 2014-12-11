@@ -12,6 +12,8 @@
 
 #import "MMScalableVectorView.h"
 #import "AMWaveTransition.h"
+#import <pop/POP.h>
+
 
 
 #endif
