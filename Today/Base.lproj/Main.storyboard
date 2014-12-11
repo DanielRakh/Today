@@ -293,15 +293,15 @@
                                 <exclude reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="FD5-p8-Nd7"/>
-                                <exclude reference="wjQ-VH-cFf"/>
-                                <exclude reference="pmC-ua-qC5"/>
-                                <exclude reference="3o1-pz-fCQ"/>
-                                <exclude reference="JVA-eA-Xm7"/>
-                                <exclude reference="wrf-0f-N6E"/>
                                 <exclude reference="Bph-4A-sgM"/>
                                 <exclude reference="JJV-xY-chy"/>
                                 <exclude reference="ste-zV-jNV"/>
+                                <exclude reference="3o1-pz-fCQ"/>
+                                <exclude reference="JVA-eA-Xm7"/>
+                                <exclude reference="wrf-0f-N6E"/>
+                                <exclude reference="pmC-ua-qC5"/>
+                                <exclude reference="FD5-p8-Nd7"/>
+                                <exclude reference="wjQ-VH-cFf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -311,15 +311,15 @@
                                 <include reference="Qo4-AZ-smG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="FD5-p8-Nd7"/>
-                                <include reference="wjQ-VH-cFf"/>
-                                <include reference="pmC-ua-qC5"/>
-                                <include reference="3o1-pz-fCQ"/>
-                                <include reference="JVA-eA-Xm7"/>
-                                <include reference="wrf-0f-N6E"/>
                                 <include reference="Bph-4A-sgM"/>
                                 <include reference="JJV-xY-chy"/>
                                 <include reference="ste-zV-jNV"/>
+                                <include reference="3o1-pz-fCQ"/>
+                                <include reference="JVA-eA-Xm7"/>
+                                <include reference="wrf-0f-N6E"/>
+                                <include reference="pmC-ua-qC5"/>
+                                <include reference="FD5-p8-Nd7"/>
+                                <include reference="wjQ-VH-cFf"/>
                             </mask>
                         </variation>
                     </view>
@@ -724,8 +724,8 @@
                                             <outlet property="trashButton" destination="hUx-nx-O5s" id="jza-47-umP"/>
                                             <outlet property="trashIconView" destination="HVL-Pr-enV" id="LSH-AJ-zP8"/>
                                             <outletCollection property="iconArray" destination="HVL-Pr-enV" collectionClass="NSMutableArray" id="3kW-1p-fUW"/>
-                                            <outletCollection property="iconArray" destination="hb0-48-PS5" id="QzM-gg-rPV"/>
-                                            <outletCollection property="iconArray" destination="OLq-jh-AFS" id="CQG-EF-8Ut"/>
+                                            <outletCollection property="iconArray" destination="hb0-48-PS5" collectionClass="NSMutableArray" id="QzM-gg-rPV"/>
+                                            <outletCollection property="iconArray" destination="OLq-jh-AFS" collectionClass="NSMutableArray" id="CQG-EF-8Ut"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -934,6 +934,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8os-mu-IR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4494" y="327"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3vc-Z4-J6c">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="nGI-VJ-tOZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2mD-xA-LoQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="3aR-Zx-Tja"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CKZ-N3-jU8">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZs-54-zVw">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kb3-on-I1n">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UZs-54-zVw" firstAttribute="top" secondItem="2mD-xA-LoQ" secondAttribute="bottom" id="5OV-B2-FAh"/>
+                            <constraint firstItem="UZs-54-zVw" firstAttribute="leading" secondItem="CKZ-N3-jU8" secondAttribute="leading" id="5cL-2s-pRl"/>
+                            <constraint firstAttribute="trailing" secondItem="UZs-54-zVw" secondAttribute="trailing" id="jer-OW-gve"/>
+                            <constraint firstItem="3aR-Zx-Tja" firstAttribute="top" secondItem="UZs-54-zVw" secondAttribute="bottom" id="wE9-Sv-ZBj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="UZs-54-zVw"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5OV-B2-FAh"/>
+                                <exclude reference="5cL-2s-pRl"/>
+                                <exclude reference="jer-OW-gve"/>
+                                <exclude reference="wE9-Sv-ZBj"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="UZs-54-zVw"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5OV-B2-FAh"/>
+                                <include reference="5cL-2s-pRl"/>
+                                <include reference="jer-OW-gve"/>
+                                <include reference="wE9-Sv-ZBj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rta-6b-MEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1527" y="1059"/>
         </scene>
     </scenes>
 </document>
