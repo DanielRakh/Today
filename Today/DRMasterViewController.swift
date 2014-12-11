@@ -14,19 +14,6 @@ import CoreData
 */
 
 
-enum Mode {
-    
-    case Dont
-    case Do
-    
-    func gradientColors() -> (startColor:UIColor, endColor:UIColor) {
-        return self == .Do ?
-            (UIColor.todayGradientGreenStart(), UIColor.todayGradientGreenEnd()) :
-            (UIColor.todayGradientRedStart(), UIColor.todayGradientRedEnd())
-    }
-}
-
-
 class DRMasterViewController: UIViewController {
     
 //MARK: Properties
@@ -80,7 +67,7 @@ class DRMasterViewController: UIViewController {
         return true
     }
     
-    func animateNavBarAlongsideForMode(mode:Mode) {
+    func animateNavBarAlongsideForMode(mode:TodayMode) {
         
         navController.transitionCoordinator()?.animateAlongsideTransitionInView(navBar, animation: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
             self.navBar.performAnimationsForMode(mode, withDuration: context.transitionDuration())

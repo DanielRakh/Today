@@ -29,7 +29,7 @@ class DRNavBarView: UIView {
     var centerXAlignUnderlineToDontLabel:NSLayoutConstraint?
     var equalWidthUnderlineToDontLabel:NSLayoutConstraint?
     
-    var mode:Mode
+    var mode:TodayMode
     
     required init(coder aDecoder: NSCoder) {
         mode = .Do
@@ -54,7 +54,7 @@ class DRNavBarView: UIView {
             super.updateConstraints()
         }
 
-    func performAnimationsForMode(mode:Mode, withDuration duration:NSTimeInterval) {
+    func performAnimationsForMode(mode:TodayMode, withDuration duration:NSTimeInterval) {
         
         adjustContraintsForMode(mode)
         
@@ -68,7 +68,7 @@ class DRNavBarView: UIView {
         
     }
     
-    func adjustContraintsForMode(mode:Mode) {
+    func adjustContraintsForMode(mode:TodayMode) {
         switch mode {
         case .Do:
             removeConstraints([centerXAlignUnderlineToDontLabel!, equalWidthUnderlineToDontLabel!])

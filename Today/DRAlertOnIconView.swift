@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class DRAlertOnIconView: MMScalableVectorView {
+@IBDesignable class DRAlertOnIconView: DRGradientGlyphIconView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,22 +21,12 @@ import UIKit
     }
     
     func setup() {
-        backgroundColor = UIColor.clearColor()
+        iconMode = .Off
+        todayMode = .Do
+        shapePath = iconShape()
     }
     
-    override func drawInCurrentContext() {
-        //// General Declarations
-        let context = UIGraphicsGetCurrentContext()
-        
-        //// Color Declarations
-        let gradientColor = UIColor.todayGradientGreenStart()
-        let gradientColor2 = UIColor.todayGradientGreenEnd()
-        
-        //// Gradient Declarations
-        let gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [gradientColor.CGColor, gradientColor2.CGColor], [0, 1])
-        
-        //// notifications-on
-        //// Bezier 2 Drawing
+    func iconShape() -> UIBezierPath {
         var bezier2Path = UIBezierPath()
         bezier2Path.moveToPoint(CGPointMake(5.6, 1.6))
         bezier2Path.addLineToPoint(CGPointMake(4.2, 0.2))
@@ -74,12 +64,9 @@ import UIKit
         bezier2Path.closePath()
         bezier2Path.miterLimit = 4;
         
-        CGContextSaveGState(context)
-        bezier2Path.addClip()
-        CGContextDrawLinearGradient(context, gradient, CGPointMake(10.5, 0), CGPointMake(10.5, 20), 0)
-        CGContextRestoreGState(context)
-
+        return bezier2Path
     }
+    
     
     override func originalSize() -> CGSize {
         return CGSizeMake(21, 20)

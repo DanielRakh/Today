@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class DRCheckmarkIconView: MMScalableVectorView {
+@IBDesignable class DRCheckmarkIconView: DRGradientGlyphIconView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,21 +21,12 @@ import UIKit
     }
     
     func setup() {
-        backgroundColor = UIColor.clearColor()
+        iconMode = .Off
+        todayMode = .Do
+        shapePath = iconShape()
     }
     
-    override func drawInCurrentContext() {
-        //// General Declarations
-        let context = UIGraphicsGetCurrentContext()
-        
-        //// Color Declarations
-        let gradientColor = UIColor(red: 0.286, green: 0.831, blue: 0.486, alpha: 1.000)
-        let gradientColor2 = UIColor(red: 0.231, green: 0.800, blue: 0.620, alpha: 1.000)
-        
-        //// Gradient Declarations
-        let gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [gradientColor.CGColor, gradientColor2.CGColor], [0, 1])
-        
-        //// Shape Drawing
+    func iconShape() -> UIBezierPath {
         var shapePath = UIBezierPath()
         shapePath.moveToPoint(CGPointMake(8, 20))
         shapePath.addLineToPoint(CGPointMake(0, 11.63))
@@ -49,13 +40,9 @@ import UIKit
         
         shapePath.usesEvenOddFillRule = true;
         
-        CGContextSaveGState(context)
-        shapePath.addClip()
-        CGContextDrawLinearGradient(context, gradient, CGPointMake(13, 0), CGPointMake(13, 20), 0)
-        CGContextRestoreGState(context)
-
+        return shapePath
     }
-    
+ 
     override func originalSize() -> CGSize {
         return CGSizeMake(26, 20)
     }

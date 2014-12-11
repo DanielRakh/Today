@@ -12,7 +12,7 @@ import QuartzCore
 @IBDesignable class DRAddEntryButton: DRGradientButton {
     
     var additionGlyph:CALayer!
-    var mode:Mode = .Do
+    var mode:TodayMode = .Do
     
     @IBInspectable var glyphSizeAsPercentageOfSuperView:CGFloat = 0
     

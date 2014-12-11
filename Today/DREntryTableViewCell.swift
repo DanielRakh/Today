@@ -29,8 +29,8 @@ class DREntryTableViewCell: UITableViewCell {
     @IBOutlet weak var alertIconView: DRAlertOnIconView!
     
     
+    lazy var tapGesture = UITapGestureRecognizer()
     
-
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -54,6 +54,24 @@ class DREntryTableViewCell: UITableViewCell {
         textView.textColor = UIColor.todayWhite()
         textView.backgroundColor = UIColor.clearColor()
         lineView.applyGradientColorsForMode(.Do)
+        
+        addGestureRecognizer(tapGesture)
+        tapGesture.addTarget(self, action:"didTap:")
+
+    }
+    
+    func didTap(recoginzer:UITapGestureRecognizer) {
+    
+    }
+    
+    func fadeoutView(view:UIView) {
+        UIView.animateWithDuration(0.35,
+            delay: 0.0,
+            options: .CurveEaseInOut, animations: { () -> Void in
+                view.alpha = 0.0
+            }) { (success:Bool) -> Void in
+            //
+        }
     }
     
 }

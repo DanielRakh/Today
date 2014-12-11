@@ -436,7 +436,7 @@
                                                             </variation>
                                                         </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="QsU-A4-Fc2" firstAttribute="leading" secondItem="Cmf-Bb-Nep" secondAttribute="leading" constant="20" id="1iu-j7-qfk">
                                                             <variation key="widthClass=compact" constant="15"/>
@@ -493,7 +493,9 @@
                                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="35" id="Oxf-7E-NLm"/>
+                                                                <constraint firstAttribute="width" constant="35" id="Oxf-7E-NLm">
+                                                                    <variation key="widthClass=compact" constant="31"/>
+                                                                </constraint>
                                                                 <constraint firstAttribute="height" constant="35" id="i4V-af-dfY"/>
                                                             </constraints>
                                                             <state key="normal">
@@ -521,7 +523,9 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="35" id="WKf-Q7-nve"/>
-                                                                <constraint firstAttribute="width" constant="50" id="cAG-7c-01z"/>
+                                                                <constraint firstAttribute="width" constant="50" id="cAG-7c-01z">
+                                                                    <variation key="widthClass=compact" constant="49"/>
+                                                                </constraint>
                                                             </constraints>
                                                             <state key="normal">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -548,7 +552,9 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="35" id="bUe-F1-Uov"/>
-                                                                <constraint firstAttribute="width" constant="40" id="gtC-lR-ryC"/>
+                                                                <constraint firstAttribute="width" constant="40" id="gtC-lR-ryC">
+                                                                    <variation key="widthClass=compact" constant="38"/>
+                                                                </constraint>
                                                             </constraints>
                                                             <state key="normal">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -703,6 +709,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="alertButton" destination="qbN-xz-8n1" id="Yds-x4-leo"/>
                                             <outlet property="alertIconView" destination="OLq-jh-AFS" id="aFS-Uc-kxo"/>

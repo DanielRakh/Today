@@ -38,7 +38,7 @@ class DRGradientView: UIView {
         self.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
     
-    func applyGradientColorsForMode(mode:Mode) {
+    func applyGradientColorsForMode(mode:TodayMode) {
         
         mode == .Do ?
             applyGradientColors(UIColor.todayGradientGreenStart(), endColor: UIColor.todayGradientGreenEnd()) :

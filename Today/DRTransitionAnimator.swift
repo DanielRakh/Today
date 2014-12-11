@@ -11,7 +11,7 @@ import UIKit
 class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     
-    var mode:Mode!
+    var mode:TodayMode!
     private var fromView:UIView!
     private var toView:UIView!
     private var containerView:UIView!
@@ -26,7 +26,7 @@ class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         return CGRectMake(xPosition, view.frame.origin.y, view.bounds.size.width, view.bounds.size.height)
     }
     
-    private func framesForMode(mode:Mode) -> (toStartFrame:CGRect, fromEndFrame:CGRect) {
+    private func framesForMode(mode:TodayMode) -> (toStartFrame:CGRect, fromEndFrame:CGRect) {
         
         if mode == .Do {
             return (
@@ -54,9 +54,6 @@ class DRTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let animationDuration = transitionDuration(transitionContext)
         
         let array:NSArray = NSArray()
-        
- 
-     
         
         fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         toView = transitionContext.viewForKey(UITransitionContextToViewKey)!

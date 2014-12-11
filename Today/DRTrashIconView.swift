@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class DRTrashIconView: MMScalableVectorView {
+@IBDesignable class DRTrashIconView: DRGradientGlyphIconView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,21 +21,13 @@ import UIKit
     }
     
     func setup() {
-        backgroundColor = UIColor.clearColor()
+        iconMode = .Off
+        todayMode = .Do
+        shapePath = iconShape()
     }
-
-    override func drawInCurrentContext() {
-        //// General Declarations
-        let context = UIGraphicsGetCurrentContext()
+    
+    func iconShape() -> UIBezierPath {
         
-        //// Color Declarations
-        let gradientColor = UIColor(red: 0.286, green: 0.831, blue: 0.486, alpha: 1.000)
-        let gradientColor2 = UIColor(red: 0.231, green: 0.800, blue: 0.620, alpha: 1.000)
-        
-        //// Gradient Declarations
-        let gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [gradientColor.CGColor, gradientColor2.CGColor], [0, 1])
-        
-        //// Shape Drawing
         var shapePath = UIBezierPath()
         shapePath.moveToPoint(CGPointMake(2, 23.79))
         shapePath.addCurveToPoint(CGPointMake(4.95, 27), controlPoint1: CGPointMake(2, 25.45), controlPoint2: CGPointMake(3.29, 27))
@@ -61,10 +53,7 @@ import UIKit
         
         shapePath.usesEvenOddFillRule = true;
         
-        CGContextSaveGState(context)
-        shapePath.addClip()
-        CGContextDrawLinearGradient(context, gradient, CGPointMake(11.5, -0), CGPointMake(11.5, 27), 0)
-        CGContextRestoreGState(context)
+        return shapePath
     }
     
     override func originalSize() -> CGSize {
