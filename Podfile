@@ -3,7 +3,7 @@
 
 target 'Today' do
 
-pod 'pop', '~> 1.0'
+pod 'POP+MCAnimate', '~> 2.0'
 pod 'AMWaveTransition', '~> 0.5'
 pod 'MMScalableVectorView', '~> 0.1'
 

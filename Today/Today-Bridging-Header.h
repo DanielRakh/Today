@@ -10,9 +10,9 @@
 #define Today_Today_Bridging_Header_h
 
 
+#import <POP+MCAnimate.h>
 #import "MMScalableVectorView.h"
 #import "AMWaveTransition.h"
-#import <pop/POP.h>
 
 
 

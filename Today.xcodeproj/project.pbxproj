@@ -196,7 +196,7 @@
 			children = (
 				8E189FD219F637180056697C /* Main.storyboard */,
 				8E189FD719F637180056697C /* LaunchScreen.xib */,
-				8EFA65921A1A892300066ACC /* Tab Bar */,
+				8EFA65921A1A892300066ACC /* Nav Bar */,
 				8EFA65911A1A88EB00066ACC /* Table View */,
 				8EB18D1D1A2FF60D00CF0AB2 /* DRSeperatorLine.swift */,
 				8EFA12821A342A6D004BC7F1 /* DRGradientView.swift */,
@@ -252,13 +252,13 @@
 			name = "Table View";
 			sourceTree = "<group>";
 		};
-		8EFA65921A1A892300066ACC /* Tab Bar */ = {
+		8EFA65921A1A892300066ACC /* Nav Bar */ = {
 			isa = PBXGroup;
 			children = (
 				8E7E89711A0953C50087C655 /* DRAddEntryButton.swift */,
 				8EAF9E021A0D9EF4005BB9D0 /* DRNavBarView.swift */,
 			);
-			name = "Tab Bar";
+			name = "Nav Bar";
 			sourceTree = "<group>";
 		};
 		8EFA65941A1A895700066ACC /* Table View Controllers */ = {

@@ -137,18 +137,4 @@ extension DRMasterViewController: DRNavBarViewDelegate {
 
 
 
-/*
-
-1. NavBar: Underline View
-2. Add Entry Button. 
-3. Cell: Streak Line
-4. Cell: Small Alert Icon
-5. Cell: Checkmark Icon
-6. Cell: Large Alert Icon
-7. Cell: Trashcan Icon
-8. Cell: Checkmark Icon 
-
-*/
-
-
 

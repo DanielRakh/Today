@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DREntryTableViewCell: UITableViewCell {
+class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
 
     /// This is the container for Text View Mode
     @IBOutlet weak var textContainerView: UIView!
@@ -20,6 +20,7 @@ class DREntryTableViewCell: UITableViewCell {
     
     /// This is the container for Button Mode
     @IBOutlet weak var buttonContainerView: UIView!
+    @IBOutlet var iconArray: [DRGradientGlyphIconView]!
     /// These are the elements that are subviews of the container
     @IBOutlet weak var trashButton: UIButton!
     @IBOutlet weak var trashIconView: DRTrashIconView!
@@ -57,21 +58,50 @@ class DREntryTableViewCell: UITableViewCell {
         
         addGestureRecognizer(tapGesture)
         tapGesture.addTarget(self, action:"didTap:")
+        
+        for icon in iconArray {
+            icon.alpha = 0
+            icon.pop_spring().pop_scaleXY = CGPointMake(0.1, 0.1)
+        }
 
     }
     
     func didTap(recoginzer:UITapGestureRecognizer) {
-    
+        slideOutView(textContainerView)
     }
     
-    func fadeoutView(view:UIView) {
-        UIView.animateWithDuration(0.35,
-            delay: 0.0,
-            options: .CurveEaseInOut, animations: { () -> Void in
-                view.alpha = 0.0
-            }) { (success:Bool) -> Void in
-            //
+    func slideOutView(view:UIView) {
+        
+        
+        
+//        let decayAnimation = POPSpringAnimation(propertyNamed: kPOPViewCenter)
+//        decayAnimation.toValue = NSValue(CGPoint: CGPointMake(-view.bounds.size.width/2 , view.center.y))
+//        decayAnimation.delegate = self
+//        view.layer.pop_addAnimation(decayAnimation, forKey: "TextViewSpringFrame")
+        
+        let springAlpha = POPSpringAnimation(propertyNamed: kPOPViewAlpha)
+        springAlpha.toValue = NSNumber(float: 0)
+        springAlpha.delegate = self
+        view.pop_addAnimation(springAlpha, forKey: "TextViewSpringAlpha")
+        
+    }
+    
+    
+    func pop_animationDidReachToValue(anim: POPAnimation!) {
+//        if (anim.name as NSString).isEqualToString("TextViewSpringFrame") {
+            (self.iconArray.reverse() as NSArray).pop_sequenceWithInterval(0.15, animations: { (object:AnyObject!, index:Int) -> Void in
+                if object is DRGradientGlyphIconView {
+                    let icon = object as DRGradientGlyphIconView
+                    icon.pop_springBounciness = 20
+                    icon.pop_springSpeed = 18
+                    icon.pop_spring().alpha = 1
+                    icon.pop_spring().pop_scaleXY = CGPointMake(1, 1)
+                }
+                }) { (finished:Bool) -> Void in
+                    //
+            }
         }
-    }
+//    }
+    
     
 }

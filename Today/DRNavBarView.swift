@@ -37,7 +37,6 @@ class DRNavBarView: UIView {
         backgroundColor = UIColor.todayDarkGray()
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         doLabel.textColor = UIColor.todayWhite()
