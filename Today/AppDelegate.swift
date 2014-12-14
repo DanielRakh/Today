@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+                
         //Core Data Setup
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let masterViewController = storyboard.instantiateInitialViewController() as DRMasterViewController

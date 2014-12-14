@@ -86,6 +86,7 @@ class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
         
     }
     
+
     
     func pop_animationDidReachToValue(anim: POPAnimation!) {
 //        if (anim.name as NSString).isEqualToString("TextViewSpringFrame") {

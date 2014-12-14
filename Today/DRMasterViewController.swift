@@ -67,14 +67,14 @@ class DRMasterViewController: UIViewController {
         return true
     }
     
-    func animateNavBarAlongsideForMode(mode:TodayMode) {
-        
-        navController.transitionCoordinator()?.animateAlongsideTransitionInView(navBar, animation: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
-            self.navBar.performAnimationsForMode(mode, withDuration: context.transitionDuration())
-            }, completion: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
-                //
-        })
-    }
+//    func animateNavBarAlongsideForMode(mode:TodayMode) {
+//        
+//        navController.transitionCoordinator()?.animateAlongsideTransitionInView(navBar, animation: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
+//            self.navBar.performAnimationsForMode(mode, withDuration: context.transitionDuration())
+//            }, completion: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
+//                //
+//        })
+//    }
 }
 
 //MARK:
@@ -92,8 +92,10 @@ protocol DRMasterViewControllerDelegate {
 extension DRMasterViewController: DRNavBarViewDelegate {
     
     @IBAction func addEntryButtonDidTouch(sender: AnyObject) {
-        delegate?.addEntry()
+//        delegate?.addEntry()
+        performSegueWithIdentifier("presentAddEntryVC", sender: self)
     }
+    
     
     func doButtonDidTouch(sender: AnyObject) {
         if navController.topViewController is DRDontViewController {
