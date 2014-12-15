@@ -8,6 +8,30 @@
 
 import Foundation
 
-class DREntryService: NSObject {
-   
+class DREntryService {
+    
+    let entityName = "Entry"
+    
+    //Singleton Instance
+    class var sharedInstance: DREntryService {
+        struct Static {
+            static let instance = DREntryService()
+        }
+        return Static.instance
+    }
+    
+    private var fetchedResultsManager:DRFetchedResultsManager!
+    
+    var coreDataStack:DRCoreDataStack! {
+        didSet {
+            fetchedResultsManager = DRFetchedResultsManager(coreDataStack: coreDataStack, entityName:entityName)
+        }
+    }
+
+    /**
+    
+
+    
+    */
+    
 }

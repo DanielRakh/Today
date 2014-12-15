@@ -13,7 +13,6 @@ import CoreData
     DRMasterViewController is a custom container controller that serves as the root controller of the app.
 */
 
-
 class DRMasterViewController: UIViewController {
     
 //MARK: Properties
@@ -32,7 +31,7 @@ class DRMasterViewController: UIViewController {
     
     
     // Core Data MOC set in AppDelegate.
-    var managedObjectContext:NSManagedObjectContext!
+//    var managedObjectContext:NSManagedObjectContext!
     
     
 //MARK:

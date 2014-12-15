@@ -10,9 +10,11 @@ import Foundation
 import CoreData
 
 class DREntry: NSManagedObject {
-
+    
     @NSManaged var activity: String
-    @NSManaged var type: NSNumber
+    @NSManaged var type: String
     @NSManaged var date: NSDate
+    @NSManaged var alert: Bool
+    @NSManaged var done: Bool
 
 }

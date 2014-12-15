@@ -11,9 +11,9 @@ import CoreData
 class DRCoreDataStack {
     
     let managedObjectContext:NSManagedObjectContext!
-   private let persistentStoreCoordinator: NSPersistentStoreCoordinator!
-   private let model: NSManagedObjectModel!
-   private let store: NSPersistentStore?
+    private let persistentStoreCoordinator: NSPersistentStoreCoordinator!
+    private let model: NSManagedObjectModel!
+    private let store: NSPersistentStore?
     
     init() {
         let bundle = NSBundle.mainBundle()

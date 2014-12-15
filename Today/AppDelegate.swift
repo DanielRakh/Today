@@ -17,18 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-                
-        //Core Data Setup
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let masterViewController = storyboard.instantiateInitialViewController() as DRMasterViewController
-        masterViewController.managedObjectContext = self.coreDataStack.managedObjectContext
-        UIView.appearance().tintColor = UIColor.todayWhite()
         
-        //Global Appearence Methods
-//        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 21.0)!]
-//        UINavigationBar.appearance().barStyle = .Black
-//        UINavigationBar.appearance().barTintColor = .todayBlack
-//        UINavigationBar.appearance().translucent = false
+        DREntryService.sharedInstance.coreDataStack = coreDataStack
+        
+        UIView.appearance().tintColor = UIColor.todayWhite()
+
         
         return true
     }
@@ -41,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        self.coreDataStack.saveContext()
+        coreDataStack.saveContext()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -54,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        self.coreDataStack.saveContext()
+        coreDataStack.saveContext()
     }
 
 
