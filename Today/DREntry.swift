@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class DREntry: NSManagedObject {
+class Entry: NSManagedObject {
     
     @NSManaged var activity: String
     @NSManaged var type: String

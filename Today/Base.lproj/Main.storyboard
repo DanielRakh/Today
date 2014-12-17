@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" ambiguous="YES" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvH-lr-xpP">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvH-lr-xpP">
                                 <rect key="frame" x="20" y="54.5" width="370" height="72"/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
@@ -30,7 +30,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQy-mw-1BD">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="316" y="175" width="9" height="20"/>
@@ -39,7 +39,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCg-rY-9PQ">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCu-Ia-8SS">
@@ -74,13 +74,13 @@
                                 <exclude reference="zCu-Ia-8SS"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Ioo-ZE-nLs"/>
+                                <exclude reference="sHt-5i-SAW"/>
                                 <exclude reference="G4M-lh-SMU"/>
                                 <exclude reference="5zh-cY-5ip"/>
                                 <exclude reference="YvG-Gb-EmX"/>
                                 <exclude reference="jBq-LL-OWP"/>
                                 <exclude reference="vlk-nR-Mxp"/>
-                                <exclude reference="Ioo-ZE-nLs"/>
-                                <exclude reference="sHt-5i-SAW"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -91,13 +91,13 @@
                                 <include reference="zCu-Ia-8SS"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Ioo-ZE-nLs"/>
+                                <include reference="sHt-5i-SAW"/>
                                 <include reference="G4M-lh-SMU"/>
                                 <include reference="5zh-cY-5ip"/>
                                 <include reference="YvG-Gb-EmX"/>
                                 <include reference="jBq-LL-OWP"/>
                                 <include reference="vlk-nR-Mxp"/>
-                                <include reference="Ioo-ZE-nLs"/>
-                                <include reference="sHt-5i-SAW"/>
                             </mask>
                         </variation>
                     </view>

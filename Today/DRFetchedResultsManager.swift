@@ -9,42 +9,63 @@
 import Foundation
 import CoreData
 
+/// This is a protocol that mirrors the standard Fetched Results Controller
 
-class DRFetchedResultsManager {
+@objc protocol DRFetchedResultsManagerDelegate {
+    
+    optional func fetchedResultsManagerWillChangeContent(manager: DRFetchedResultsManager)
+    
+    optional func fetchedResultsManagerDidChangeContent(manager: DRFetchedResultsManager)
+    
+    optional func insertRowsAtIndexPaths(indexPaths:[NSIndexPath])
+    
+    optional func deleteRowsAtIndexPaths(indexPaths:[NSIndexPath])
+    
+    optional func configureCellAtIndexPath(indexPath:NSIndexPath)
+}
+
+
+class DRFetchedResultsManager:NSObject {
     
     ///MARK:
     ///MARK: Properties
-    var fetchedResultsController:NSFetchedResultsController
+    
+    //MARK:Public
+    weak var delegate:DRFetchedResultsManagerDelegate?
+    
+    var sections:[AnyObject]? {
+       return fetchedResultsController.sections
+    }
+    
+    ///MARK: Private
+    private var fetchedResultsController:NSFetchedResultsController!
     
     ///Core Data Stack passed in App Delegate
-    private var coreDataStack:DRCoreDataStack
-
-    var fetchedResults:[AnyObject]?
-    
+    private var coreDataStack:DRCoreDataStack!
     
     ///MARK:
     ///MARK: Methods
     
     init(coreDataStack:DRCoreDataStack, entityName:String) {
+        super.init()
         
         self.coreDataStack = coreDataStack
         
         ///Fetched Results Controller initalization.
         ///You can only set the fetch request ONCE, at initalization only.
         let fetchRequest = NSFetchRequest(entityName: entityName)
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "type", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "activity", ascending: true)]
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+        var error: NSError? =  nil
+        if (!fetchedResultsController.performFetch(&error)) {
+            println("Error: \(error?.localizedDescription)")
+        }
+        
     }
     
-    
-    func performFetch() {
-        var error:NSError?
-        if fetchedResultsController.performFetch(&error) == false {
-            println("There was an error in the fetched results controller: \(error?.localizedDescription)")
-        } else {
-            fetchedResults = fetchedResultsController.fetchedObjects
-            println("Fetched Results:\(fetchedResults)")
-        }
+    func fetchedObjectAtIndexPath(indexPath:NSIndexPath) -> AnyObject {
+        return fetchedResultsController.objectAtIndexPath(indexPath)
     }
     
 }
@@ -54,6 +75,31 @@ class DRFetchedResultsManager {
 //MARK:
 //MARK: Fetched Results Controller Delegate
 extension DRFetchedResultsManager: NSFetchedResultsControllerDelegate {
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        delegate?.fetchedResultsManagerWillChangeContent?(self)
+    }
+
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        delegate?.fetchedResultsManagerDidChangeContent?(self)
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        switch type {
+        case .Insert:
+            delegate?.insertRowsAtIndexPaths?([newIndexPath!])
+        case .Delete:
+            delegate?.deleteRowsAtIndexPaths?([indexPath!])
+        case .Update:
+            delegate?.configureCellAtIndexPath?(indexPath!)
+        case .Move:
+            delegate?.deleteRowsAtIndexPaths?([indexPath!])
+            delegate?.insertRowsAtIndexPaths?([newIndexPath!])
+        default:
+            break
+            
+        }
+    }
     
     
 }

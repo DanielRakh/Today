@@ -48,6 +48,8 @@ class DRAddEntryViewController: UIViewController {
 
     @IBAction func dismissButtonTapped(sender: AnyObject) {
         textView.resignFirstResponder()
+        
+        DREntryService.sharedInstance.saveEntry(textView.text, type: .Do)
         presentingViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
             //
         })
