@@ -17,22 +17,13 @@ class DRDoTableViewManager:NSObject {
     private var items:[AnyObject]?
     private var entryService = DREntryService.sharedInstance
     
-    required init(tableView:UITableView, items:[AnyObject]?, withCellIdentifier cellIdentifier:String) {
+    required init(tableView:UITableView, withCellIdentifier cellIdentifier:String) {
         super.init()
-        self.items = items
         self.cellIdentifier = cellIdentifier
         self.tableView = tableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
-    }
-    
-    // Inserts row at next available index path
-    func insertRow() {
-        
-        let nextAvailableIndexPath = NSIndexPath(forRow: self.items!.count, inSection: 0)
-        items!.append(items!.count)
-        tableView.insertRowsAtIndexPaths([nextAvailableIndexPath], withRowAnimation: .Left)
     }
     
     func configureCell(cell:DREntryTableViewCell, forIndexPath indexPath:NSIndexPath) {

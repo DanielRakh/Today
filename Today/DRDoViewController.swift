@@ -37,7 +37,6 @@ class DRDoViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        tableView.reloadData()
         println("DoVC viewDidAppear")
 
     }
@@ -53,16 +52,10 @@ class DRDoViewController: UIViewController {
     }
     
     func setupTableView() {
-        tableViewManager = DRDoTableViewManager(tableView: tableView, items: Array(1...20), withCellIdentifier: cellIdentifier)
+        tableViewManager = DRDoTableViewManager(tableView: tableView, withCellIdentifier: cellIdentifier)
     }
 }
 
-
-extension DRDoViewController: DRMasterViewControllerDelegate {
-    func addEntry() {
-        tableViewManager.insertRow()
-    }
-}
 
 extension DRDoViewController: UINavigationControllerDelegate {
     

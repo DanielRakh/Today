@@ -17,7 +17,6 @@ class DRMasterViewController: UIViewController {
     
 //MARK: Properties
     
-    var delegate:DRMasterViewControllerDelegate?
     
     // This is the bottom bar view used to switch between the children. Similar to UITabBar.
     @IBOutlet private weak var navBar: DRNavBarView!
@@ -44,15 +43,7 @@ class DRMasterViewController: UIViewController {
         view.backgroundColor = UIColor.todayDarkGray()
         navBar.delegate = self
     }
-    
 
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        if navController.topViewController is DRDoViewController {
-            self.delegate = navController.topViewController as DRDoViewController
-        }
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "navControllerEmbed" {
             navController = segue.destinationViewController as UINavigationController
@@ -79,9 +70,6 @@ class DRMasterViewController: UIViewController {
 //MARK:
 //MARK: Protocols
 
-protocol DRMasterViewControllerDelegate {
-    func addEntry()
-}
 
 //MARK: 
 //MARK: Adopted Protocols:
@@ -91,7 +79,6 @@ protocol DRMasterViewControllerDelegate {
 extension DRMasterViewController: DRNavBarViewDelegate {
     
     @IBAction func addEntryButtonDidTouch(sender: AnyObject) {
-//        delegate?.addEntry()
         performSegueWithIdentifier("presentAddEntryVC", sender: self)
     }
     

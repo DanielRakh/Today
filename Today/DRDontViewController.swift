@@ -32,7 +32,7 @@ class DRDontViewController: UIViewController {
     
     func setupTableView() {
         //TODO: Change this to DRDontTableViewManager
-        tableViewManager = DRDoTableViewManager(tableView: tableView, items: Array(1...20), withCellIdentifier: cellIdentifier)
+        tableViewManager = DRDoTableViewManager(tableView: tableView, withCellIdentifier: cellIdentifier)
     }
     
 
@@ -60,12 +60,6 @@ class DRDontViewController: UIViewController {
         println("DontVC View did dissappear")
     }
     
-}
-
-extension DRDontViewController: DRMasterViewControllerDelegate {
-    func addEntry() {
-        tableViewManager.insertRow()
-    }
 }
 
 

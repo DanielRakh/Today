@@ -63,6 +63,9 @@ class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
             icon.alpha = 0
             icon.pop_spring().pop_scaleXY = CGPointMake(0.1, 0.1)
         }
+        
+        println("TEXT VIEW COLOR:\(textView.textColor)")
+
 
     }
     
