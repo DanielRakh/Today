@@ -50,11 +50,12 @@ class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
     
     
     func setupUI() {
+        
         backgroundColor = UIColor.clearColor()
         daysLabel.textColor = UIColor.todayWhite()
         textView.textColor = UIColor.todayWhite()
         textView.backgroundColor = UIColor.clearColor()
-        lineView.applyGradientColorsForMode(.Do)
+        setupForMode(.Do)
         
         addGestureRecognizer(tapGesture)
         tapGesture.addTarget(self, action:"didTap:")
@@ -64,8 +65,10 @@ class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
             icon.pop_spring().pop_scaleXY = CGPointMake(0.1, 0.1)
         }
         
-        println("TEXT VIEW COLOR:\(textView.textColor)")
-
+    }
+    
+    func setupForMode(mode:TodayMode) {
+        lineView.applyGradientColorsForMode(mode)
 
     }
     

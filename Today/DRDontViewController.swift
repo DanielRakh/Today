@@ -18,7 +18,7 @@ class DRDontViewController: UIViewController {
 
     
     //TODO: Change this to DRDontTableViewManager
-    var tableViewManager:DRDoTableViewManager!
+    var tableViewManager:DRTableViewManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class DRDontViewController: UIViewController {
     
     func setupTableView() {
         //TODO: Change this to DRDontTableViewManager
-        tableViewManager = DRDoTableViewManager(tableView: tableView, withCellIdentifier: cellIdentifier, mode:.Dont)
+        tableViewManager = DRTableViewManager(tableView: tableView, withCellIdentifier: cellIdentifier, mode:.Dont)
     }
     
 

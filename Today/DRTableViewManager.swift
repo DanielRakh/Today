@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class DRDoTableViewManager:NSObject {
+class DRTableViewManager:NSObject {
     
     private var tableView:UITableView!
     private var cellIdentifier:String!
@@ -31,6 +31,7 @@ class DRDoTableViewManager:NSObject {
     func configureCell(cell:DREntryTableViewCell, forIndexPath indexPath:NSIndexPath) {
         let entry = entryService.entryForIndexPath(indexPath, mode:mode)
         cell.textView.text = entry?.activity
+        cell.setupForMode(mode)
         
     }
     
@@ -42,7 +43,7 @@ class DRDoTableViewManager:NSObject {
 
 //MARK: <UICollectionViewDataSource>
 
-extension DRDoTableViewManager: UITableViewDataSource {
+extension DRTableViewManager: UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
@@ -70,13 +71,13 @@ extension DRDoTableViewManager: UITableViewDataSource {
 
 
 ///MARK: <TableViewDelegate>
-extension DRDoTableViewManager: UITableViewDelegate {
+extension DRTableViewManager: UITableViewDelegate {
     
 }
 
 
 ///MARK: <DREntryServiceDelegate>
-extension DRDoTableViewManager: DREntryServiceDelegate {
+extension DRTableViewManager: DREntryServiceDelegate {
     
     func entryServiceWillChangeContent(entryService: DREntryService) {
         tableView.beginUpdates()

@@ -15,7 +15,7 @@ class DRDoViewController: UIViewController {
 
     @IBOutlet weak var tableView: DREntryTableView!
     
-    var tableViewManager:DRDoTableViewManager!
+    var tableViewManager:DRTableViewManager!
     lazy private var transitionAnimator = TransitionAnimator()
 
     
@@ -52,7 +52,7 @@ class DRDoViewController: UIViewController {
     }
     
     func setupTableView() {
-        tableViewManager = DRDoTableViewManager(tableView: tableView, withCellIdentifier: cellIdentifier, mode:.Do)
+        tableViewManager = DRTableViewManager(tableView: tableView, withCellIdentifier: cellIdentifier, mode:.Do)
     }
 }
 
