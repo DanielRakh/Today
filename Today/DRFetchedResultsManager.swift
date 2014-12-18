@@ -33,12 +33,13 @@ class DRFetchedResultsManager:NSObject {
     //MARK:Public
     weak var delegate:DRFetchedResultsManagerDelegate?
     
-    var sections:[AnyObject]? {
-       return fetchedResultsController.sections
+    var sections:(doSections:[AnyObject]?, dontSections:[AnyObject]?) {
+       return (doFetchedResultsController.sections, dontFetchedResultsController.sections)
     }
     
     ///MARK: Private
-    private var fetchedResultsController:NSFetchedResultsController!
+    private var doFetchedResultsController:NSFetchedResultsController!
+    private var dontFetchedResultsController:NSFetchedResultsController!
     
     ///Core Data Stack passed in App Delegate
     private var coreDataStack:DRCoreDataStack!
@@ -46,26 +47,38 @@ class DRFetchedResultsManager:NSObject {
     ///MARK:
     ///MARK: Methods
     
-    init(coreDataStack:DRCoreDataStack, entityName:String) {
+    init(coreDataStack:DRCoreDataStack, entities:(doEntity:String, dontEntity:String)) {
         super.init()
         
         self.coreDataStack = coreDataStack
         
         ///Fetched Results Controller initalization.
         ///You can only set the fetch request ONCE, at initalization only.
+       doFetchedResultsController =  setupFetchedResultsControllerForEntity(entities.doEntity)
+       dontFetchedResultsController = setupFetchedResultsControllerForEntity(entities.dontEntity)
+        
+    }
+    
+    
+    func setupFetchedResultsControllerForEntity(entityName:String) -> NSFetchedResultsController {
+        
         let fetchRequest = NSFetchRequest(entityName: entityName)
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "activity", ascending: true)]
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateCreated", ascending: true)]
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         var error: NSError? =  nil
         if (!fetchedResultsController.performFetch(&error)) {
             println("Error: \(error?.localizedDescription)")
         }
-        
+        println(fetchedResultsController)
+        return fetchedResultsController
     }
     
-    func fetchedObjectAtIndexPath(indexPath:NSIndexPath) -> AnyObject {
-        return fetchedResultsController.objectAtIndexPath(indexPath)
+    
+    
+    
+    func fetchedObjectAtIndexPath(indexPath:NSIndexPath, mode:TodayMode) -> AnyObject {
+        return mode == .Do ? doFetchedResultsController.objectAtIndexPath(indexPath) : dontFetchedResultsController.objectAtIndexPath(indexPath)
     }
     
 }

@@ -52,7 +52,7 @@ class DRDoViewController: UIViewController {
     }
     
     func setupTableView() {
-        tableViewManager = DRDoTableViewManager(tableView: tableView, withCellIdentifier: cellIdentifier)
+        tableViewManager = DRDoTableViewManager(tableView: tableView, withCellIdentifier: cellIdentifier, mode:.Do)
     }
 }
 

@@ -32,7 +32,7 @@ class DRDontViewController: UIViewController {
     
     func setupTableView() {
         //TODO: Change this to DRDontTableViewManager
-        tableViewManager = DRDoTableViewManager(tableView: tableView, withCellIdentifier: cellIdentifier)
+        tableViewManager = DRDoTableViewManager(tableView: tableView, withCellIdentifier: cellIdentifier, mode:.Dont)
     }
     
 

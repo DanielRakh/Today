@@ -16,9 +16,11 @@ class DRDoTableViewManager:NSObject {
     private var cellIdentifier:String!
     private var items:[AnyObject]?
     private var entryService = DREntryService.sharedInstance
+    private var mode:TodayMode!
     
-    required init(tableView:UITableView, withCellIdentifier cellIdentifier:String) {
+    required init(tableView:UITableView, withCellIdentifier cellIdentifier:String, mode:TodayMode) {
         super.init()
+        self.mode = mode
         self.cellIdentifier = cellIdentifier
         self.tableView = tableView
         self.tableView.dataSource = self
@@ -27,9 +29,13 @@ class DRDoTableViewManager:NSObject {
     }
     
     func configureCell(cell:DREntryTableViewCell, forIndexPath indexPath:NSIndexPath) {
-        let entry = entryService.entryForIndexPath(indexPath)
+        let entry = entryService.entryForIndexPath(indexPath, mode:mode)
         cell.textView.text = entry?.activity
         
+    }
+    
+    func sectionsForMode(mode:TodayMode) -> [AnyObject]? {
+        return mode == .Do ? entryService.sections.doSections : entryService.sections.dontSections
     }
     
 }
@@ -39,14 +45,15 @@ class DRDoTableViewManager:NSObject {
 extension DRDoTableViewManager: UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if let sections = entryService.sections {
+        
+        if let sections = sectionsForMode(mode) {
             return sections.count
         } else {
             return 1
         }
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let sectionInfo = entryService.sections?[section] as? NSFetchedResultsSectionInfo {
+        if let sectionInfo = sectionsForMode(mode)?[section] as? NSFetchedResultsSectionInfo {
             return sectionInfo.numberOfObjects
         } else {
             return 0

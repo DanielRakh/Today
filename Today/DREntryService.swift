@@ -43,49 +43,69 @@ class DREntryService: NSObject {
     var coreDataStack:DRCoreDataStack!
         {
         didSet {
-            fetchedResultsManager = DRFetchedResultsManager(coreDataStack: coreDataStack, entityName:entityName)
+            fetchedResultsManager = DRFetchedResultsManager(coreDataStack: coreDataStack, entities:(doEntityName, dontEntityName))
             fetchedResultsManager.delegate = self
         }
     }
     
-    lazy var sections:[AnyObject]? = self.fetchedResultsManager.sections
-
+    lazy var sections:(doSections:[AnyObject]?, dontSections:[AnyObject]?) = self.fetchedResultsManager.sections
+    
     
     
     weak var delegate:DREntryServiceDelegate?
     
     ///MARK: Private
-    private let entityName = "Entry"
+    private let doEntityName = "DoEntry"
+    private let dontEntityName = "DontEntry"
     private var fetchedResultsManager:DRFetchedResultsManager!
     
     ///MARK:
-    ///MARK: Methods    
+    ///MARK: Methods
+    
+    
+    private func prepareEntryEntityForMode(todayMode:TodayMode, inManagedObjectContext context:NSManagedObjectContext) -> Entry {
+        let entity = NSEntityDescription.entityForName(todayMode == .Do ? doEntityName : dontEntityName, inManagedObjectContext: context)
+        
+        var entry:Entry!
+        
+        if todayMode == .Do {
+            entry = DoEntry(entity: entity!, insertIntoManagedObjectContext: coreDataStack.managedObjectContext) as DoEntry
+        } else if todayMode == .Dont {
+            entry = DontEntry(entity: entity!, insertIntoManagedObjectContext: coreDataStack.managedObjectContext) as DontEntry
+        }
+        
+        assert(entry != nil, "Entry cannot be nil")
+        
+        return entry
+    }
+    
     
     func saveEntry(activity:String, type:TodayMode) {
         
-        let entity = NSEntityDescription.entityForName("Entry", inManagedObjectContext: coreDataStack.managedObjectContext)
-        let entry = Entry(entity: entity!, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
+        let entry = prepareEntryEntityForMode(type, inManagedObjectContext: coreDataStack.managedObjectContext)
         entry.activity = activity
-        entry.type = type == .Do ? "Do" : "Dont"
         entry.alert = false
         entry.done = false
-        entry.date = NSDate()
+        entry.dateCreated = NSDate()
+        
         coreDataStack.saveContext()
         
     }
+    
     
     func deleteEntryAtIndexPath(indexPath:NSIndexPath) -> Entry {
         
         return Entry()
     }
     
-    func entryForIndexPath(indexPath:NSIndexPath) -> Entry? {
+    func entryForIndexPath(indexPath:NSIndexPath, mode:TodayMode) -> Entry? {
         
-        let object = fetchedResultsManager.fetchedObjectAtIndexPath(indexPath) as Entry
-        if (object as Any) is Entry {
-            return object
+        let object:AnyObject = fetchedResultsManager.fetchedObjectAtIndexPath(indexPath, mode: mode)
+        
+        if object is Entry {
+            return (object as Entry)
         } else {
-            assert((object as Any) is Entry, "Object should be of type Entry")
+            assert(object is Entry, "Object should be of type Entry")
             return nil
         }
     }

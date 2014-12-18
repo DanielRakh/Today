@@ -14,6 +14,7 @@ class DRAddEntryViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var characterCountLabel: UILabel!
+    var todayMode:TodayMode!
     
     
     required init(coder aDecoder: NSCoder) {
@@ -49,7 +50,7 @@ class DRAddEntryViewController: UIViewController {
     @IBAction func dismissButtonTapped(sender: AnyObject) {
         textView.resignFirstResponder()
         
-        DREntryService.sharedInstance.saveEntry(textView.text, type: .Do)
+        DREntryService.sharedInstance.saveEntry(textView.text, type: todayMode)
         presentingViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
             //
         })

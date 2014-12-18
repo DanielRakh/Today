@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6735" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Entry" representedClassName="Today.Entry" syncable="YES">
+    <entity name="DoEntry" representedClassName="Today.DoEntry" parentEntity="Entry" syncable="YES"/>
+    <entity name="DontEntry" representedClassName="Today.DontEntry" parentEntity="Entry" syncable="YES"/>
+    <entity name="Entry" representedClassName="Today.Entry" isAbstract="YES" syncable="YES">
         <attribute name="activity" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="alert" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="done" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Entry" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="DoEntry" positionX="-63" positionY="-18" width="128" height="43"/>
+        <element name="DontEntry" positionX="-54" positionY="18" width="128" height="43"/>
+        <element name="Entry" positionX="-36" positionY="54" width="128" height="103"/>
     </elements>
 </model>

@@ -28,6 +28,8 @@ class DRMasterViewController: UIViewController {
     // Add Entry Button
     @IBOutlet weak var addEntryButton: DRAddEntryButton!
     
+    var todayMode:TodayMode = .Do
+    
     
     // Core Data MOC set in AppDelegate.
 //    var managedObjectContext:NSManagedObjectContext!
@@ -47,6 +49,9 @@ class DRMasterViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "navControllerEmbed" {
             navController = segue.destinationViewController as UINavigationController
+        } else if segue.identifier == "presentAddEntryVC" {
+            let addEntryVC = segue.destinationViewController as DRAddEntryViewController
+            addEntryVC.todayMode = todayMode
         }
     }
     
@@ -97,7 +102,7 @@ extension DRMasterViewController: DRNavBarViewDelegate {
                     self.navBar.underlineView.applyGradientColorsForMode(.Do)
                     CATransaction.commit()
                 }, completion: { (stop:Bool) -> Void in
-                    //
+                    self.todayMode = .Do
             })
         }
     }
@@ -116,7 +121,7 @@ extension DRMasterViewController: DRNavBarViewDelegate {
                     self.navBar.underlineView.applyGradientColorsForMode(.Dont)
                     CATransaction.commit()
                 }, completion: { (stop:Bool) -> Void in
-                //
+                self.todayMode = .Dont
             })
 //            animateNavBarAlongsideForMode(.Dont)
         }
