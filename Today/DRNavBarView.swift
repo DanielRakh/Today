@@ -34,13 +34,13 @@ class DRNavBarView: UIView {
     required init(coder aDecoder: NSCoder) {
         mode = .Do
         super.init(coder: aDecoder)
-        backgroundColor = UIColor.todayDarkGray()
+        backgroundColor = UIColor.todayOffWhite()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        doLabel.textColor = UIColor.todayWhite()
-        dontLabel.textColor = UIColor.todayFadedGray()
+        doLabel.textColor = UIColor.todayDarkText()
+        dontLabel.textColor = UIColor.todayOffGray()
         underlineView.applyGradientColorsForMode(.Do)
     }
     
@@ -58,8 +58,8 @@ class DRNavBarView: UIView {
         adjustContraintsForMode(mode)
         
         UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping:0.7, initialSpringVelocity:0.5, options: .CurveEaseInOut, animations: {
-            self.dontLabel.textColor = mode == .Do ? UIColor.todayFadedGray() : UIColor.todayWhite()
-            self.doLabel.textColor = mode == .Do ? UIColor.todayWhite() : UIColor.todayFadedGray()
+            self.dontLabel.textColor = mode == .Do ? UIColor.todayOffGray() : UIColor.todayDarkText()
+            self.doLabel.textColor = mode == .Do ? UIColor.todayDarkText() : UIColor.todayOffGray()
             self.layoutIfNeeded()
             }, completion: { finished in
                 self.mode = mode

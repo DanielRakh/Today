@@ -28,9 +28,9 @@ class DRAddEntryViewController: UIViewController {
     
     
     func setup() {
-        view.backgroundColor = UIColor.todayDarkGray()
-        textView.textColor = UIColor.todayWhite()
-        characterCountLabel.textColor = UIColor.todayWhite()
+        view.backgroundColor = UIColor.todayOffWhite()
+        textView.textColor = UIColor.todayDarkText()
+        characterCountLabel.textColor = UIColor.todayDarkText()
         characterCountLabel.text = String(characterLimit)
         textView.delegate = self
         textView.becomeFirstResponder()
@@ -77,7 +77,7 @@ extension DRAddEntryViewController : UITextViewDelegate {
             characterCountLabel.text = "\(characterCountLabelLength - replacementStringLength)"
         }
         
-        characterCountLabel.textColor = characterCountLabel.text?.toInt() <= 5 ? UIColor.todayGradientRedStart() : UIColor.todayWhite()
+        characterCountLabel.textColor = characterCountLabel.text?.toInt() <= 5 ? UIColor.todayGradientRedStart() : UIColor.todayDarkText()
     }
     
     func textViewDidBeginEditing(textView: UITextView) {

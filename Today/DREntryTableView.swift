@@ -24,7 +24,7 @@ class DREntryTableView: UITableView {
     func setup() {
         backgroundColor = UIColor.clearColor()
         contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
-        separatorColor = UIColor.blackColor()
+        separatorColor = UIColor.todayOffGray()
 
     }
 }

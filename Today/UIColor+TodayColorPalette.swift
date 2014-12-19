@@ -26,18 +26,15 @@ extension UIColor {
     class func todayGradientGreenEnd() -> UIColor {
         return UIColor(red:0.231, green:0.800 , blue:0.620, alpha: 1.0) }
     
-    class func todayDarkGray() -> UIColor {
-        return UIColor(red:0.129, green:0.129 , blue:0.129, alpha: 1.0) }
+    class func todayOffWhite() -> UIColor {
+        return UIColor(red:0.973, green:0.973 , blue:0.973, alpha: 1.0) }
     
-    class func todayFadedGray() -> UIColor {
-        return UIColor(red:0.169, green:0.169 , blue:0.169, alpha: 1.0) }
+    class func todayOffGray() -> UIColor {
+        return UIColor(red:0.749, green:0.749 , blue:0.749, alpha: 1.0) }
     
-    class func todayWhite() -> UIColor {
-        return UIColor.whiteColor() }
-    
-    class func todayBlack() -> UIColor {
-        return UIColor.blackColor() }
-    
+    class func todayDarkText() -> UIColor {
+        return UIColor(red:0.251, green:0.251 , blue:0.251, alpha: 1.0) }
+
 }
 
 

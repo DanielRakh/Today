@@ -44,7 +44,7 @@ class DRGradientGlyphIconView: MMScalableVectorView {
             gradientColorArray = [gradientColors.startColor.CGColor, gradientColors.endColor.CGColor]
             gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), gradientColorArray!, [0, 1])!
         } else {
-            fillColor = UIColor.todayFadedGray()
+            fillColor = UIColor.todayOffGray()
         }
         
         //// Shape Drawing

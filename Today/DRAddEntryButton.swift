@@ -16,7 +16,7 @@ import QuartzCore
     
     @IBInspectable var glyphSizeAsPercentageOfSuperView:CGFloat = 0
     
-    @IBInspectable var glyphColor:UIColor = UIColor.todayWhite()
+    @IBInspectable var glyphColor:UIColor = UIColor.todayOffWhite()
     
     @IBInspectable var cornerRadius:CGFloat = 0 {
         didSet {

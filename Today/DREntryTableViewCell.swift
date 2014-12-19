@@ -18,6 +18,7 @@ class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
     @IBOutlet weak var lineView: DRGradientView!
     @IBOutlet weak var textView: UITextView!
     
+    
     /// This is the container for Button Mode
     @IBOutlet weak var buttonContainerView: UIView!
     @IBOutlet var iconArray: [DRGradientGlyphIconView]!
@@ -31,7 +32,6 @@ class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
     
     
     lazy var tapGesture = UITapGestureRecognizer()
-    
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -52,8 +52,8 @@ class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
     func setupUI() {
         
         backgroundColor = UIColor.clearColor()
-        daysLabel.textColor = UIColor.todayWhite()
-        textView.textColor = UIColor.todayWhite()
+        daysLabel.textColor = UIColor.todayDarkText()
+        textView.textColor = UIColor.todayDarkText()
         textView.backgroundColor = UIColor.clearColor()
         setupForMode(.Do)
         

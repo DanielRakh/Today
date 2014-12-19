@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DREntryService.sharedInstance.coreDataStack = coreDataStack
         
-        UIView.appearance().tintColor = UIColor.todayWhite()
+        UIView.appearance().tintColor = UIColor.todayDarkText()
 
         
         return true
