@@ -57,6 +57,9 @@ class DRTransitionSpringPopAnimator: NSObject, UIViewControllerAnimatedTransitio
         containerView.addSubview(toView)
         
         
+        
+        
+        
         UIView.animateWithDuration(transitionDuration(transitionContext),
             delay: 0.0,
             options: .CurveEaseInOut,

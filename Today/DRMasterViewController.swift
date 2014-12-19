@@ -94,8 +94,12 @@ class DRMasterViewController: UIViewController, UIViewControllerTransitioningDel
 //MARK: IBActions
     
     @IBAction func addEntryButtonDidTouch(sender: AnyObject) {
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("EntryButtonTapped", object: nil)
+        self.navBar.pop_spring().alpha = 0
+//        self.addEntryButton.pop_spring().scale
 
-        performSegueWithIdentifier("presentAddEntryVC", sender: self)
+//        performSegueWithIdentifier("presentAddEntryVC", sender: self)
         
 //                NSObject.pop_animate({ () -> Void in
 //            (self.navController.topViewController.view).pop_spring().alpha = 0

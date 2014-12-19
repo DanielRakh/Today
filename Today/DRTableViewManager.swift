@@ -27,6 +27,8 @@ class DRTableViewManager:NSObject {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+          NSNotificationCenter.defaultCenter().addObserver(self, selector: "entryButtonTapped:", name: "EntryButtonTapped", object: nil)
   
     }
     
@@ -39,6 +41,21 @@ class DRTableViewManager:NSObject {
     
     func sectionsForMode(mode:TodayMode) -> [AnyObject]? {
         return mode == .Do ? entryService.sections.doSections : entryService.sections.dontSections
+    }
+    
+    func entryButtonTapped(sender:NSNotification) {
+        items.append(1)
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as DREntryTableViewCell
+        cell.textView.text = ""
+        cell.textView.becomeFirstResponder()
+        for (idx, cell) in enumerate(tableView.visibleCells()) {
+            if idx != 0 {
+                (cell as DREntryTableViewCell).pop_spring().alpha = 0.2
+            }
+        }
+        
     }
     
 }

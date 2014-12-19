@@ -29,7 +29,6 @@ class DRDoViewController: UIViewController {
         setupTableView()
         
     
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "entryButtonTapped:", name: "EntryButtonTapped", object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,7 +58,8 @@ class DRDoViewController: UIViewController {
     }
     
     func entryButtonTapped(sender:NSNotification) {
-        
+        //
+    }
         /*
         
         User taps Button ->
@@ -78,20 +78,20 @@ class DRDoViewController: UIViewController {
         
         
         
-        NSObject.pop_animate({ () -> Void in
-            for (idx, cell) in enumerate(self.tableView.visibleCells()) {
-                (cell as UITableViewCell).pop_duration = 0.25
-                (cell as UITableViewCell).pop_easeInEaseOut().alpha = 0
-                if idx % 2 == 0 {
-                    (cell as UITableViewCell).pop_easeInEaseOut().frame = CGRectMake(-cell.bounds.size.width, cell.frame.origin.y, cell.bounds.size.width, cell.bounds.size.height)
-                    //is Even
-                } else {
-                    (cell as UITableViewCell).pop_easeInEaseOut().frame = CGRectMake(cell.bounds.size.width, cell.frame.origin.y, cell.bounds.size.width, cell.bounds.size.height)
-                }
-            }
-            }, completion: { (success:Bool) -> Void in
-            //
-        })
+//        NSObject.pop_animate({ () -> Void in
+//            for (idx, cell) in enumerate(self.tableView.visibleCells()) {
+//                (cell as UITableViewCell).pop_duration = 0.25
+//                (cell as UITableViewCell).pop_easeInEaseOut().alpha = 0
+//                if idx % 2 == 0 {
+//                    (cell as UITableViewCell).pop_easeInEaseOut().frame = CGRectMake(-cell.bounds.size.width, cell.frame.origin.y, cell.bounds.size.width, cell.bounds.size.height)
+//                    //is Even
+//                } else {
+//                    (cell as UITableViewCell).pop_easeInEaseOut().frame = CGRectMake(cell.bounds.size.width, cell.frame.origin.y, cell.bounds.size.width, cell.bounds.size.height)
+//                }
+//            }
+//            }, completion: { (success:Bool) -> Void in
+//            //
+//        })
         
         
 //        (self.tableView.visibleCells().reverse() as NSArray).pop_sequenceWithInterval(0.1, animations: { (object:AnyObject!, index:Int) -> Void in
@@ -105,8 +105,6 @@ class DRDoViewController: UIViewController {
 //            }) { (finished:Bool) -> Void in
 //                //
 //        }
-    }
-    
     
 //    func tableViewSplitAnimation() {
 //        NSObject.pop_animate({ () -> Void in
