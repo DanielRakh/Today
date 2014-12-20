@@ -24,6 +24,8 @@ import UIKit
         iconMode = .Off
         todayMode = .Do
         shapePath = iconShape()
+        gradientEndPoint = CGPointMake(0, originalSize().height)
+
     }
     
     func iconShape() -> UIBezierPath {

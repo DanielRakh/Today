@@ -13,6 +13,7 @@ class DRGradientGlyphIconView: MMScalableVectorView {
     var todayMode:TodayMode!
     var iconMode:IconMode!
     var shapePath:UIBezierPath
+    var gradientEndPoint:CGPoint!
     
     private var gradient:CGGradient?
     private var gradientColorArray:[CGColor]?
@@ -27,19 +28,20 @@ class DRGradientGlyphIconView: MMScalableVectorView {
         self.shapePath = UIBezierPath()
         super.init(coder: aDecoder)
         setup()
-        
     }
     
     private func setup() {
         backgroundColor = UIColor.clearColor()
+        addLongPressGesture()
     }
     
     override func drawInCurrentContext() {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()
+
         
         //// Color Declarations
-        
+    
         if let gradientColors = iconMode.colorsForTodayMode(todayMode) {
             gradientColorArray = [gradientColors.startColor.CGColor, gradientColors.endColor.CGColor]
             gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), gradientColorArray!, [0, 1])!
@@ -52,11 +54,37 @@ class DRGradientGlyphIconView: MMScalableVectorView {
         if gradient != nil {
             CGContextSaveGState(context)
             shapePath.addClip()
-            CGContextDrawLinearGradient(context, gradient, CGPointMake(11.5, -0), CGPointMake(11.5, 27), 0)
+            CGContextDrawLinearGradient(context, gradient, CGPointMake(0, 0), gradientEndPoint, 0)
             CGContextRestoreGState(context)
         } else {
             fillColor!.setFill()
             shapePath.fill()
         }
     }
+    
+    func addLongPressGesture() {
+        let longPress = UILongPressGestureRecognizer(target: self, action: "didLongPress:")
+        longPress.minimumPressDuration = 0.25
+        addGestureRecognizer(longPress)
+    }
+    
+    
+    func didLongPress(recognizer:UILongPressGestureRecognizer) {
+        switch recognizer.state {
+        case .Began:
+            recognizer.view?.pop_spring().pop_scaleXY = CGPointMake(1.8, 1.8)
+        case .Ended, .Cancelled:
+            recognizer.view?.pop_spring().pop_scaleXY = CGPointMake(1, 1)
+
+        default:
+            println("Default recognizer state")
+        }
+        println("Did Long Press")
+    }
+    
+}
+
+
+extension DRGradientGlyphIconView:UIGestureRecognizerDelegate {
+    
 }

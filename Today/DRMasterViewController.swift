@@ -29,6 +29,9 @@ class DRMasterViewController: UIViewController, UIViewControllerTransitioningDel
     // Today Mode
     var todayMode:TodayMode = .Do
     
+    @IBOutlet weak var addEntryToolbar: DRAddEntryToolbar!
+    
+    
 //MARK:
 //MARK: Methods
     

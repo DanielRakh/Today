@@ -34,10 +34,11 @@
 		8EE2A1E61A426F3A00802A37 /* DontEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2A1E51A426F3A00802A37 /* DontEntry.swift */; };
 		8EE2A1E81A426F3A00802A37 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2A1E71A426F3A00802A37 /* Entry.swift */; };
 		8EE2A1EA1A436CF300802A37 /* DRTransitionSpringPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2A1E91A436CF300802A37 /* DRTransitionSpringPopAnimator.swift */; };
+		8EE2A1F01A44EDBE00802A37 /* DRCloseIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2A1EF1A44EDBD00802A37 /* DRCloseIconView.swift */; };
+		8EE2A1F21A44FBD100802A37 /* DRAddEntryToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE2A1F11A44FBD100802A37 /* DRAddEntryToolbar.swift */; };
 		8EFA12831A342A6D004BC7F1 /* DRGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA12821A342A6D004BC7F1 /* DRGradientView.swift */; };
 		8EFA12851A34314B004BC7F1 /* DRGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA12841A34314B004BC7F1 /* DRGradientButton.swift */; };
 		8EFA12871A34FDB5004BC7F1 /* DRGradientGlyphIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA12861A34FDB5004BC7F1 /* DRGradientGlyphIconView.swift */; };
-		8EFA12891A354653004BC7F1 /* DRAlertOffIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA12881A354653004BC7F1 /* DRAlertOffIconView.swift */; };
 		8EFA128B1A354B74004BC7F1 /* DRTrashIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA128A1A354B74004BC7F1 /* DRTrashIconView.swift */; };
 		8EFA128D1A3668A4004BC7F1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA128C1A3668A4004BC7F1 /* Enums.swift */; };
 		9243E29856E3C30B982D3FB8 /* libPods-Today.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD57866255A23D28CD4CD5AA /* libPods-Today.a */; };
@@ -89,10 +90,11 @@
 		8EE2A1E51A426F3A00802A37 /* DontEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DontEntry.swift; sourceTree = "<group>"; };
 		8EE2A1E71A426F3A00802A37 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		8EE2A1E91A436CF300802A37 /* DRTransitionSpringPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTransitionSpringPopAnimator.swift; sourceTree = "<group>"; };
+		8EE2A1EF1A44EDBD00802A37 /* DRCloseIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCloseIconView.swift; sourceTree = "<group>"; };
+		8EE2A1F11A44FBD100802A37 /* DRAddEntryToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAddEntryToolbar.swift; sourceTree = "<group>"; };
 		8EFA12821A342A6D004BC7F1 /* DRGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRGradientView.swift; sourceTree = "<group>"; };
 		8EFA12841A34314B004BC7F1 /* DRGradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRGradientButton.swift; sourceTree = "<group>"; };
 		8EFA12861A34FDB5004BC7F1 /* DRGradientGlyphIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRGradientGlyphIconView.swift; sourceTree = "<group>"; };
-		8EFA12881A354653004BC7F1 /* DRAlertOffIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAlertOffIconView.swift; sourceTree = "<group>"; };
 		8EFA128A1A354B74004BC7F1 /* DRTrashIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRTrashIconView.swift; sourceTree = "<group>"; };
 		8EFA128C1A3668A4004BC7F1 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		BD57866255A23D28CD4CD5AA /* libPods-Today.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Today.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +211,7 @@
 				8EB18D1D1A2FF60D00CF0AB2 /* DRSeperatorLine.swift */,
 				8EFA12821A342A6D004BC7F1 /* DRGradientView.swift */,
 				8EFA12841A34314B004BC7F1 /* DRGradientButton.swift */,
+				8EE2A1F11A44FBD100802A37 /* DRAddEntryToolbar.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -286,8 +289,8 @@
 				8EFA12861A34FDB5004BC7F1 /* DRGradientGlyphIconView.swift */,
 				8EC563401A19DFA1003EF8D2 /* DRAlertOnIconView.swift */,
 				8EC563421A19E1B6003EF8D2 /* DRCheckmarkIconView.swift */,
-				8EFA12881A354653004BC7F1 /* DRAlertOffIconView.swift */,
 				8EFA128A1A354B74004BC7F1 /* DRTrashIconView.swift */,
+				8EE2A1EF1A44EDBD00802A37 /* DRCloseIconView.swift */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -440,15 +443,16 @@
 				8E047E2A1A08766800B2690A /* DRFetchedResultsManager.swift in Sources */,
 				8EB18CDB1A2D041300CF0AB2 /* TransitionAnimator.swift in Sources */,
 				8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */,
+				8EE2A1F01A44EDBE00802A37 /* DRCloseIconView.swift in Sources */,
 				8EFA12871A34FDB5004BC7F1 /* DRGradientGlyphIconView.swift in Sources */,
 				8E047E2C1A08787300B2690A /* DREntryService.swift in Sources */,
 				8E047E341A08795600B2690A /* DRDontViewController.swift in Sources */,
 				8EC563431A19E1B6003EF8D2 /* DRCheckmarkIconView.swift in Sources */,
 				8E9C95AF1A0ED3CA009DCE60 /* DRTableViewManager.swift in Sources */,
 				8E189FCF19F637180056697C /* AppDelegate.swift in Sources */,
+				8EE2A1F21A44FBD100802A37 /* DRAddEntryToolbar.swift in Sources */,
 				8EE2A1EA1A436CF300802A37 /* DRTransitionSpringPopAnimator.swift in Sources */,
 				8E84A93C1A0C1B9100E40422 /* DRMasterViewController.swift in Sources */,
-				8EFA12891A354653004BC7F1 /* DRAlertOffIconView.swift in Sources */,
 				8EE2A1E61A426F3A00802A37 /* DontEntry.swift in Sources */,
 				8EB18D1E1A2FF60D00CF0AB2 /* DRSeperatorLine.swift in Sources */,
 				8E1971F61A1B2D53004074E7 /* DREntryTableView.swift in Sources */,
