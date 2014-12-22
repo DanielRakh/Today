@@ -8,7 +8,13 @@
 
 import UIKit
 
-class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
+@objc protocol DREntryTableViewCellDelegate {
+    
+    func textViewDidChange(textView:UITextView)
+}
+
+
+class DREntryTableViewCell: UITableViewCell {
 
     /// This is the container for Text View Mode
     @IBOutlet weak var textContainerView: UIView!
@@ -29,6 +35,9 @@ class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
     @IBOutlet weak var checkmarkIconView: DRCheckmarkIconView!
     @IBOutlet weak var alertButton: UIButton!
     @IBOutlet weak var alertIconView: DRAlertOnIconView!
+    
+    
+    weak var delegate:DREntryTableViewCellDelegate?
     
     
     lazy var tapGesture = UITapGestureRecognizer()
@@ -54,6 +63,7 @@ class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
         backgroundColor = UIColor.clearColor()
         daysLabel.textColor = UIColor.todayDarkText()
         textView.textColor = UIColor.todayDarkText()
+        textView.delegate = self
         textView.backgroundColor = UIColor.clearColor()
         setupForMode(.Do)
         
@@ -109,6 +119,12 @@ class DREntryTableViewCell: UITableViewCell, POPAnimationDelegate {
             }
         }
 //    }
+}
+
+
+extension DREntryTableViewCell:UITextViewDelegate {
     
-    
+    func textViewDidChange(textView: UITextView) {
+        delegate?.textViewDidChange(textView)
+    }
 }

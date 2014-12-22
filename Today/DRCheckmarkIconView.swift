@@ -21,7 +21,7 @@ import UIKit
     }
     
     func setup() {
-        iconMode = .On
+        iconMode = .Off
         todayMode = .Do
         shapePath = iconShape()
         gradientEndPoint = CGPointMake(0, originalSize().height)
@@ -30,13 +30,13 @@ import UIKit
     
     func iconShape() -> UIBezierPath {
         var shapePath = UIBezierPath()
-        shapePath.moveToPoint(CGPointMake(8, 20))
-        shapePath.addLineToPoint(CGPointMake(0, 11.63))
-        shapePath.addLineToPoint(CGPointMake(2.11, 9.42))
-        shapePath.addLineToPoint(CGPointMake(8.06, 15.64))
-        shapePath.addLineToPoint(CGPointMake(23.95, 0))
-        shapePath.addLineToPoint(CGPointMake(26, 2.28))
-        shapePath.addLineToPoint(CGPointMake(8, 20))
+        shapePath.moveToPoint(CGPointMake(10.5, 19.78))
+        shapePath.addLineToPoint(CGPointMake(2.62, 11.94))
+        shapePath.addLineToPoint(CGPointMake(0, 14.55))
+        shapePath.addLineToPoint(CGPointMake(10.5, 25))
+        shapePath.addLineToPoint(CGPointMake(33, 2.61))
+        shapePath.addLineToPoint(CGPointMake(30.38, -0))
+        shapePath.addLineToPoint(CGPointMake(10.5, 19.78))
         shapePath.closePath()
         shapePath.miterLimit = 4;
         
@@ -46,7 +46,7 @@ import UIKit
     }
  
     override func originalSize() -> CGSize {
-        return CGSizeMake(26, 20)
+        return CGSizeMake(33, 25)
     }
 
 }
