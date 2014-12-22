@@ -24,16 +24,25 @@ PODS:
   - POP+MCAnimate/Velocity (2.0.1):
     - pop (~> 1.0)
     - POP+MCAnimate/Internal
+  - ReactiveCocoa (2.4.2):
+    - ReactiveCocoa/UI (= 2.4.2)
+  - ReactiveCocoa/Core (2.4.2):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.4.2)
+  - ReactiveCocoa/UI (2.4.2):
+    - ReactiveCocoa/Core
 
 DEPENDENCIES:
   - AMWaveTransition (~> 0.5)
   - MMScalableVectorView (~> 0.1)
   - POP+MCAnimate (~> 2.0)
+  - ReactiveCocoa (~> 2.4)
 
 SPEC CHECKSUMS:
   AMWaveTransition: af3c5baf82bf9d414f39ab42adf3a3f6c734d127
   MMScalableVectorView: c8f1b86036c8d1056ff5d5c3be59044ef93fd9fe
   pop: 2f14a1ea61339767af9e66741b418c831b3844df
   POP+MCAnimate: 528a556e3754a0b406adc481b02ec2984cfd1032
+  ReactiveCocoa: 8418a82b67af2f1b7587baf29c329040a23c2063
 
 COCOAPODS: 0.35.0
