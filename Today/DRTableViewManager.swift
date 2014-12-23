@@ -12,30 +12,31 @@ import CoreData
 
 class DRTableViewManager:NSObject {
     
+    ///Test Array. Comment out when not testing
+    private var items:[Int]!
+
     private var tableView:UITableView!
     private var cellIdentifier:String!
-    private var items:[Int]!
     private var entryService = DREntryService.sharedInstance
-    private var mode:TodayMode!
+    private var todayMode:TodayMode!
     
     required init(tableView:UITableView, withCellIdentifier cellIdentifier:String, mode:TodayMode) {
         super.init()
-        self.mode = mode
+        self.todayMode = mode
         self.items = Array(1...4)
         self.cellIdentifier = cellIdentifier
         self.tableView = tableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
-          NSNotificationCenter.defaultCenter().addObserver(self, selector: "entryButtonTapped:", name: "EntryButtonTapped", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "entryButtonTapped:", name: "EntryButtonTapped", object: nil)
   
     }
     
     func configureCell(cell:DREntryTableViewCell, forIndexPath indexPath:NSIndexPath) {
-        let entry = entryService.entryForIndexPath(indexPath, mode:mode)
+        let entry = entryService.entryForIndexPath(indexPath, mode:todayMode)
         cell.textView.text = entry?.activity
-        cell.setupForMode(mode)
+        cell.setupForMode(.Normal, todayMode:.Do)
         
     }
     
@@ -47,14 +48,10 @@ class DRTableViewManager:NSObject {
         items.append(1)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
+        
         let cell = tableView.cellForRowAtIndexPath(indexPath) as DREntryTableViewCell
         cell.textView.text = ""
         cell.textView.becomeFirstResponder()
-        for (idx, cell) in enumerate(tableView.visibleCells()) {
-            if idx != 0 {
-                (cell as DREntryTableViewCell).pop_spring().alpha = 0.2
-            }
-        }
         
     }
     

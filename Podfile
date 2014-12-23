@@ -6,7 +6,7 @@ target 'Today' do
 pod 'POP+MCAnimate', '~> 2.0'
 pod 'AMWaveTransition', '~> 0.5'
 pod 'MMScalableVectorView', '~> 0.1'
-pod 'ReactiveCocoa', '~> 2.4'
+#pod 'ReactiveCocoa', '~> 2.4'
 
 
 end

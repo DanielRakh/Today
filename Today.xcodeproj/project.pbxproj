@@ -25,6 +25,7 @@
 		8EA94F811A3A4A45000F68D1 /* DRAddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA94F801A3A4A45000F68D1 /* DRAddEntryViewController.swift */; };
 		8EAA94BC1A0155F00002659C /* DRDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94BB1A0155F00002659C /* DRDoViewController.swift */; };
 		8EAA94C61A0161C50002659C /* DREntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA94C51A0161C50002659C /* DREntryTableViewCell.swift */; };
+		8EAD17841A48C97000B62AD1 /* UIView+MCAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD17831A48C97000B62AD1 /* UIView+MCAnimate.swift */; };
 		8EAF9E031A0D9EF4005BB9D0 /* DRNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF9E021A0D9EF4005BB9D0 /* DRNavBarView.swift */; };
 		8EB18CDB1A2D041300CF0AB2 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB18CDA1A2D041300CF0AB2 /* TransitionAnimator.swift */; };
 		8EB18D1E1A2FF60D00CF0AB2 /* DRSeperatorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB18D1D1A2FF60D00CF0AB2 /* DRSeperatorLine.swift */; };
@@ -80,6 +81,7 @@
 		8EA94F801A3A4A45000F68D1 /* DRAddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRAddEntryViewController.swift; sourceTree = "<group>"; };
 		8EAA94BB1A0155F00002659C /* DRDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDoViewController.swift; sourceTree = "<group>"; };
 		8EAA94C51A0161C50002659C /* DREntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREntryTableViewCell.swift; sourceTree = "<group>"; };
+		8EAD17831A48C97000B62AD1 /* UIView+MCAnimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+MCAnimate.swift"; sourceTree = "<group>"; };
 		8EAF9E021A0D9EF4005BB9D0 /* DRNavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRNavBarView.swift; sourceTree = "<group>"; };
 		8EB18CDA1A2D041300CF0AB2 /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionAnimator.swift; path = ../TransitionAnimator.swift; sourceTree = "<group>"; };
 		8EB18D1D1A2FF60D00CF0AB2 /* DRSeperatorLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRSeperatorLine.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			children = (
 				8EFA128C1A3668A4004BC7F1 /* Enums.swift */,
 				8E853BB619F719FA007128B3 /* UIColor+TodayColorPalette.swift */,
+				8EAD17831A48C97000B62AD1 /* UIView+MCAnimate.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			files = (
 				8EE2A1E81A426F3A00802A37 /* Entry.swift in Sources */,
 				8E047E2A1A08766800B2690A /* DRFetchedResultsManager.swift in Sources */,
+				8EAD17841A48C97000B62AD1 /* UIView+MCAnimate.swift in Sources */,
 				8EB18CDB1A2D041300CF0AB2 /* TransitionAnimator.swift in Sources */,
 				8E18A02019F6E6880056697C /* DRCoreDataStack.swift in Sources */,
 				8EE2A1F01A44EDBE00802A37 /* DRCloseIconView.swift in Sources */,

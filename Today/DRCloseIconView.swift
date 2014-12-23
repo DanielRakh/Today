@@ -20,7 +20,7 @@ import UIKit
         super.init(frame: frame)
         setup()
     }
-    
+
     func setup() {
         iconMode = .Off
         todayMode = .Do

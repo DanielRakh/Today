@@ -375,9 +375,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="QRf-vQ-LJ0"/>
+                                            <constraint firstAttribute="height" constant="25" id="QRf-vQ-LJ0">
+                                                <variation key="widthClass=compact" constant="20"/>
+                                            </constraint>
                                             <constraint firstAttribute="width" constant="28" id="hEd-Lb-pTn">
-                                                <variation key="widthClass=compact" constant="25"/>
+                                                <variation key="widthClass=compact" constant="20"/>
                                             </constraint>
                                         </constraints>
                                         <variation key="default">
@@ -397,8 +399,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="33" id="Bj2-xx-bmJ"/>
-                                            <constraint firstAttribute="height" constant="25" id="FgZ-EF-N4x"/>
+                                            <constraint firstAttribute="width" constant="33" id="Bj2-xx-bmJ">
+                                                <variation key="widthClass=compact" constant="27"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="25" id="FgZ-EF-N4x">
+                                                <variation key="widthClass=compact" constant="20"/>
+                                            </constraint>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -446,7 +452,7 @@
                                     <constraint firstAttribute="height" constant="64" id="T7s-UD-yor"/>
                                     <constraint firstAttribute="bottom" secondItem="oVI-kq-yE0" secondAttribute="bottom" id="g9v-0j-7PZ"/>
                                     <constraint firstItem="Djq-4Y-tG3" firstAttribute="trailing" secondItem="oVI-kq-yE0" secondAttribute="trailing" constant="-5" id="gyI-i8-F5N">
-                                        <variation key="widthClass=compact" constant="0.0"/>
+                                        <variation key="widthClass=compact" constant="-6"/>
                                     </constraint>
                                     <constraint firstItem="Djq-4Y-tG3" firstAttribute="top" secondItem="OJl-kr-knY" secondAttribute="top" constant="15" id="tc1-cz-ocB">
                                         <variation key="widthClass=compact" constant="20"/>
@@ -591,7 +597,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXE-9J-HQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2362.5" y="327"/>
+            <point key="canvasLocation" x="2467.5" y="327"/>
         </scene>
         <!--Do View Controller-->
         <scene sceneID="I9n-9q-NFZ">

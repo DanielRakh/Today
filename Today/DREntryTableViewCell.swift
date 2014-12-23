@@ -8,13 +8,15 @@
 
 import UIKit
 
-@objc protocol DREntryTableViewCellDelegate {
-    
-    func textViewDidChange(textView:UITextView)
-}
 
 
 class DREntryTableViewCell: UITableViewCell {
+    
+    enum CellMode {
+        case New
+        case Normal
+        case Icon
+    }
 
     /// This is the container for Text View Mode
     @IBOutlet weak var textContainerView: UIView!
@@ -36,8 +38,7 @@ class DREntryTableViewCell: UITableViewCell {
     @IBOutlet weak var alertButton: UIButton!
     @IBOutlet weak var alertIconView: DRAlertOnIconView!
     
-    
-    weak var delegate:DREntryTableViewCellDelegate?
+    var cellMode:CellMode!
     
     
     lazy var tapGesture = UITapGestureRecognizer()
@@ -65,7 +66,7 @@ class DREntryTableViewCell: UITableViewCell {
         textView.textColor = UIColor.todayDarkText()
         textView.delegate = self
         textView.backgroundColor = UIColor.clearColor()
-        setupForMode(.Do)
+        setupForMode(.Normal, todayMode: .Do)
         
         addGestureRecognizer(tapGesture)
         tapGesture.addTarget(self, action:"didTap:")
@@ -77,8 +78,8 @@ class DREntryTableViewCell: UITableViewCell {
         
     }
     
-    func setupForMode(mode:TodayMode) {
-        lineView.applyGradientColorsForMode(mode)
+    func setupForMode(cellMode:CellMode, todayMode:TodayMode) {
+        lineView.applyGradientColorsForMode(todayMode)
 
     }
     
@@ -87,13 +88,6 @@ class DREntryTableViewCell: UITableViewCell {
     }
     
     func slideOutView(view:UIView) {
-        
-        
-        
-//        let decayAnimation = POPSpringAnimation(propertyNamed: kPOPViewCenter)
-//        decayAnimation.toValue = NSValue(CGPoint: CGPointMake(-view.bounds.size.width/2 , view.center.y))
-//        decayAnimation.delegate = self
-//        view.layer.pop_addAnimation(decayAnimation, forKey: "TextViewSpringFrame")
         
         let springAlpha = POPSpringAnimation(propertyNamed: kPOPViewAlpha)
         springAlpha.toValue = NSNumber(float: 0)
@@ -125,6 +119,11 @@ class DREntryTableViewCell: UITableViewCell {
 extension DREntryTableViewCell:UITextViewDelegate {
     
     func textViewDidChange(textView: UITextView) {
-        delegate?.textViewDidChange(textView)
+        
+        if (textView.text as NSString).length == 0 {
+            NSNotificationCenter.defaultCenter().postNotificationName("EntryCellTextViewIsInvalidToSave", object: nil)
+        } else if ((textView.text as NSString).length >= 1) {
+            NSNotificationCenter.defaultCenter().postNotificationName("EntryCellTextViewIsValidToSave", object: nil)
+        }
     }
 }

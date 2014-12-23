@@ -105,8 +105,7 @@ class DRMasterViewController: UIViewController, UIViewControllerTransitioningDel
         NSObject.pop_animate({ () -> Void in
             self.navBar.pop_spring().alpha = 0
             }, completion: { (success:Bool) -> Void in
-                self.addEntryToolbar.springPop(self.addEntryToolbar.closeIcon, reveal: true)
-                self.addEntryToolbar.springPop(self.addEntryToolbar.checkmarkIcon, reveal: true)
+                self.addEntryToolbar.closeIcon.animateScaleWithSpringPOP(nil, springSpeed: nil, reveal: true)
         })
     }
 }

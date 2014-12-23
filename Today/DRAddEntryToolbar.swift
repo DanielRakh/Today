@@ -25,34 +25,34 @@ class DRAddEntryToolbar: UIView {
     
     override func awakeFromNib() {
         setup()
+        
     }
     
     func setup() {
         //Set initial postion of icons to a scale of (0,0)
-        closeIcon.pop_scaleXY = CGPointMake(0, 0)
+        closeIcon.transform = CGAffineTransformMakeScale(0.001, 0.001)
         closeIcon.todayMode = .Dont
         closeIcon.iconMode = .On
-        checkmarkIcon.pop_scaleXY = CGPointMake(0, 0)
-        checkmarkIcon.pop_spring().alpha = 0
+        checkmarkIcon.transform = CGAffineTransformMakeScale(0.001, 0.001)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "revealSaveButton:", name: "EntryCellTextViewIsValidToSave", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideSaveButton:", name: "EntryCellTextViewIsInvalidToSave", object: nil)
     }
     
-    func springPop(view:UIView, reveal:Bool) {
-        let toScale:CGFloat = reveal == true ? 1 : 0.1
-        view.pop_springBounciness = 20
-        view.pop_springSpeed = 18
-        view.pop_spring().alpha = 1
-        view.pop_spring().pop_scaleXY = CGPointMake(toScale, toScale)
-       
+    
+    func revealSaveButton(notification:NSNotification) {
+        checkmarkIcon.animateScaleWithSpringPOP(nil, springSpeed: nil, reveal: true)
     }
     
+    func hideSaveButton(notification:NSNotification) {
+        checkmarkIcon.animateScaleWithSpringPOP(nil, springSpeed: nil, reveal: false)
+
+    }
+    
+
 }
 
-extension DRAddEntryToolbar:DREntryTableViewCellDelegate {
-    
-    func textViewDidChange(textView: UITextView) {
-        //
-    }
-}
 
 
 
