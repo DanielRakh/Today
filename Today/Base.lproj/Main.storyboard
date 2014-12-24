@@ -248,14 +248,14 @@
                                                 <exclude reference="UYo-f4-ePv"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <exclude reference="Vbj-q9-bTt"/>
+                                                <exclude reference="uvr-zT-VFm"/>
                                                 <exclude reference="Eam-Dr-F64"/>
                                                 <exclude reference="Zpm-mz-NPB"/>
                                                 <exclude reference="yqW-k2-rSn"/>
                                                 <exclude reference="JkX-uq-FKC"/>
                                                 <exclude reference="Xic-8h-ORj"/>
                                                 <exclude reference="hgh-XQ-opx"/>
-                                                <exclude reference="Vbj-q9-bTt"/>
-                                                <exclude reference="uvr-zT-VFm"/>
                                                 <exclude reference="0g4-BT-Fry"/>
                                                 <exclude reference="1cc-Ha-ATr"/>
                                                 <exclude reference="ieJ-wj-yDc"/>
@@ -268,14 +268,14 @@
                                                 <include reference="UYo-f4-ePv"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <include reference="Vbj-q9-bTt"/>
+                                                <include reference="uvr-zT-VFm"/>
                                                 <include reference="Eam-Dr-F64"/>
                                                 <include reference="Zpm-mz-NPB"/>
                                                 <include reference="yqW-k2-rSn"/>
                                                 <include reference="JkX-uq-FKC"/>
                                                 <include reference="Xic-8h-ORj"/>
                                                 <include reference="hgh-XQ-opx"/>
-                                                <include reference="Vbj-q9-bTt"/>
-                                                <include reference="uvr-zT-VFm"/>
                                                 <include reference="0g4-BT-Fry"/>
                                                 <include reference="1cc-Ha-ATr"/>
                                                 <include reference="ieJ-wj-yDc"/>
@@ -326,14 +326,14 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="iNh-pd-S7v"/>
-                                        <exclude reference="6zH-vE-96v"/>
-                                        <exclude reference="7Wt-7U-eDc"/>
-                                        <exclude reference="8sV-EL-ger"/>
-                                        <exclude reference="REZ-jJ-pXE"/>
                                         <exclude reference="4Cg-dQ-uCc"/>
                                         <exclude reference="4Hn-ig-HW6"/>
                                         <exclude reference="OYO-ER-zal"/>
                                         <exclude reference="k5S-16-vQ8"/>
+                                        <exclude reference="6zH-vE-96v"/>
+                                        <exclude reference="7Wt-7U-eDc"/>
+                                        <exclude reference="8sV-EL-ger"/>
+                                        <exclude reference="REZ-jJ-pXE"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -342,14 +342,14 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="iNh-pd-S7v"/>
-                                        <include reference="6zH-vE-96v"/>
-                                        <include reference="7Wt-7U-eDc"/>
-                                        <include reference="8sV-EL-ger"/>
-                                        <include reference="REZ-jJ-pXE"/>
                                         <include reference="4Cg-dQ-uCc"/>
                                         <include reference="4Hn-ig-HW6"/>
                                         <include reference="OYO-ER-zal"/>
                                         <include reference="k5S-16-vQ8"/>
+                                        <include reference="6zH-vE-96v"/>
+                                        <include reference="7Wt-7U-eDc"/>
+                                        <include reference="8sV-EL-ger"/>
+                                        <include reference="REZ-jJ-pXE"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -700,7 +700,8 @@
                                                                     <exclude reference="cAG-7c-01z"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact">
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="136" y="52" width="46" height="35"/>
                                                                 <mask key="constraints">
                                                                     <include reference="WKf-Q7-nve"/>
                                                                     <include reference="cAG-7c-01z"/>
@@ -710,6 +711,9 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hb0-48-PS5" userLabel="Checkmark View" customClass="DRCheckmarkIconView" customModule="Today" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="136" y="52" width="46" height="35"/>
+                                                            </variation>
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbN-xz-8n1" userLabel="Alert Button">
                                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -729,7 +733,8 @@
                                                                     <exclude reference="gtC-lR-ryC"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact">
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="238" y="52" width="38" height="35"/>
                                                                 <mask key="constraints">
                                                                     <include reference="bUe-F1-Uov"/>
                                                                     <include reference="gtC-lR-ryC"/>
@@ -739,6 +744,9 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLq-jh-AFS" userLabel="Alert View" customClass="DRAlertOnIconView" customModule="Today" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="238" y="52" width="38" height="35"/>
+                                                            </variation>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -810,7 +818,8 @@
                                                             <exclude reference="ook-ba-knF"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                                                         <mask key="subviews">
                                                             <include reference="hUx-nx-O5s"/>
                                                             <include reference="HVL-Pr-enV"/>
@@ -849,6 +858,9 @@
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="252" y="10" width="53" height="20"/>
+                                                            </variation>
                                                         </label>
                                                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VWp-cC-B12" userLabel="Line View" customClass="DRGradientView" customModule="Today" customModuleProvider="target">
                                                             <rect key="frame" x="290" y="29" width="30" height="2"/>
@@ -863,7 +875,8 @@
                                                                     <exclude reference="umh-EX-yjd"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact">
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="212" y="19" width="30" height="2"/>
                                                                 <mask key="constraints">
                                                                     <include reference="lyK-NK-VTt"/>
                                                                     <include reference="umh-EX-yjd"/>
@@ -875,8 +888,9 @@
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                            <variation key="widthClass=compact">
+                                                            <variation key="widthClass=compact" misplaced="YES">
                                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
+                                                                <rect key="frame" x="15" y="45" width="290" height="79"/>
                                                             </variation>
                                                         </textView>
                                                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QsU-A4-Fc2" customClass="DRAlertOnIconView" customModule="Today" customModuleProvider="target">
@@ -935,7 +949,8 @@
                                                             <exclude reference="iTS-ot-Grp"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                                                         <mask key="constraints">
                                                             <include reference="1iu-j7-qfk"/>
                                                             <include reference="Ev5-Ju-57m"/>
@@ -1123,7 +1138,8 @@
                                                                     <exclude reference="y5H-cl-91X"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact">
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="136" y="52" width="46" height="35"/>
                                                                 <mask key="constraints">
                                                                     <include reference="Ahd-JC-pSH"/>
                                                                     <include reference="y5H-cl-91X"/>
@@ -1133,6 +1149,9 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxe-kq-x9Y" userLabel="Checkmark View" customClass="DRCheckmarkIconView" customModule="Today" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="136" y="52" width="46" height="35"/>
+                                                            </variation>
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GW2-mh-xYw" userLabel="Alert Button">
                                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1152,7 +1171,8 @@
                                                                     <exclude reference="T0E-rV-W62"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact">
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="238" y="52" width="38" height="35"/>
                                                                 <mask key="constraints">
                                                                     <include reference="Meg-ck-RnL"/>
                                                                     <include reference="T0E-rV-W62"/>
@@ -1162,6 +1182,9 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qD-oV-UeG" userLabel="Alert View" customClass="DRAlertOnIconView" customModule="Today" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="238" y="52" width="38" height="35"/>
+                                                            </variation>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1231,7 +1254,8 @@
                                                             <exclude reference="ndr-ar-Vlx"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                                                         <mask key="subviews">
                                                             <include reference="zye-xn-W9i"/>
                                                             <include reference="kwJ-ud-Muy"/>
@@ -1270,6 +1294,9 @@
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="252" y="10" width="53" height="20"/>
+                                                            </variation>
                                                         </label>
                                                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kB4-Q5-06Q" userLabel="Line View" customClass="DRGradientView" customModule="Today" customModuleProvider="target">
                                                             <rect key="frame" x="290" y="29" width="30" height="2"/>
@@ -1284,7 +1311,8 @@
                                                                     <exclude reference="Xvh-za-MeO"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact">
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="212" y="19" width="30" height="2"/>
                                                                 <mask key="constraints">
                                                                     <include reference="7SL-ea-ukM"/>
                                                                     <include reference="Xvh-za-MeO"/>
@@ -1296,8 +1324,9 @@
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                            <variation key="widthClass=compact">
+                                                            <variation key="widthClass=compact" misplaced="YES">
                                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
+                                                                <rect key="frame" x="15" y="45" width="290" height="79"/>
                                                             </variation>
                                                         </textView>
                                                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RqH-0C-07I" customClass="DRAlertOnIconView" customModule="Today" customModuleProvider="target">
@@ -1356,7 +1385,8 @@
                                                             <exclude reference="wCy-DH-Ncd"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                                                         <mask key="constraints">
                                                             <include reference="KNI-4z-hgG"/>
                                                             <include reference="YDl-LS-myq"/>
