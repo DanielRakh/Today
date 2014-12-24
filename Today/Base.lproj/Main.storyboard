@@ -791,7 +791,7 @@
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
+                                                        <rect key="frame" x="0.0" y="-1" width="320" height="139"/>
                                                         <mask key="subviews">
                                                             <include reference="hUx-nx-O5s"/>
                                                             <include reference="HVL-Pr-enV"/>
@@ -922,7 +922,7 @@
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
+                                                        <rect key="frame" x="0.0" y="-1" width="320" height="139"/>
                                                         <mask key="constraints">
                                                             <include reference="1iu-j7-qfk"/>
                                                             <include reference="Ev5-Ju-57m"/>
@@ -1227,7 +1227,7 @@
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
+                                                        <rect key="frame" x="0.0" y="-1" width="320" height="139"/>
                                                         <mask key="subviews">
                                                             <include reference="zye-xn-W9i"/>
                                                             <include reference="kwJ-ud-Muy"/>
@@ -1358,7 +1358,7 @@
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
+                                                        <rect key="frame" x="0.0" y="-1" width="320" height="139"/>
                                                         <mask key="constraints">
                                                             <include reference="KNI-4z-hgG"/>
                                                             <include reference="YDl-LS-myq"/>
