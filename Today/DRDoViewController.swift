@@ -27,8 +27,6 @@ class DRDoViewController: UIViewController {
         transitionAnimator.delegate = self
 
         setupTableView()
-        
-    
     }
     
     override func viewWillAppear(animated: Bool) {

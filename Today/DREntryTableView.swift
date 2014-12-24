@@ -32,8 +32,7 @@ class DREntryTableView: UITableView {
         
         let droppedFirstElementArray = dropFirst(self.visibleCells())
         droppedFirstElementArray.map({cell in
-            (cell as UITableViewCell).pop_easeInEaseOut().alpha = tableMode == .New ? 0 : 1
+            (cell as UITableViewCell).pop_easeInEaseOut().alpha = tableMode == .New ? 0.20 : 1
         })
-        
     }
 }

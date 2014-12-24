@@ -98,6 +98,10 @@ class DRMasterViewController: UIViewController, UIViewControllerTransitioningDel
     
     @IBAction func addEntryButtonDidTouch(sender: AnyObject) {
         
+        //Post notification that entrybutton tapped.
+        // Observers: Nav Bar, TableView
+        
+        
         
         self.addEntryToolbar.hidden = false
         NSNotificationCenter.defaultCenter().postNotificationName("EntryButtonTapped", object: nil)

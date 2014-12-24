@@ -15,12 +15,12 @@ class DRTableViewManager:NSObject {
     ///Test Array. Comment out when not testing
     private var items:[Int]!
 
-    private var tableView:UITableView!
+    private var tableView:DREntryTableView!
     private var cellIdentifier:String!
     private var entryService = DREntryService.sharedInstance
     private var todayMode:TodayMode!
     
-    required init(tableView:UITableView, withCellIdentifier cellIdentifier:String, mode:TodayMode) {
+    required init(tableView:DREntryTableView, withCellIdentifier cellIdentifier:String, mode:TodayMode) {
         super.init()
         self.todayMode = mode
         self.items = Array(1...4)
@@ -52,6 +52,7 @@ class DRTableViewManager:NSObject {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as DREntryTableViewCell
         cell.textView.text = ""
         cell.textView.becomeFirstResponder()
+        tableView.setupTableViewForMode(.New)
         
     }
     
