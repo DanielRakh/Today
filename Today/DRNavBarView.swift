@@ -49,6 +49,7 @@ class DRNavBarView: UIView {
     override func updateConstraints() {
         if (centerXAlignUnderlineToDontLabel == nil && equalWidthUnderlineToDontLabel == nil) {
             setupDontLabelConstraints()
+            println("Is nil")
         }
             super.updateConstraints()
         }
