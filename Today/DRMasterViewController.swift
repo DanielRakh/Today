@@ -27,10 +27,11 @@ class DRMasterViewController: UIViewController, UIViewControllerTransitioningDel
     @IBOutlet weak var addEntryButton: DRAddEntryButton!
     
     // Today Mode
-    var todayMode:TodayMode = .Do
-    
-    @IBOutlet weak var addEntryToolbar: DRAddEntryToolbar!
-    
+    var todayMode:TodayMode = .Do {
+        didSet {
+            addEntryButton.mode = todayMode
+        }
+    }
     
     //MARK:
     //MARK: Methods
@@ -64,17 +65,6 @@ class DRMasterViewController: UIViewController, UIViewControllerTransitioningDel
         return dismissAnimator
     }
     
-    //    func animateAccessoryViewsAlongsideAddEntryPresentation() {
-    //
-    //        transitionCoordinator()?.animateAlongsideTransitionInView(view, animation: { (transitionContext:UIViewControllerTransitionCoordinatorContext!) -> Void in
-    //            //
-    //            }, completion: { (transitionContext:UIViewControllerTransitionCoordinatorContext!) -> Void in
-    //            //
-    //        })
-    //    }
-    
-    
-    
     //MARK:
     //MARK: Helpers
     
@@ -82,80 +72,36 @@ class DRMasterViewController: UIViewController, UIViewControllerTransitioningDel
         return true
     }
     
-    
-    
-    //    func animateNavBarAlongsideForMode(mode:TodayMode) {
-    //
-    //        navController.transitionCoordinator()?.animateAlongsideTransitionInView(navBar, animation: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
-    //            self.navBar.performAnimationsForMode(mode, withDuration: context.transitionDuration())
-    //            }, completion: { (context:UIViewControllerTransitionCoordinatorContext!) -> Void in
-    //                //
-    //        })
-    //    }
-    
+
     //MARK:
     //MARK: IBActions
     
     @IBAction func addEntryButtonDidTouch(sender: AnyObject) {
         
-        //Post notification that entrybutton tapped.
-        // Observers: Nav Bar, TableView
-        
-        
-        
-        self.addEntryToolbar.hidden = false
+        // Observers: DRNavBar, DREntryTableView, DREntryCell
         NSNotificationCenter.defaultCenter().postNotificationName("EntryButtonTapped", object: nil)
-
-        NSObject.pop_animate({ () -> Void in
-            self.navBar.pop_spring().alpha = 0
-            }, completion: { (success:Bool) -> Void in
-                self.addEntryToolbar.closeIcon.animateScaleWithSpringPOP(nil, springSpeed: nil, reveal: true)
-        })
     }
 }
 
 //MARK:
-//MARK: DRTabBarViewDelegate
+//MARK: DRNavBarViewDelegate
 
 extension DRMasterViewController: DRNavBarViewDelegate {
     
     func doButtonDidTouch(sender: AnyObject) {
         if navController.topViewController is DRDontViewController {
+            self.todayMode = .Do
             navController.popToRootViewControllerAnimated(true)
-            
-            UIView.animateWithDuration(0.35,
-                delay: 0,
-                options: .CurveEaseInOut,
-                animations: { () -> Void in
-                    CATransaction.begin()
-                    CATransaction.setAnimationDuration(0.35)
-                    self.addEntryButton.applyGradientColorsForMode(.Do)
-                    self.navBar.underlineView.applyGradientColorsForMode(.Do)
-                    CATransaction.commit()
-                }, completion: { (stop:Bool) -> Void in
-                    self.todayMode = .Do
-            })
         }
     }
     
     func dontButtonDidTouch(sender: AnyObject) {
         if navController.topViewController is DRDoViewController {
+            self.todayMode = .Dont
             navController.topViewController.performSegueWithIdentifier("pushToDontVC", sender:self.navController.topViewController)
-            
-            UIView.animateWithDuration(0.35,
-                delay: 0,
-                options: .CurveEaseInOut,
-                animations: { () -> Void in
-                    CATransaction.begin()
-                    CATransaction.setAnimationDuration(0.35)
-                    self.addEntryButton.applyGradientColorsForMode(.Dont)
-                    self.navBar.underlineView.applyGradientColorsForMode(.Dont)
-                    CATransaction.commit()
-                }, completion: { (stop:Bool) -> Void in
-                    self.todayMode = .Dont
-            })
-        }
+            }
     }
+    
 }
 
 

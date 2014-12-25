@@ -52,7 +52,7 @@ class DRTableViewManager:NSObject {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as DREntryTableViewCell
         cell.textView.text = ""
         cell.textView.becomeFirstResponder()
-        tableView.setupTableViewForMode(.New)
+//        tableView.setupTable
         
     }
     

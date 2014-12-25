@@ -20,7 +20,6 @@ enum TodayMode {
     }
 }
 
-
 enum IconMode {
     
     case On
@@ -30,8 +29,10 @@ enum IconMode {
         
         return self == .On ? todayMode.gradientColors() : nil
     }
+}
+
+enum EntryMode {
     
-    
-    
-    
+    case Normal
+    case New
 }

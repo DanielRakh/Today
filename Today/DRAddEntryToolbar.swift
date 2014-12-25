@@ -15,12 +15,12 @@ class DRAddEntryToolbar: UIView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.todayOffWhite()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.todayOffWhite()
     }
     
     override func awakeFromNib() {

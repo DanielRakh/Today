@@ -12,7 +12,18 @@ import QuartzCore
 @IBDesignable class DRAddEntryButton: DRGradientButton {
     
     var additionGlyph:CALayer!
-    var mode:TodayMode = .Do
+    
+    var mode:TodayMode = .Do {
+        didSet {
+            UIView.animateWithDuration(0.35,
+                delay: 0,
+                options: .CurveEaseInOut,
+                animations: { () -> Void in
+                    self.applyGradientColorsForMode(self.mode)
+                }, completion: { (stop:Bool) -> Void in
+            })
+        }
+    }
     
     @IBInspectable var glyphSizeAsPercentageOfSuperView:CGFloat = 0
     
@@ -95,6 +106,7 @@ import QuartzCore
     }
     
 }
+
 
 
 

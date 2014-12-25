@@ -16,32 +16,54 @@ import UIKit
 
 class DRNavBarView: UIView {
     
+    var entryMode:EntryMode
+    var todayMode:TodayMode
+    
     var delegate:DRNavBarViewDelegate?
     
+    //This is the toolbar that appears when we add a new entry
+    @IBOutlet weak var addEntryToolbar:DRAddEntryToolbar!
+    
+    // These are the view that appear when we are in normal/default mode
+    @IBOutlet var normalModeCollection:[UIView]!
     @IBOutlet weak var dontButton:UIButton!
     @IBOutlet weak var doButton:UIButton!
     @IBOutlet weak var dontLabel:UILabel!
     @IBOutlet weak var doLabel:UILabel!
     @IBOutlet weak var underlineView:DRGradientView!
     
+    
+    //Constraints
     @IBOutlet var centerXAlignUnderlineToDoLabel:NSLayoutConstraint!
     @IBOutlet var equalWidthUnderlineToDoLabel:NSLayoutConstraint!
     var centerXAlignUnderlineToDontLabel:NSLayoutConstraint?
     var equalWidthUnderlineToDontLabel:NSLayoutConstraint?
+
     
-    var mode:TodayMode
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
     required init(coder aDecoder: NSCoder) {
-        mode = .Do
+        todayMode = .Do
+        entryMode = .Normal
         super.init(coder: aDecoder)
         backgroundColor = UIColor.todayOffWhite()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchToNewMode:", name: "EntryButtonTapped", object: nil)
+        
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupInitialUI()
+    }
+    
+    func setupInitialUI() {
         doLabel.textColor = UIColor.todayDarkText()
         dontLabel.textColor = UIColor.todayOffGray()
         underlineView.applyGradientColorsForMode(.Do)
+        addEntryToolbar.hidden = true
     }
     
     //MARK: Functions
@@ -60,9 +82,10 @@ class DRNavBarView: UIView {
         UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping:0.7, initialSpringVelocity:0.5, options: .CurveEaseInOut, animations: {
             self.dontLabel.textColor = mode == .Do ? UIColor.todayOffGray() : UIColor.todayDarkText()
             self.doLabel.textColor = mode == .Do ? UIColor.todayDarkText() : UIColor.todayOffGray()
+            self.underlineView.applyGradientColorsForMode(mode)
             self.layoutIfNeeded()
             }, completion: { finished in
-                self.mode = mode
+                self.todayMode = mode
         })
         
     }
@@ -109,17 +132,30 @@ class DRNavBarView: UIView {
     //MARK: IBActions
     
     @IBAction func doButtonPressed(sender:AnyObject) {
-        if mode == .Dont {
+        if todayMode == .Dont {
             delegate?.doButtonDidTouch?(sender)
             performAnimationsForMode(.Do, withDuration: 0.5)
         }
     }
     
     @IBAction func dontButtonPressed(sender:AnyObject) {
-        if mode == .Do {
+        if todayMode == .Do {
             delegate?.dontButtonDidTouch?(sender)
             performAnimationsForMode(.Dont, withDuration: 0.5)
         }
     }
     
+    //MARL: Notifications
+    
+    func switchToNewMode(notification:NSNotification) {
+        
+        NSObject.pop_animate({
+            self.addEntryToolbar.hidden = false
+            for view in self.normalModeCollection {
+                view.pop_easeInEaseOut().alpha = 0
+            }
+            }, completion: { (success:Bool) -> Void in
+                self.addEntryToolbar.closeIcon.animateScaleWithSpringPOP(nil, springSpeed: nil, reveal: true)
+        })
+    }
 }

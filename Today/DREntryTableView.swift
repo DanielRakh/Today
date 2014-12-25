@@ -11,10 +11,17 @@ import Swift
 
 class DREntryTableView: UITableView {
     
-    enum TableMode {
-        case New
-        case Normal
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
+
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setupTableViewForNewMode:", name: "EntryButtonTapped", object: nil)
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,11 +35,17 @@ class DREntryTableView: UITableView {
         self.tableFooterView = UIView(frame: CGRectZero)
     }
     
-    func setupTableViewForMode(tableMode:TableMode) {
+    
+    func setupTableViewForNewMode(notification:NSNotification) {
+        
+        setupTableViewForMode(.New)
+    }
+    
+    func setupTableViewForMode(entryMode:EntryMode) {
         
         let droppedFirstElementArray = dropFirst(self.visibleCells())
         droppedFirstElementArray.map({cell in
-            (cell as UITableViewCell).pop_easeInEaseOut().alpha = tableMode == .New ? 0.20 : 1
+            (cell as UITableViewCell).pop_easeInEaseOut().alpha = entryMode == .New ? 0.20 : 1
         })
     }
 }
