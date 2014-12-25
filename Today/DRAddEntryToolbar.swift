@@ -8,14 +8,24 @@
 
 import UIKit
 
+@objc protocol  DRAddEntryToolBarDelegate {
+    
+    optional func closeButtonDidTap(sender:UIButton)
+    optional func doneButtonDidTap(sender:UIButton)
+    
+}
+
 class DRAddEntryToolbar: UIView {
     
     @IBOutlet weak var closeIcon:DRCloseIconView!
     @IBOutlet weak var checkmarkIcon:DRCheckmarkIconView!
     
+    var delegate:DRAddEntryToolBarDelegate?
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = UIColor.todayOffWhite()
+
     }
     
     override init(frame: CGRect) {
@@ -30,6 +40,8 @@ class DRAddEntryToolbar: UIView {
     
     func setup() {
         //Set initial postion of icons to a scale of (0,0)
+        closeIcon.userInteractionEnabled = false
+        checkmarkIcon.userInteractionEnabled = false
         closeIcon.transform = CGAffineTransformMakeScale(0.001, 0.001)
         closeIcon.todayMode = .Dont
         closeIcon.iconMode = .On
@@ -48,6 +60,18 @@ class DRAddEntryToolbar: UIView {
     func hideSaveButton(notification:NSNotification) {
         checkmarkIcon.animateScaleWithSpringPOP(nil, springSpeed: nil, reveal: false)
 
+    }
+    
+    
+    //MARK: IBActions
+    
+    @IBAction func closeButtonDidTap(sender:UIButton) {
+        delegate?.closeButtonDidTap?(sender)
+    }
+    
+    @IBAction func doneButtonDidTap(sender:UIButton) {
+        delegate?.doneButtonDidTap?(sender)
+        
     }
     
 

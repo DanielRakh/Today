@@ -9,15 +9,52 @@
 import UIKit
 
 @objc protocol DRNavBarViewDelegate {
-    optional func doButtonDidTouch(sender:AnyObject)
-    optional func dontButtonDidTouch(sender:AnyObject)
+    optional func doButtonDidTouch()
+    optional func dontButtonDidTouch()
 }
 
 
 class DRNavBarView: UIView {
     
-    var entryMode:EntryMode
-    var todayMode:TodayMode
+    var entryMode:EntryMode = .Normal {
+        
+        willSet {
+            if newValue == .New {
+                NSObject.pop_animate({
+                    self.addEntryToolbar.hidden = false
+                    for view in self.normalModeCollection {
+                        view.pop_easeInEaseOut().alpha = 0
+                    }
+                    }, completion: { (success:Bool) -> Void in
+                        self.addEntryToolbar.closeIcon.animateScaleWithSpringPOP(nil, springSpeed: nil, reveal: true)
+                })
+            } else {
+                NSObject.pop_animate({
+                    self.addEntryToolbar.closeIcon.animateScaleWithSpringPOP(nil, springSpeed: nil, reveal: false)
+                    self.addEntryToolbar.checkmarkIcon.animateScaleWithSpringPOP(nil, springSpeed: nil, reveal: false)
+                    self.addEntryToolbar.hidden = true
+                    for view in self.normalModeCollection {
+                        view.pop_easeInEaseOut().alpha = 1
+                    }
+                    }, completion: { (success:Bool) -> Void in
+//                        println("Did complete")
+//                        self.addEntryToolbar.hidden = true
+//                        for view in self.normalModeCollection {
+//                            view.pop_easeInEaseOut().alpha = 1
+//                        }
+                })
+            }
+            
+         
+        }
+    }
+    
+    var todayMode:TodayMode = .Do {
+        didSet {
+            todayMode == .Do ? delegate?.doButtonDidTouch?() : delegate?.dontButtonDidTouch?()
+            performAnimationsForMode(todayMode, withDuration: 0.5)
+        }
+    }
     
     var delegate:DRNavBarViewDelegate?
     
@@ -45,12 +82,8 @@ class DRNavBarView: UIView {
     }
     
     required init(coder aDecoder: NSCoder) {
-        todayMode = .Do
-        entryMode = .Normal
         super.init(coder: aDecoder)
-        backgroundColor = UIColor.todayOffWhite()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchToNewMode:", name: "EntryButtonTapped", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchToModeNew:", name: "EntryButtonTapped", object: nil)
         
     }
     
@@ -60,10 +93,12 @@ class DRNavBarView: UIView {
     }
     
     func setupInitialUI() {
+        backgroundColor = UIColor.todayOffWhite()
         doLabel.textColor = UIColor.todayDarkText()
         dontLabel.textColor = UIColor.todayOffGray()
         underlineView.applyGradientColorsForMode(.Do)
         addEntryToolbar.hidden = true
+        addEntryToolbar.delegate = self
     }
     
     //MARK: Functions
@@ -77,6 +112,7 @@ class DRNavBarView: UIView {
 
     func performAnimationsForMode(mode:TodayMode, withDuration duration:NSTimeInterval) {
         
+        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         adjustContraintsForMode(mode)
         
         UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping:0.7, initialSpringVelocity:0.5, options: .CurveEaseInOut, animations: {
@@ -85,7 +121,9 @@ class DRNavBarView: UIView {
             self.underlineView.applyGradientColorsForMode(mode)
             self.layoutIfNeeded()
             }, completion: { finished in
-                self.todayMode = mode
+                if UIApplication.sharedApplication().isIgnoringInteractionEvents() {
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                }
         })
         
     }
@@ -133,29 +171,38 @@ class DRNavBarView: UIView {
     
     @IBAction func doButtonPressed(sender:AnyObject) {
         if todayMode == .Dont {
-            delegate?.doButtonDidTouch?(sender)
-            performAnimationsForMode(.Do, withDuration: 0.5)
+            todayMode = .Do
         }
     }
     
     @IBAction func dontButtonPressed(sender:AnyObject) {
         if todayMode == .Do {
-            delegate?.dontButtonDidTouch?(sender)
-            performAnimationsForMode(.Dont, withDuration: 0.5)
+            todayMode = .Dont
         }
     }
     
-    //MARL: Notifications
+    //MARK: Notifications
     
-    func switchToNewMode(notification:NSNotification) {
-        
-        NSObject.pop_animate({
-            self.addEntryToolbar.hidden = false
-            for view in self.normalModeCollection {
-                view.pop_easeInEaseOut().alpha = 0
-            }
-            }, completion: { (success:Bool) -> Void in
-                self.addEntryToolbar.closeIcon.animateScaleWithSpringPOP(nil, springSpeed: nil, reveal: true)
-        })
+    func switchToModeNew(notification:NSNotification) {
+        entryMode = .New
+    }
+    
+    
+    func switchToModeOld(notification:NSNotification) {
+        entryMode = .Normal
+    }
+    
+}
+
+
+extension DRNavBarView:DRAddEntryToolBarDelegate {
+    
+    func closeButtonDidTap(sender:UIButton) {
+        entryMode = .Normal
+    }
+    
+    func doneButtonDidTap(sender:UIButton) {
+        //TODO:
+        println("Done button did touch")
     }
 }

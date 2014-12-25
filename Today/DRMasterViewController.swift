@@ -28,8 +28,8 @@ class DRMasterViewController: UIViewController, UIViewControllerTransitioningDel
     
     // Today Mode
     var todayMode:TodayMode = .Do {
-        didSet {
-            addEntryButton.mode = todayMode
+        willSet {
+            addEntryButton.mode = newValue
         }
     }
     
@@ -77,8 +77,9 @@ class DRMasterViewController: UIViewController, UIViewControllerTransitioningDel
     //MARK: IBActions
     
     @IBAction func addEntryButtonDidTouch(sender: AnyObject) {
-        
+    
         // Observers: DRNavBar, DREntryTableView, DREntryCell
+        
         NSNotificationCenter.defaultCenter().postNotificationName("EntryButtonTapped", object: nil)
     }
 }
@@ -88,14 +89,15 @@ class DRMasterViewController: UIViewController, UIViewControllerTransitioningDel
 
 extension DRMasterViewController: DRNavBarViewDelegate {
     
-    func doButtonDidTouch(sender: AnyObject) {
+    func doButtonDidTouch() {
         if navController.topViewController is DRDontViewController {
             self.todayMode = .Do
             navController.popToRootViewControllerAnimated(true)
         }
     }
     
-    func dontButtonDidTouch(sender: AnyObject) {
+    
+    func dontButtonDidTouch() {
         if navController.topViewController is DRDoViewController {
             self.todayMode = .Dont
             navController.topViewController.performSegueWithIdentifier("pushToDontVC", sender:self.navController.topViewController)

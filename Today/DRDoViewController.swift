@@ -25,30 +25,7 @@ class DRDoViewController: UIViewController {
         view.backgroundColor = UIColor.clearColor()
         self.navigationController?.delegate = self
         transitionAnimator.delegate = self
-
         setupTableView()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        println("DoVC viewWillAppear")
-
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        println("DoVC viewDidAppear")
-
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        println("DoVC View will dissappear")
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        println("DoVC View did dissappear")
     }
     
     func setupTableView() {

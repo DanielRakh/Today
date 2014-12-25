@@ -14,12 +14,12 @@ import QuartzCore
     var additionGlyph:CALayer!
     
     var mode:TodayMode = .Do {
-        didSet {
+        willSet {
             UIView.animateWithDuration(0.35,
                 delay: 0,
                 options: .CurveEaseInOut,
                 animations: { () -> Void in
-                    self.applyGradientColorsForMode(self.mode)
+                    self.applyGradientColorsForMode(newValue)
                 }, completion: { (stop:Bool) -> Void in
             })
         }

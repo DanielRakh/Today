@@ -133,7 +133,30 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJl-kr-knY" userLabel="Add Entry Toolbar" customClass="DRAddEntryToolbar" customModule="Today" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="238-qz-BW3" customClass="DRCloseIconView" customModule="Today" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lv5-Bg-RXO" userLabel="Close Icon Button">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="UtA-hC-2Ju"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="UtA-hC-2Ju"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="UtA-hC-2Ju"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="closeButtonDidTap:" destination="OJl-kr-knY" eventType="touchUpInside" id="3z9-Qb-e7k"/>
+                                                </connections>
+                                            </button>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="238-qz-BW3" customClass="DRCloseIconView" customModule="Today" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -157,7 +180,30 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Djq-4Y-tG3" customClass="DRCheckmarkIconView" customModule="Today" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jZ-S9-We7" userLabel="Checkmark Button">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="x2u-ne-ibO"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="x2u-ne-ibO"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="x2u-ne-ibO"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="doneButtonDidTap:" destination="OJl-kr-knY" eventType="touchUpInside" id="F21-BJ-HKh"/>
+                                                </connections>
+                                            </button>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Djq-4Y-tG3" customClass="DRCheckmarkIconView" customModule="Today" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -184,10 +230,18 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="lv5-Bg-RXO" firstAttribute="leading" secondItem="OJl-kr-knY" secondAttribute="leading" id="6qI-TO-zoM"/>
                                             <constraint firstItem="238-qz-BW3" firstAttribute="top" secondItem="OJl-kr-knY" secondAttribute="top" constant="15" id="CEL-a0-WVG">
                                                 <variation key="widthClass=compact" constant="20"/>
                                             </constraint>
+                                            <constraint firstAttribute="bottom" secondItem="lv5-Bg-RXO" secondAttribute="bottom" constant="34" id="HDr-x5-aXl">
+                                                <variation key="widthClass=compact" constant="0.0"/>
+                                            </constraint>
+                                            <constraint firstAttribute="trailing" secondItem="0jZ-S9-We7" secondAttribute="trailing" id="If9-Hf-NLf"/>
                                             <constraint firstAttribute="trailing" secondItem="Djq-4Y-tG3" secondAttribute="trailing" constant="21" id="L8d-d3-V02"/>
+                                            <constraint firstItem="0jZ-S9-We7" firstAttribute="top" secondItem="OJl-kr-knY" secondAttribute="top" id="MFL-e8-HKB"/>
+                                            <constraint firstItem="lv5-Bg-RXO" firstAttribute="top" secondItem="OJl-kr-knY" secondAttribute="top" id="b0z-h6-FVm"/>
+                                            <constraint firstAttribute="bottom" secondItem="0jZ-S9-We7" secondAttribute="bottom" id="bgn-bG-bBc"/>
                                             <constraint firstItem="Djq-4Y-tG3" firstAttribute="top" secondItem="OJl-kr-knY" secondAttribute="top" constant="15" id="tc1-cz-ocB">
                                                 <variation key="widthClass=compact" constant="20"/>
                                             </constraint>
@@ -195,24 +249,40 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="subviews">
+                                                <exclude reference="lv5-Bg-RXO"/>
                                                 <exclude reference="238-qz-BW3"/>
+                                                <exclude reference="0jZ-S9-We7"/>
                                                 <exclude reference="Djq-4Y-tG3"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <exclude reference="6qI-TO-zoM"/>
+                                                <exclude reference="HDr-x5-aXl"/>
+                                                <exclude reference="b0z-h6-FVm"/>
                                                 <exclude reference="CEL-a0-WVG"/>
                                                 <exclude reference="xyR-KG-xiw"/>
+                                                <exclude reference="If9-Hf-NLf"/>
+                                                <exclude reference="MFL-e8-HKB"/>
+                                                <exclude reference="bgn-bG-bBc"/>
                                                 <exclude reference="L8d-d3-V02"/>
                                                 <exclude reference="tc1-cz-ocB"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
                                             <mask key="subviews">
+                                                <include reference="lv5-Bg-RXO"/>
                                                 <include reference="238-qz-BW3"/>
+                                                <include reference="0jZ-S9-We7"/>
                                                 <include reference="Djq-4Y-tG3"/>
                                             </mask>
                                             <mask key="constraints">
+                                                <include reference="6qI-TO-zoM"/>
+                                                <include reference="HDr-x5-aXl"/>
+                                                <include reference="b0z-h6-FVm"/>
                                                 <include reference="CEL-a0-WVG"/>
                                                 <include reference="xyR-KG-xiw"/>
+                                                <include reference="If9-Hf-NLf"/>
+                                                <include reference="MFL-e8-HKB"/>
+                                                <include reference="bgn-bG-bBc"/>
                                                 <include reference="L8d-d3-V02"/>
                                                 <include reference="tc1-cz-ocB"/>
                                             </mask>
